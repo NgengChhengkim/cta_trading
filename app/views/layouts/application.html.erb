@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>CtaTrading</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>Youth Fashion A Ecommerce Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Youth Fashion Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+    Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      <%= render "layouts/header_top" %>
+      <div class="container">
+        <div class="head-top">
+          <%= render "layouts/nav" %>
+          <div class="clearfix"></div>
+          <%= render "layouts/search_dialog" %>
+        </div>
+      </div>
+    </div>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
+    <div class="footer">
+      <%= render "layouts/footer_top" %>
+      <%= render "layouts/footer_bottom" %>
+    </div>
+  </body>
 </html>
