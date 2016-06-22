@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
+//= require bootstrap-sprockets
+//= require imagezoom
+//= require jquery.flexslider
+//= require jquery.magnific-popup
+//= require memenu
+//= require responsiveslides.min
+//= require simpleCart.min
+//= require wow.min
+//= require custom
