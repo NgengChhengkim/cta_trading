@@ -23,7 +23,7 @@ h1,h2,h3,h4,h5,h6,label,p{
   margin:0;
 }
 /*----*/
-.logo span {
+.logo-icon span {
   color: #fa03bb;
 }
 .header-top {
@@ -246,10 +246,10 @@ ul.nav-list.list-inline li {
 	font-weight:700;
 }
 /*--header--*/
-.logo {
+.logo-icon {
   padding: 0 0em 0 2.5em;
 }
-.logo h1 a {
+.logo-icon h1 a {
   color: #403b37;
   font-size: 1em;
   text-decoration: none;
@@ -1702,7 +1702,7 @@ a.to-buy:hover{
     padding-right: 0px;
     padding-left: 0px;
   }
-  .logo {
+  .logo-icon {
     padding: 0 0em 0 0em;
   }
   .search, .world {
@@ -1729,7 +1729,7 @@ a.to-buy:hover{
   .top-footer1 input[type="submit"] {
     width: 28%;
   }
-  .world ,.logo,.header-left{
+  .world ,.logo-icon,.header-left{
     width: 33.33%;
     float: left;
   }
@@ -1939,10 +1939,10 @@ p.log {
     width: 14%;
     padding: 0;
   }
-  .logo {
+  .logo-icon {
     width: 38%;
   }
-  .logo img{
+  .logo-icon img{
     width: 80%;
     margin: 0 auto;
   }
@@ -2082,7 +2082,7 @@ p.log {
   .header-top {
     padding: 10px 0;
   }
-  .logo {
+  .logo-icon {
     width: 100%;
     padding: 0;
     text-align: center;
@@ -2097,12 +2097,12 @@ p.log {
   .banner-mat img {
     display: none;
   }
-  .logo {
+  .logo-icon {
     width: 100%;
     padding: 0;
     text-align: center;
   }
-  .logo img {
+  .logo-icon img {
     width: 29%;
   }
   .search {
@@ -2361,10 +2361,10 @@ p.log {
   }
 }
 @media(max-width:320px){
-  .logo {
+  .logo-icon {
     width: 100%;
   }
-  .logo h1 a {
+  .logo-icon h1 a {
     font-size: 0.85em;
   }
   .world h6 {
@@ -2378,7 +2378,7 @@ p.log {
     padding: 0;
   	text-align:left;
   }
-  .logo img {
+  .logo-icon img {
     width: 46%;
   }
   .number p {
@@ -2388,7 +2388,7 @@ p.log {
   .number {
     width: 40%;
   }
-  .logo {
+  .logo-icon {
     width: 100%;
     text-align: center;
   }

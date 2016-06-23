@@ -22,3 +22,6 @@
 //= require simpleCart.min
 //= require wow.min
 //= require custom
+//= require admin/app
+//= require admin/fastclick
+//= require admin/jquery.slimscroll
