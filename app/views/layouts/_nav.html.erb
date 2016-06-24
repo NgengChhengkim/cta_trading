@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default navbar-fixed-top">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -8,13 +8,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#"></a>
+      <a class="navbar-brand" href="#">CTA</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</span></a></li>
+        <li class="active"><a href="#">Home</a></li>
         <li><a href="#">Products</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -28,6 +28,16 @@
             <li role="separator" class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
+        </li>
+        <li>
+          <%= link_to "#", class: "cart" do %>
+            <span><%= image_tag "cart.png" %></span>
+            <span class="badge number-cart">4</span>
+          <% end %>
+        </li>
+        <li class="search">
+          <a class="popup-with-zoom-anim search" href="#small-dialog">
+          <i class="glyphicon glyphicon-search"></i></a>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
