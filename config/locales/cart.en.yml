@@ -1,0 +1,6 @@
+en:
+  cart:
+    tables:
+      item: "Item"
+      quantity: "Quantity"
+      price: "Price"

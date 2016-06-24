@@ -1,0 +1,15 @@
+<tr>
+  <td class="ring-in">
+    <a href="single.html" class="at-in">
+      <%= image_tag "pi.png", class: "img-responsive" %>
+    </a>
+    <div class="sed">
+      <h5><%= product.name %></h5>
+      <p><%= product.description %></p>
+    </div>
+    <div class="clearfix"></div>
+  </td>
+  <td><%= number_field_tag :number, @product_cart.count(product.id), min: 0,
+    class: "form-control" %></td>
+  <td><%= product.retail_sale_price %></td>
+</tr>

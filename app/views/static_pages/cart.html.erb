@@ -1,0 +1,28 @@
+<div class="divide"></div>
+<div class="breadcrumbs">
+  <div class="container">
+    <ol class="breadcrumb breadcrumb1 animated wow slideInLeft animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: slideInLeft;">
+      <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+      <li class="active">Checkout</li>
+    </ol>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-md-6">
+    <div class="check-out">
+      <table class="table">
+        <thead>
+          <tr>
+            <th><%= t "cart.tables.item" %></th>
+            <th><%= t "cart.tables.quantity" %></th>
+            <th><%= t "cart.tables.price" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "cart", collection: @products, as: :product %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
