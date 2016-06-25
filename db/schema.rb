@@ -92,7 +92,7 @@ ActiveRecord::Schema.define(version: 20160623142418) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   limit: 255
-    t.integer  "role",                   limit: 4
+    t.integer  "role",                   limit: 4,   default: 2
     t.string   "address",                limit: 255
     t.string   "phone_number",           limit: 255
     t.string   "email",                  limit: 255, default: "", null: false
