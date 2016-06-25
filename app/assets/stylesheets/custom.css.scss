@@ -1,2 +1,49 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.head-title {
+  font-size: 1.5em;
+  padding: 20px 0px 10px 0px;
+}
+
+.products {
+  background-color: WHITE;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  line-height: 1.7;
+  color: BLACK;
+  .image {
+    display: inline-block;
+    height: 180px;
+  }
+  .product-content {
+    font-size: 1em;
+    .type {
+      font-size: 0.8em;
+    }
+    .price {
+      .discount-price {
+        color: RED;
+      }
+      .discount {
+        position: relative;
+        top: -3px;
+      }
+    }
+    .net-price {
+      text-decoration: line-through;
+      font-size: 0.8em;
+    }
+    .add-to-cart, .btn-add-to-cart {
+      padding: 2px 6px;
+      border-radius: 2px;
+      background-color: #fa03bb;
+      color: WHITE;
+    }
+  }
+}
+
+a:hover {
+  text-decoration: none;
+}

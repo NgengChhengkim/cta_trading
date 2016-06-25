@@ -13,6 +13,10 @@ class CreateProducts < ActiveRecord::Migration
       t.text :description
       t.text :usage
 
+      t.references :category, index: true, foreign_key: true
+      t.references :supplier, index: true, foreign_key: true
+      t.references :brand, index: true, foreign_key: true
+
       t.timestamps null: false
     end
   end

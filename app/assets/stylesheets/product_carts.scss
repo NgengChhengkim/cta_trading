@@ -1,0 +1,26 @@
+#product-cart {
+  .check-out {
+    background-color: WHITE;
+  }
+  .tbl-cart {
+    font-size: 1em;
+    .item {
+      width: 20%;
+    }
+    .name {
+      width: 50%;
+    }
+    .price {
+      width: 15%;
+    }
+    .quantity {
+      width: 10%;
+    }
+    .action {
+      width: 5%;
+    }
+    .type {
+      font-size: 0.8em;
+    }
+  }
+}

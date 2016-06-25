@@ -1,0 +1,24 @@
+<div class="col-md-3 no-padding">
+  <%= link_to "#" do %>
+    <div class="products">
+      <div class="image">
+        <%= image_tag "bachi.jpg", width: "180", class: "img-responsive" %>
+      </div>
+      <div class="product-content">
+        <div class="title" title="<%= product.name %>"><%= product.name %></div>
+        <div class="type" title="<%= product.category_name %>"><%= product.category_name %></div>
+        <div class="price">
+          <span class="discount-price"><%= number_to_currency product.discount_price %></span>
+          <span class="discount label label-danger"><%= percentage_format product.discount %></span>
+        </div>
+        <div class="net-price"><%= number_to_currency product.retail_sale_price %></div>
+        <div>
+          <%= form_for @product_cart, remote: true do |f| %>
+            <%= f.hidden_field :product_id, value: product.id %>
+            <%= f.submit t("actions.add_to_cart"), class: "btn btn-add-to-cart" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

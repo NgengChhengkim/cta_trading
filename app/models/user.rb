@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
-  has_many :product_carts, as: :customer, dependent: :destroy
+  has_many :product_orders, as: :customer, dependent: :destroy
+  has_many :products, through: :product_orders
+  has_many :product_carts, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable

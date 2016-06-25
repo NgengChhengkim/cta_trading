@@ -1,10 +1,6 @@
 class StaticPagesController < ApplicationController
-  def cart
-    product_cart_cookie = cookies[:product_cart]
-    @products = []
-    if product_cart_cookie
-      @product_cart = JSON.parse cookies[:product_cart]
-      @products = Product.where id: @product_cart
-    end
+  def index
+    @products = Product.includes(:category).order(created_at: :DESC).limit 12
+    @product_cart = ProductCart.new
   end
 end

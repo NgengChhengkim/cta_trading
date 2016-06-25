@@ -24,7 +24,7 @@
 //= require js.cookie
 //= require jquery-number-format
 //= require custom
-//= require cart
+//= require product_cart
 
 //= require admin/app
 //= require admin/fastclick
