@@ -1,0 +1,8 @@
+en:
+  cart:
+    tables:
+      item: "Item"
+      quantity: "Quantity"
+      price: "Price"
+    actions:
+      remove: "Remove from cart"

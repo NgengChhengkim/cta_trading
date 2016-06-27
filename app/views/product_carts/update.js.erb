@@ -1,0 +1,5 @@
+<% if @product_cart %>
+  $(".number-cart").html("<%= @product_cart_number %>");
+<% else %>
+  alert("Cannot update");
+<% end %>

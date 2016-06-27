@@ -21,7 +21,11 @@
 //= require responsiveslides.min
 //= require simpleCart.min
 //= require wow.min
+//= require js.cookie
+//= require jquery-number-format
 //= require custom
+//= require product_cart
+
 //= require admin/app
 //= require admin/fastclick
 //= require admin/jquery.slimscroll

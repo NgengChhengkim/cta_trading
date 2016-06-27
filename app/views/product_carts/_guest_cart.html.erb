@@ -1,0 +1,17 @@
+<tr class="guest-cart cart-<%= product.id %>">
+  <td><%= image_tag "bachi.jpg", width: "100", class: "img-responsive" %></td>
+  <td>
+    <div class="title"><%= product.name %></div>
+    <div class="type"><%= product.category_name %></div>
+  </td>
+  <td><%= number_to_currency product.retail_sale_price %></td>
+  <td><%= number_field_tag :number, product_quantity(@product_object, product.id),
+    "data-product-id": product.id, min: 0,
+    class: "form-control product-quantity" %></td>
+  <td>
+    <%= link_to "#", class: "remove", "data-product-id": product.id,
+      title: t("cart.actions.remove") do %>
+      <i class="fa fa-times" aria-hidden="true"></i>
+    <% end %>
+  </td>
+</tr>

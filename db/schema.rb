@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160623142418) do
+ActiveRecord::Schema.define(version: 20160624150241) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -55,15 +55,48 @@ ActiveRecord::Schema.define(version: 20160623142418) do
   end
 
   create_table "product_carts", force: :cascade do |t|
-    t.integer  "quantity",      limit: 4
-    t.integer  "customer_id",   limit: 4
-    t.string   "customer_type", limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
-    t.integer  "country_id",    limit: 4
+    t.integer  "user_id",    limit: 4
+    t.integer  "product_id", limit: 4
+    t.integer  "quantity",   limit: 4, default: 1
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
   end
 
-  add_index "product_carts", ["country_id"], name: "index_product_carts_on_country_id", using: :btree
+  add_index "product_carts", ["product_id"], name: "index_product_carts_on_product_id", using: :btree
+  add_index "product_carts", ["user_id"], name: "index_product_carts_on_user_id", using: :btree
+
+  create_table "product_orders", force: :cascade do |t|
+    t.integer  "quantity",    limit: 4
+    t.integer  "customer_id", limit: 4
+    t.integer  "product_id",  limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "product_orders", ["product_id"], name: "index_product_orders_on_product_id", using: :btree
+
+  create_table "products", force: :cascade do |t|
+    t.string   "name",              limit: 255
+    t.string   "code",              limit: 255
+    t.float    "weight",            limit: 24
+    t.integer  "number_per_case",   limit: 4
+    t.decimal  "whole_sale_price",                precision: 10
+    t.decimal  "retail_sale_price",               precision: 10
+    t.decimal  "price_per_case",                  precision: 10
+    t.float    "discount",          limit: 24
+    t.string   "smell",             limit: 255
+    t.text     "description",       limit: 65535
+    t.text     "usage",             limit: 65535
+    t.integer  "category_id",       limit: 4
+    t.integer  "supplier_id",       limit: 4
+    t.integer  "brand_id",          limit: 4
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+  end
+
+  add_index "products", ["brand_id"], name: "index_products_on_brand_id", using: :btree
+  add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
+  add_index "products", ["supplier_id"], name: "index_products_on_supplier_id", using: :btree
 
   create_table "promotions", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -112,6 +145,11 @@ ActiveRecord::Schema.define(version: 20160623142418) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "product_carts", "countries"
+  add_foreign_key "product_carts", "products"
+  add_foreign_key "product_carts", "users"
+  add_foreign_key "product_orders", "products"
+  add_foreign_key "products", "brands"
+  add_foreign_key "products", "categories"
+  add_foreign_key "products", "suppliers"
   add_foreign_key "suppliers", "countries"
 end

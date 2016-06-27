@@ -1,0 +1,5 @@
+<% if @product_cart.errors.any? %>
+  alert("Cannot add to cart");
+<% else %>
+  $(".number-cart").html("<%= @product_cart_number %>");
+<% end %>
