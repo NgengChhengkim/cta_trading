@@ -15,8 +15,9 @@ gem "cancancan", "~> 1.10"
 gem "jquery-form-validator-rails"
 gem "i18n-js", ">= 3.0.0.rc12"
 gem "settingslogic"
+gem "font-awesome-rails"
 group :development, :test do
-  gem "byebug"
+  gem "pry"
 end
 
 group :development do

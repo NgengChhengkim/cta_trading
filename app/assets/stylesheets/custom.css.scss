@@ -1,5 +1,17 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome";
+
+.error-explanation {
+  padding-left: 35px;
+  .close {
+    color: white;
+    opacity: 1;
+    text-shadow: none;
+    text-decoration: none;
+    font-weight: normal;
+  }
+}
 
 .head-title {
   font-size: 1.5em;
@@ -61,4 +73,30 @@ a:hover {
     background-color: white;
     padding: 1px 14px;
   }
+}
+
+.btn {
+  border-radius: 0px;
+}
+
+.form-control {
+  font-size: 13px;
+  border-radius: 0px;
+  border: 1px solid #ddd;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  -webkit-box-shadow: none !important;
+}
+
+.form-control:focus {
+  border-color: #00b9f2;
+}
+
+.btn-warning {
+  height: 35px;
+  background-color: #f7941d;
+  color: white;
+}
+
+.full-width {
+  width: 100%;
 }

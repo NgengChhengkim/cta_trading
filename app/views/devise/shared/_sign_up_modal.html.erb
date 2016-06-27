@@ -1,0 +1,57 @@
+<div class="col-md-6 col-md-offset-3 devise-form">
+  <div class="head">
+    <% if resource.new_record? %>
+      <h2><%= t "devise.labels.join" %></h2>
+      <p><%= t "devise.labels.choose_method" %></p>
+      <button class="btn btn-facebook">
+        <i class="fa fa-fw fa-facebook"></i>
+        <span><%= t "devise.labels.facebook" %></span>
+      </button>
+
+      <button class="btn btn-google">
+        <i class="fa fa-fw fa-google"></i>
+        <span><%= t "devise.labels.google" %></span>
+      </button>
+
+      <div class="hr">
+        <hr>
+        <span><%= t "devise.labels.or" %></span>
+      </div>
+    <% else %>
+      <h2><%= t "devise.labels.edit_account" %></h2>
+    <% end %>
+  </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "shared/error_messages", object: resource %>
+
+    <div><%= f.text_field :name, data: Settings.validations.name,
+      placeholder: t("devise.placeholders.name"), class: "form-control"%>
+    </div><br />
+
+    <div><%= f.email_field :email, data: Settings.validations.email,
+      placeholder: t("devise.placeholders.email"), class: "form-control" %>
+    </div><br />
+
+    <div><%= f.password_field :password,
+      data: Settings.validations.password, autocomplete: "off",
+      placeholder: t("devise.placeholders.password"), class: "form-control"%>
+    </div><br />
+
+    <div><%= f.password_field :password_confirmation,
+      data: Settings.validations.confirm_password, autocomplete: "off",
+      placeholder: t("devise.placeholders.confirm_password"), class: "form-control" %>
+    </div><br />
+
+    <div><%= f.text_area :address, placeholder: t("devise.placeholders.address"),
+      class: "form-control" %>
+    </div><br />
+
+    <div><%= f.text_field :phone_number, data: Settings.validations.phone_number,
+      placeholder: t("devise.placeholders.phone_number"), class: "form-control" %>
+    </div><br />
+
+    <%= f.submit (f.object.new_record? ? t("devise.labels.sign_up")
+      : t("devise.labels.save")), class: "btn btn-warning full-width" %>
+  <% end %>
+</div>
+

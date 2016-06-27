@@ -50,6 +50,25 @@ en:
       send_instructions: "You will receive an email with instructions for how to unlock your account in a few minutes."
       send_paranoid_instructions: "If your account exists, you will receive an email with instructions for how to unlock it in a few minutes."
       unlocked: "Your account has been unlocked successfully. Please sign in to continue."
+    labels:
+      join: "Join Today"
+      choose_method: "Choose one of the following sign up methods"
+      facebook: "Facebook"
+      google: "Google"
+      edit_account: "Edit Account"
+      or: "or"
+      sign_up: "Sign up"
+      sign_in: "Sign in"
+      login: "Log in"
+      forget_pass: "Forgot your password?"
+      save: "Save"
+    placeholders:
+      name: "Enter your name"
+      email: "Enter your email"
+      password: "Enter your password"
+      confirm_password: "Enter confirmation password"
+      phone_number: "Enter your phone number"
+      address: "Enter your address"
   errors:
     messages:
       already_confirmed: "was already confirmed, please try signing in"

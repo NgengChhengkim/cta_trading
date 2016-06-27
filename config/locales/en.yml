@@ -12,4 +12,8 @@ en:
   errors:
     required: "%{data} cannot be blank"
     name_length: "Name requires at least 4 characters"
+    password: "Password requires at least 8 characters"
+    confirm_password: "Password does not match"
     email_invalidate: "Email is invalid"
+    form: "Form contains "
+    error: "error"
