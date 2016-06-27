@@ -1,12 +1,19 @@
-<tr class="user-cart cart-<%= product_cart.id %>">
+<tr class="user-cart product-cart cart-<%= product_cart.id %>">
   <td><%= image_tag "bachi.jpg", width: "100", class: "img-responsive" %></td>
   <td>
     <div class="title"><%= product_cart.product_name %></div>
     <div class="type"><%= product_cart.product.category_name %></div>
   </td>
-  <td><%= number_to_currency product_cart.product_retail_sale_price %></td>
+  <td>
+    <div class="discount-price" data-discount-price="<%= product_cart.product_discount_price %>">
+      <%= number_to_currency product_cart.product_discount_price %></div>
+    <div class="old-price"><%= number_to_currency product_cart.product_retail_sale_price %></div>
+    <div class="discount">
+      <%= "#{percentage_format product_cart.product_discount} #{t "cart.labels.discount"}" %>
+    </div>
+  </td>
   <td><%= number_field_tag :number, product_cart.quantity,
-    "data-product-cart-id": product_cart.id, min: 0,
+    "data-product-cart-id": product_cart.id, min: 1,
     class: "form-control product-quantity" %></td>
   <td>
     <%= link_to product_cart_path(product_cart), method: :delete,

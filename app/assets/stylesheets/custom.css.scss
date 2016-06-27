@@ -47,3 +47,18 @@
 a:hover {
   text-decoration: none;
 }
+
+.hr {
+  padding-top: 5px;
+  text-align: center;
+  hr {
+    margin-bottom: 10px;
+  }
+
+  span {
+    position: relative;
+    top: -21px;
+    background-color: white;
+    padding: 1px 14px;
+  }
+}

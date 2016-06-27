@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require i18n
+//= require i18n/translations
 //= require imagezoom
 //= require jquery.flexslider
 //= require jquery.magnific-popup
@@ -23,6 +25,7 @@
 //= require wow.min
 //= require js.cookie
 //= require jquery-number-format
+//= require jquery.form-validator
 //= require custom
 //= require product_cart
 

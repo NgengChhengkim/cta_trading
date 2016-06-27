@@ -1,2 +1,7 @@
 $(".number-cart").html("<%= @product_cart_number %>");
-$(".cart-<%= @product_cart.id %>").html("");
+<% if @product_cart_number == 0 %>
+  $("#product-cart .row").html("<%= j render 'product_carts/empty_cart' %>");
+<% else %>
+  $(".cart-<%= @product_cart.id %>").remove();
+  total_price();
+<% end %>

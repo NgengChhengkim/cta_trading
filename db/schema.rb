@@ -66,11 +66,12 @@ ActiveRecord::Schema.define(version: 20160624150241) do
   add_index "product_carts", ["user_id"], name: "index_product_carts_on_user_id", using: :btree
 
   create_table "product_orders", force: :cascade do |t|
-    t.integer  "quantity",    limit: 4
-    t.integer  "customer_id", limit: 4
-    t.integer  "product_id",  limit: 4
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.integer  "customer_id",   limit: 4
+    t.string   "customer_type", limit: 255
+    t.integer  "quantity",      limit: 4
+    t.integer  "product_id",    limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "product_orders", ["product_id"], name: "index_product_orders_on_product_id", using: :btree
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 20160624150241) do
     t.decimal  "retail_sale_price",               precision: 10
     t.decimal  "price_per_case",                  precision: 10
     t.float    "discount",          limit: 24
+    t.decimal  "discount_price",                  precision: 10
     t.string   "smell",             limit: 255
     t.text     "description",       limit: 65535
     t.text     "usage",             limit: 65535

@@ -9,6 +9,7 @@ class CreateProducts < ActiveRecord::Migration
       t.decimal :retail_sale_price
       t.decimal :price_per_case
       t.float :discount
+      t.decimal :discount_price
       t.string :smell
       t.text :description
       t.text :usage

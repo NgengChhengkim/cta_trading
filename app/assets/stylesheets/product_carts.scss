@@ -1,17 +1,25 @@
 #product-cart {
+  margin-bottom: 10px;
   .check-out {
     background-color: WHITE;
   }
+  .empty-cart {
+    background-color: WHITE;
+    padding: 20px;
+    text-align: center;
+    margin: 20px 0px;
+  }
   .tbl-cart {
     font-size: 1em;
+    line-height: 2;
     .item {
       width: 20%;
     }
     .name {
-      width: 50%;
+      width: 45%;
     }
     .price {
-      width: 15%;
+      width: 20%;
     }
     .quantity {
       width: 10%;
@@ -22,5 +30,36 @@
     .type {
       font-size: 0.8em;
     }
+
+    .old-price {
+      text-decoration: line-through;
+      color: #777777;
+      font-size: 0.8em;
+    }
+    .discount {
+      color: #777777;
+      font-size: 0.8em;
+    }
   }
+  .br {
+    margin: 8px 0px;
+  }
+
+  .order {
+    background-color: WHITE;
+    padding: 10px;
+    .order-title {
+      font-weight: bold;
+    }
+    .order-price {
+      font-weight: bold;
+      .total {
+        float: right;
+      }
+    }
+    .btn-login {
+      text-align: center;
+    }
+  }
+
 }

@@ -1,0 +1,43 @@
+<div class="order">
+  <div class="order-title"><%= t "cart.cart_information" %></div>
+  <hr>
+  <div class="order-price">
+    <span><%= t "cart.total_price" %></span>
+    <span class="total"></span>
+  </div>
+  <hr>
+  <% if user_signed_in? %>
+    <%= form_for @product_order do |f| %>
+      <%= f.submit t("cart.actions.checkout"), class: "btn btn-primary br" %>
+    <% end %>
+  <% else %>
+    <div class="btn-login">
+      <%= link_to t("cart.labels.login"), new_user_session_path, class: "btn btn-primary" %>
+    </div>
+    <div class="hr">
+      <hr>
+      <span>or</span>
+    </div>
+    <%= form_for @guest do |f| %>
+      <div>
+        <%= f.text_field :name, class: "form-control br",
+          data: Settings.validations.name, placeholder: t("cart.forms.name") %>
+      </div>
+      <div>
+        <%= f.text_field :email, class: "form-control br",
+          data: Settings.validations.email, placeholder: t("cart.forms.email") %>
+      </div>
+      <div>
+        <%= f.text_area :address, class: "form-control br",
+          placeholder: t("cart.forms.address") %>
+      </div>
+      <div>
+        <%= f.text_field :phone_number, class: "form-control br",
+          data: Settings.validations.phone_number, placeholder: t("cart.forms.phone_number") %>
+      </div>
+      <div class="clearfix">
+        <%= f.submit t("cart.actions.checkout"), class: "btn btn-primary pull-right br" %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

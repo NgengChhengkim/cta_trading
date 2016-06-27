@@ -1,5 +1,6 @@
 $(document).on("page:change", function() {
   new WOW().init();
+  $.validate();
 
   $("#slider").responsiveSlides({
     auto: true,
@@ -24,5 +25,4 @@ $(document).on("page:change", function() {
     animation: "slide",
     controlNav: "thumbnails"
   });
-
 });

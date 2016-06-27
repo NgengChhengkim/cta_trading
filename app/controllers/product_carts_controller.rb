@@ -1,12 +1,14 @@
 class ProductCartsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource except: :index
   before_action :authenticate_user!, only: [:create, :update, :destroy]
   before_action :set_product_cart, only: [:create]
 
   def index
     if user_signed_in?
+      @product_order = ProductOrder.new
       @product_carts = current_user.product_carts.includes product: :category
     else
+      @guest = Guest.new
       product_cart_cookie = cookies[:product_cart]
       @products = []
       if product_cart_cookie
