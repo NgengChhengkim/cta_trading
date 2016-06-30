@@ -12,6 +12,15 @@ defaults: &defaults
     phone_number:
       "validation": "required"
       "validation-error-msg-required": <%= I18n.t "errors.required", data: "Phone number" %>
+    password:
+      "validation": "required length"
+      "validation-length": "min8"
+      "validation-error-msg-required": <%= I18n.t "errors.required", data: "Password" %>
+      "validation-error-msg-password": <%= I18n.t "errors.password" %>
+    confirm_password:
+      "validation": "confirmation"
+      "validation-confirm": "user[password]"
+      "validation-error-msg-confirmation": <%= I18n.t "errors.confirm_password" %>
 
 development:
   <<: *defaults

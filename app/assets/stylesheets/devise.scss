@@ -1,0 +1,24 @@
+.devise-form {
+  background-color: white;
+  padding: 3% 10%;
+  font-size: 13px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+  line-height: 1;
+
+  .head {
+    text-align: center;
+    color: #555;
+  }
+
+  h2 {
+    margin-bottom: 5px;
+  }
+
+  .btn-facebook, .btn-google {
+    width: 130px;
+    color: white;
+    margin-top: 10px;
+  }
+}

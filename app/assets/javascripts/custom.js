@@ -1,6 +1,12 @@
+$(document).on("page:update", function() {
+  $(".flash-message").delay(3000).slideUp();
+});
+
 $(document).on("page:change", function() {
   new WOW().init();
-  $.validate();
+  $.validate({
+    modules : 'security'
+  });
 
   $("#slider").responsiveSlides({
     auto: true,
