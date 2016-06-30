@@ -14,7 +14,8 @@ class GuestsController < ApplicationController
     end
     if @success
       cookies.delete :product_cart
-      redirect_to root_path
+      load_product_order
+      render "shared/orders"
     else
       flash[:danger] = t "cart.flashes.cannot_order"
       redirect_to product_carts_path
@@ -27,9 +28,16 @@ class GuestsController < ApplicationController
   end
 
   def create_product_order_from_cookies
+    @order_code = ProductOrder.set_order_code
     products = JSON.parse cookies[:product_cart]
     products.each do |product|
-      @guest.product_orders.create! product_id: product["id"], quantity: product["quantity"]
+      @guest.product_orders.create! order_code: @order_code, product_id: product["id"],
+        quantity: product["quantity"]
     end
+  end
+
+  def load_product_order
+    @product_orders = ProductOrder.select_by_order_code @order_code
+    @user = @guest
   end
 end

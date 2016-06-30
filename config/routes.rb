@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root "static_pages#index"
+
   resources :product_carts, only: [:index, :create, :update, :destroy]
-  resources :product_orders, only: :create
+  resources :product_orders, only: [:new, :create]
   resources :guests, only: :create
 end

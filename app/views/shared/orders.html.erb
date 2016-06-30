@@ -1,0 +1,57 @@
+<div id="product-order" class="container">
+  <div class="row success-info">
+    <div class="col-md-2 icon">
+      <span class="fa-stack fa-lg fa-5x">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-check fa-stack-1x fa-inverse" aria-hidden="true"></i>
+      </span>
+    </div>
+    <div class="col-md-10 text">
+      <h2><%= t "product_orders.order_success" %></h2>
+      <p><%= t "product_orders.confirm" %></p><br>
+      <p><%= link_to t("product_orders.continue_shopping"), root_path %></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-8 check-out">
+      <table class="table tbl-cart">
+        <thead>
+          <tr>
+            <th class="item"><%= t "cart.tables.item" %></th>
+            <th class="name"></th>
+            <th class="price"><%= t "cart.tables.price" %></th>
+            <th class="quantity"><%= t "cart.tables.quantity" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render partial: "shared/product_order",
+            collection: @product_orders, as: :product_order %>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4 no-padding-right">
+      <div class="order">
+        <div class="order-title"><%= t "cart.cart_information" %></div>
+        <hr>
+        <div class="order-price">
+          <span><%= t "cart.total_price" %></span>
+          <span class="total"></span>
+        </div>
+        <hr>
+        <div class="order-title"><%= t "cart.order_information" %></div>
+        <dl class="dl-horizontal">
+          <dt><%= t "product_orders.order_info.order_code" %></dt>
+          <dd><%= @order_code %></dd>
+          <dt><%= t "product_orders.order_info.name" %></dt>
+          <dd><%= @user.name %></dd>
+          <dt><%= t "product_orders.order_info.email" %></dt>
+          <dd><%= @user.email %></dd>
+          <dt><%= t "product_orders.order_info.phone_number" %></dt>
+          <dd><%= @user.phone_number %></dd>
+          <dt><%= t "product_orders.order_info.address" %></dt>
+          <dd><%= @user.address %></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>
