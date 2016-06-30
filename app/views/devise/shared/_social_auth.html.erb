@@ -1,0 +1,20 @@
+<p><%= t "devise.labels.choose_method" %></p>
+
+<%= link_to user_facebook_omniauth_authorize_path do %>
+  <button class="btn btn-facebook">
+    <i class="fa fa-fw fa-facebook"></i>
+    <span><%= t "devise.labels.facebook" %></span>
+  </button>
+<% end %>
+
+<%= link_to user_google_oauth2_omniauth_authorize_path do %>
+  <button class="btn btn-google">
+    <i class="fa fa-fw fa-google"></i>
+    <span><%= t "devise.labels.google" %></span>
+  </button>
+<% end %>
+
+<div class="hr">
+  <hr>
+  <span><%= t "devise.labels.or" %></span>
+</div>

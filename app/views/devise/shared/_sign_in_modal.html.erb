@@ -1,21 +1,8 @@
 <div class="col-md-6 col-md-offset-3 devise-form">
   <div class="head">
     <h2><%= t "devise.labels.sign_in" %></h2>
-    <p class="method"><%= t "devise.labels.choose_method" %></p>
-    <button class="btn btn-facebook">
-      <i class="fa fa-fw fa-facebook"></i>
-      <span><%= t "devise.labels.facebook" %></span>
-    </button>
 
-    <button class="btn btn-google">
-      <i class="fa fa-fw fa-google"></i>
-      <span><%= t "devise.labels.google" %></span>
-    </button>
-
-    <div class="hr">
-      <hr>
-      <span><%= t "devise.labels.or" %></span>
-    </div>
+    <%= render "devise/shared/social_auth" %>
   </div>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 

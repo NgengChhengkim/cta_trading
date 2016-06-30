@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  devise :omniauthable, :omniauth_providers => [:google_oauth2, :facebook]
+
   has_many :product_orders, as: :customer, dependent: :destroy
   has_many :products, through: :product_orders
 
@@ -12,4 +14,18 @@ class User < ActiveRecord::Base
   validates :phone_number, presence: true
 
   enum role: [:admin, :editor, :guest]
+
+  class << self
+    def from_omniauth access_token
+      data = access_token.info
+      user = User.find_by email: data.email
+      unless user
+        password = Devise.friendly_token[0,20]
+        user = User.new name: data.name, email: data.email, password: password,
+          password_confirmation: password
+        user.save validate: false
+      end
+      user
+    end
+  end
 end
