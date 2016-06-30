@@ -4,8 +4,4 @@ class Product < ActiveRecord::Base
   has_many :product_carts, dependent: :destroy
 
   delegate :name, to: :category, prefix: true, allow_nil: true
-
-  def discount_price
-    retail_sale_price - (retail_sale_price * discount)/100
-  end
 end

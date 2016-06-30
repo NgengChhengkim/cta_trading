@@ -1,8 +1,23 @@
 en:
   cart:
+    title: "Product Cart"
+    cart_information: "Cart Information"
+    total_price: "Total: "
     tables:
       item: "Item"
       quantity: "Quantity"
       price: "Price"
     actions:
       remove: "Remove from cart"
+      checkout: "Check out"
+    flashes:
+      cannot_order: "Check out transaction is unsuccessful. Please try again"
+    labels:
+      no_cart: "Your Cart is empty."
+      discount: "discount"
+      login: "Login"
+    forms:
+      name: "Name"
+      email: "Email"
+      address: "Address"
+      phone_number: "Phone number"

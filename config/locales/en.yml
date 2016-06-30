@@ -9,3 +9,7 @@ en:
     sign_out: "Sign out"
   actions:
     add_to_cart: "Add to cart"
+  errors:
+    required: "%{data} cannot be blank"
+    name_length: "Name requires at least 4 characters"
+    email_invalidate: "Email is invalid"

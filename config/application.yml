@@ -1,0 +1,24 @@
+defaults: &defaults
+  validations:
+    name:
+      "validation": "required length"
+      "validation-length": "min4"
+      "validation-error-msg-required": <%= I18n.t "errors.required", data: "Name" %>
+      "validation-error-msg-length": <%= I18n.t "errors.name_length" %>
+    email:
+      "validation": "required email"
+      "validation-error-msg-required": <%= I18n.t "errors.required", data: "Email" %>
+      "validation-error-msg-email": <%= I18n.t "errors.email_invalidate" %>
+    phone_number:
+      "validation": "required"
+      "validation-error-msg-required": <%= I18n.t "errors.required", data: "Phone number" %>
+
+development:
+  <<: *defaults
+  neat_setting: 800
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

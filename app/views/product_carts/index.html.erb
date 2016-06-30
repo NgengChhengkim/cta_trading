@@ -1,27 +1,34 @@
 <div id="product-cart" class="container">
-  <div class="head-title">Product Cart</div>
   <div class="row">
-    <div class="col-md-6">
-      <div class="check-out">
-        <table class="table tbl-cart">
-          <thead>
-            <tr>
-              <th class="item"><%= t "cart.tables.item" %></th>
-              <th class="name"></th>
-              <th class="price"><%= t "cart.tables.price" %></th>
-              <th class="quantity"><%= t "cart.tables.quantity" %></th>
-              <th class="action"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <% if user_signed_in? %>
-              <%= render partial: "user_cart", collection: @product_carts, as: :product_cart %>
-            <% else %>
-              <%= render partial: "guest_cart", collection: @products, as: :product %>
-            <% end %>
-          </tbody>
-        </table>
+    <% if @product_carts.present? || @products.present? %>
+      <div class="head-title"><%= t "cart.title" %></div>
+      <div class="col-md-8">
+        <div class="check-out">
+          <table class="table tbl-cart">
+            <thead>
+              <tr>
+                <th class="item"><%= t "cart.tables.item" %></th>
+                <th class="name"></th>
+                <th class="price"><%= t "cart.tables.price" %></th>
+                <th class="quantity"><%= t "cart.tables.quantity" %></th>
+                <th class="action"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% if user_signed_in? %>
+                <%= render partial: "user_cart", collection: @product_carts, as: :product_cart %>
+              <% else %>
+                <%= render partial: "guest_cart", collection: @products, as: :product %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
+      <div class="col-md-4">
+        <%= render "checkout_form" %>
+      </div>
+    <% else %>
+      <%= render "empty_cart" %>
+    <% end %>
   </div>
 </div>
