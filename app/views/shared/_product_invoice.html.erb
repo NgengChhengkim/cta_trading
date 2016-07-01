@@ -1,0 +1,20 @@
+<tr class="product-cart">
+  <td><%= image_tag "bachi.jpg", width: "100", class: "img-responsive" %></td>
+  <td>
+    <div class="title"><%= product_invoice.product_name %></div>
+    <div class="type"><%= product_invoice.product.category_name %></div>
+  </td>
+  <td>
+    <div class="discount-price" data-discount-price="<%= product_invoice.product_discount_price %>">
+      <%= number_to_currency product_invoice.product_discount_price %></div>
+    <div class="old-price"><%= number_to_currency product_invoice.product_retail_sale_price %></div>
+    <div class="discount">
+      <%= "#{percentage_format product_invoice.product_discount} #{t "cart.labels.discount"}" %>
+    </div>
+  </td>
+  <td>
+    <div hidden><%= text_field_tag :quantity, product_invoice.quantity,
+      class: "product-quantity" %></div>
+    <%= product_invoice.quantity %>
+  </td>
+</tr>

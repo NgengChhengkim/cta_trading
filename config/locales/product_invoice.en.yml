@@ -1,11 +1,11 @@
 en:
-  product_orders:
+  product_invoices:
     order_success: "Order completed successfully"
     confirm: "Thank you for your purchasing. You will receive and email confirmation shortly."
     continue_shopping: "Continue shopping"
-    order_info:
-      order_code: "Order Code"
-      name: "Name"
-      email: "Email"
-      address: "Address"
-      phone_number: "Phone number"
+    invoice_info:
+      invoice_id: "Invoice ID:"
+      name: "Name:"
+      email: "Email:"
+      address: "Address:"
+      phone_number: "Phone number:"

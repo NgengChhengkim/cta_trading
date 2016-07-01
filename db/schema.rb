@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160624150241) do
+ActiveRecord::Schema.define(version: 20160701032142) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(version: 20160624150241) do
     t.datetime "updated_at",              null: false
   end
 
+  create_table "invoices", force: :cascade do |t|
+    t.integer  "customer_id",   limit: 4
+    t.string   "customer_type", limit: 255
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "product_carts", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
     t.integer  "product_id", limit: 4
@@ -65,17 +72,16 @@ ActiveRecord::Schema.define(version: 20160624150241) do
   add_index "product_carts", ["product_id"], name: "index_product_carts_on_product_id", using: :btree
   add_index "product_carts", ["user_id"], name: "index_product_carts_on_user_id", using: :btree
 
-  create_table "product_orders", force: :cascade do |t|
-    t.integer  "order_code",    limit: 4
-    t.integer  "customer_id",   limit: 4
-    t.string   "customer_type", limit: 255
-    t.integer  "product_id",    limit: 4
-    t.integer  "quantity",      limit: 4
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+  create_table "product_invoices", force: :cascade do |t|
+    t.integer  "invoice_id", limit: 4
+    t.integer  "product_id", limit: 4
+    t.integer  "quantity",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
   end
 
-  add_index "product_orders", ["product_id"], name: "index_product_orders_on_product_id", using: :btree
+  add_index "product_invoices", ["invoice_id"], name: "index_product_invoices_on_invoice_id", using: :btree
+  add_index "product_invoices", ["product_id"], name: "index_product_invoices_on_product_id", using: :btree
 
   create_table "products", force: :cascade do |t|
     t.string   "name",              limit: 255
@@ -150,7 +156,8 @@ ActiveRecord::Schema.define(version: 20160624150241) do
 
   add_foreign_key "product_carts", "products"
   add_foreign_key "product_carts", "users"
-  add_foreign_key "product_orders", "products"
+  add_foreign_key "product_invoices", "invoices"
+  add_foreign_key "product_invoices", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "suppliers"

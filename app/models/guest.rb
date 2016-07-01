@@ -1,6 +1,5 @@
 class Guest < ActiveRecord::Base
-  has_many :product_orders, as: :customer, dependent: :destroy
-  has_many :products, through: :product_orders
+  has_many :invoices, as: :customer, dependent: :destroy
 
   validates :name, presence: true, length: {minimum: 4}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
