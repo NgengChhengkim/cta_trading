@@ -7,12 +7,12 @@
   </div>
   <hr>
   <% if user_signed_in? %>
-    <%= form_for @product_order do |f| %>
+    <%= form_for @product_invoice do |f| %>
       <%= f.submit t("cart.actions.checkout"), class: "btn btn-primary br" %>
     <% end %>
   <% else %>
     <div class="btn-login">
-      <%= link_to t("cart.actions.login"), new_product_order_path, class: "btn btn-primary" %>
+      <%= link_to t("cart.actions.login"), new_product_invoice_path, class: "btn btn-primary" %>
     </div>
     <div class="hr">
       <hr>

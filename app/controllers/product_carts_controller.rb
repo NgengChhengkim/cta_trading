@@ -5,7 +5,7 @@ class ProductCartsController < ApplicationController
 
   def index
     if user_signed_in?
-      @product_order = ProductOrder.new
+      @product_invoice = ProductInvoice.new
       @product_carts = current_user.product_carts.includes product: :category
     else
       @guest = Guest.new

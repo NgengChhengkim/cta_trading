@@ -7,9 +7,9 @@
       </span>
     </div>
     <div class="col-md-10 text">
-      <h2><%= t "product_orders.order_success" %></h2>
-      <p><%= t "product_orders.confirm" %></p><br>
-      <p><%= link_to t("product_orders.continue_shopping"), root_path %></p>
+      <h2><%= t "product_invoices.order_success" %></h2>
+      <p><%= t "product_invoices.confirm" %></p><br>
+      <p><%= link_to t("product_invoices.continue_shopping"), root_path %></p>
     </div>
   </div>
   <div class="row">
@@ -24,8 +24,8 @@
           </tr>
         </thead>
         <tbody>
-          <%= render partial: "shared/product_order",
-            collection: @product_orders, as: :product_order %>
+          <%= render partial: "shared/product_invoice",
+            collection: @product_invoices, as: :product_invoice %>
         </tbody>
       </table>
     </div>
@@ -40,15 +40,15 @@
         <hr>
         <div class="order-title"><%= t "cart.order_information" %></div>
         <dl class="dl-horizontal">
-          <dt><%= t "product_orders.order_info.order_code" %></dt>
-          <dd><%= @order_code %></dd>
-          <dt><%= t "product_orders.order_info.name" %></dt>
+          <dt><%= t "product_invoices.invoice_info.invoice_id" %></dt>
+          <dd><%= @invoice.id %></dd>
+          <dt><%= t "product_invoices.invoice_info.name" %></dt>
           <dd><%= @user.name %></dd>
-          <dt><%= t "product_orders.order_info.email" %></dt>
+          <dt><%= t "product_invoices.invoice_info.email" %></dt>
           <dd><%= @user.email %></dd>
-          <dt><%= t "product_orders.order_info.phone_number" %></dt>
+          <dt><%= t "product_invoices.invoice_info.phone_number" %></dt>
           <dd><%= @user.phone_number %></dd>
-          <dt><%= t "product_orders.order_info.address" %></dt>
+          <dt><%= t "product_invoices.invoice_info.address" %></dt>
           <dd><%= @user.address %></dd>
         </dl>
       </div>

@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:google_oauth2, :facebook]
 
-  has_many :product_orders, as: :customer, dependent: :destroy
-  has_many :products, through: :product_orders
+  has_many :invoices, as: :customer, dependent: :destroy
 
   has_many :product_carts, dependent: :destroy
   has_many :carts, through: :product_carts, source: :product
