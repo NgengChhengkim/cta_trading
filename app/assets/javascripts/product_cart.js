@@ -1,5 +1,5 @@
 $(document).on("page:change", function() {
-  if($("#product-cart").length > 0) {
+  if($("#product-cart").length > 0 || $("#product-order").length > 0) {
     total_price();
   }
 
