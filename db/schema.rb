@@ -66,10 +66,11 @@ ActiveRecord::Schema.define(version: 20160624150241) do
   add_index "product_carts", ["user_id"], name: "index_product_carts_on_user_id", using: :btree
 
   create_table "product_orders", force: :cascade do |t|
+    t.integer  "order_code",    limit: 4
     t.integer  "customer_id",   limit: 4
     t.string   "customer_type", limit: 255
-    t.integer  "quantity",      limit: 4
     t.integer  "product_id",    limit: 4
+    t.integer  "quantity",      limit: 4
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end

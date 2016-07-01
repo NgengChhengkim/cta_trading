@@ -1,4 +1,4 @@
-#product-cart {
+#product-cart, #product-order {
   margin-bottom: 10px;
   .check-out {
     background-color: WHITE;
@@ -45,6 +45,16 @@
     margin: 8px 0px;
   }
 
+  .no-padding-right {
+    padding-right: 0px;
+  }
+
+  @media(max-width:992px){
+    .no-padding-right {
+      padding-left: 0px !important;
+    }
+  }
+
   .order {
     background-color: WHITE;
     padding: 10px;
@@ -60,6 +70,26 @@
     .btn-login {
       text-align: center;
     }
+
+    .dl-horizontal {
+      font-size: 14px;
+      margin-top: 10px;
+      dt {
+        text-align: left;
+        font-weight: normal;
+      }
+    }
   }
 
+  .success-info {
+    background-color: WHITE;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    .icon {
+      color: #00bd5b;
+    }
+    .text {
+      margin-top: 40px;
+    }
+  }
 }
