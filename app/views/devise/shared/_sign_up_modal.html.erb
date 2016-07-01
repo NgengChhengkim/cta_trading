@@ -2,21 +2,8 @@
   <div class="head">
     <% if resource.new_record? %>
       <h2><%= t "devise.labels.join" %></h2>
-      <p><%= t "devise.labels.choose_method" %></p>
-      <button class="btn btn-facebook">
-        <i class="fa fa-fw fa-facebook"></i>
-        <span><%= t "devise.labels.facebook" %></span>
-      </button>
 
-      <button class="btn btn-google">
-        <i class="fa fa-fw fa-google"></i>
-        <span><%= t "devise.labels.google" %></span>
-      </button>
-
-      <div class="hr">
-        <hr>
-        <span><%= t "devise.labels.or" %></span>
-      </div>
+      <%= render "devise/shared/social_auth" %>
     <% else %>
       <h2><%= t "devise.labels.edit_account" %></h2>
     <% end %>
@@ -33,13 +20,14 @@
     </div><br />
 
     <div><%= f.password_field :password,
-      data: Settings.validations.password, autocomplete: "off",
+      data: (Settings.validations.password if f.object.new_record?), autocomplete: "off",
       placeholder: t("devise.placeholders.password"), class: "form-control"%>
     </div><br />
 
     <div><%= f.password_field :password_confirmation,
-      data: Settings.validations.confirm_password, autocomplete: "off",
-      placeholder: t("devise.placeholders.confirm_password"), class: "form-control" %>
+      data: (Settings.validations.confirm_password if f.object.new_record?),
+      autocomplete: "off", placeholder: t("devise.placeholders.confirm_password"),
+      class: "form-control" %>
     </div><br />
 
     <div><%= f.text_area :address, placeholder: t("devise.placeholders.address"),

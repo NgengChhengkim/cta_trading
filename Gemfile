@@ -16,6 +16,8 @@ gem "jquery-form-validator-rails"
 gem "i18n-js", ">= 3.0.0.rc12"
 gem "settingslogic"
 gem "font-awesome-rails"
+gem "omniauth-google-oauth2"
+gem "omniauth-facebook"
 group :development, :test do
   gem "pry"
 end

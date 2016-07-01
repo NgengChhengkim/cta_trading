@@ -67,6 +67,7 @@ en:
       email: "Enter your email"
       password: "Enter your password"
       confirm_password: "Enter confirmation password"
+      current_password: "Enter your current password"
       phone_number: "Enter your phone number"
       address: "Enter your address"
   errors:
