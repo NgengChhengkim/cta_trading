@@ -1,0 +1,16 @@
+<%= t "product_invoices.order_success" %>
+<%= t "product_invoices.email_confirm" %>
+-------------------------------------------------
+<%= t "cart.order_information" %>
+<%= t "product_invoices.invoice_info.invoice_id" %> <%= @invoice.id %>
+<%= t "product_invoices.invoice_info.name" %> <%= @user.name %>
+<%= t "product_invoices.invoice_info.email" %> <%= @user.email %>
+<%= t "product_invoices.invoice_info.phone_number" %> <%= @user.phone_number %>
+<%= t "product_invoices.invoice_info.address" %> <%= @user.address %>
+-------------------------------------------------
+
+<% @product_invoices.each do |product_invoice| %>
+  <%= "#{product_invoice.product_name} | #{number_to_currency product_invoice.product_discount_price} | #{product_invoice.quantity}" %>
+<% end %>
+-------------------------------------------------
+<%= t "cart.total_price" %>: <%= number_to_currency @total_price %>

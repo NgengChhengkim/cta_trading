@@ -18,6 +18,10 @@ gem "settingslogic"
 gem "font-awesome-rails"
 gem "omniauth-google-oauth2"
 gem "omniauth-facebook"
+gem "nokogiri"
+gem "premailer-rails"
+gem "sinatra", require: false
+gem "sidekiq"
 group :development, :test do
   gem "pry"
 end

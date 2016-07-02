@@ -19,6 +19,7 @@ class ProductInvoicesController < ApplicationController
     end
     if @success
       load_product_invoice
+      SendEmailWorker.perform_async @invoice.id
       render "shared/invoice"
     else
       flash[:danger] = t "cart.flashes.cannot_order"
