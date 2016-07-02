@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <%= stylesheet_link_tag "product_carts_orders", media: "all" %>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <div id="product-order" class="container">
+      <div class="row">
+        <div class="col-md-10 text">
+          <h2><%= t "product_invoices.order_success" %></h2>
+          <p><%= t "product_invoices.email_confirm" %></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-8 check-out">
+          <h4 class="order-title"><%= t "cart.order_information" %></h4>
+          <hr>
+          <table style="text-align: left;">
+            <tr>
+              <th width="50%"><%= t "product_invoices.invoice_info.invoice_id" %></th>
+              <td><%= @invoice.id %></td>
+            </tr>
+            <tr>
+              <th><%= t "product_invoices.invoice_info.name" %></th>
+              <td><%= @user.name %></td>
+            </tr>
+            <tr>
+              <th><%= t "product_invoices.invoice_info.email" %></th>
+              <td><%= @user.email %></td>
+            </tr>
+            <tr>
+              <th><%= t "product_invoices.invoice_info.phone_number" %></th>
+              <td><%= @user.phone_number %></td>
+            </tr>
+            <tr>
+              <th><%= t "product_invoices.invoice_info.address" %></th>
+              <td><%= @user.address %></td>
+            </tr>
+          </table>
+          <hr>
+          <table class="table tbl-cart" style="text-align: left;">
+            <thead>
+              <tr>
+                <th class="item"><%= t "cart.tables.item" %></th>
+                <th class="name"></th>
+                <th class="price"><%= t "cart.tables.price" %></th>
+                <th class="quantity"><%= t "cart.tables.quantity" %></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%= render partial: "shared/product_invoice",
+                collection: @product_invoices, as: :product_invoice,
+                locals: {is_invoice: false} %>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th><%= t "cart.total_price" %></th>
+                <td></td>
+                <td></td>
+                <th class="total-price"><%= number_to_currency @total_price %></th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+      <p><%= link_to t("product_invoices.continue_shopping"), root_path %></p>
+    </div>
+  </body>
+</html>

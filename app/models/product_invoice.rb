@@ -4,4 +4,7 @@ class ProductInvoice < ActiveRecord::Base
 
   delegate :id, :name, :retail_sale_price, :discount_price, :discount,
     to: :product, prefix: true, allow_nil: true
+
+  scope :total_price, ->{joins(:product)
+    .sum("product_invoices.quantity * products.discount_price")}
 end

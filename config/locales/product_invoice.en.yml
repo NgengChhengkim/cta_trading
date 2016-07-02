@@ -1,7 +1,8 @@
 en:
   product_invoices:
     order_success: "Order completed successfully"
-    confirm: "Thank you for your purchasing. You will receive and email confirmation shortly."
+    confirm: "Thank you for your purchasing. You will receive an email confirmation and contact from us shortly."
+    email_confirm: "Thank you for your purchasing. We will contact you shortly."
     continue_shopping: "Continue shopping"
     invoice_info:
       invoice_id: "Invoice ID:"
@@ -9,3 +10,6 @@ en:
       email: "Email:"
       address: "Address:"
       phone_number: "Phone number:"
+    email:
+      send_confirmation_order:
+        subject: "Invoice Order"
