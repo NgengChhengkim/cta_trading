@@ -1,0 +1,11 @@
+<div class="bread-crumb">
+  <ol class="breadcrumb">
+    <li><%= link_to t("categories.breadcrumbs.home"), root_path %></li>
+    <li class="active"><%= t "categories.breadcrumbs.category" %></li>
+  </ol>
+</div>
+<div class="infor">
+  <%= render "infor" %>
+</div>
+
+<%= render "admin/shared/form_modal" %>

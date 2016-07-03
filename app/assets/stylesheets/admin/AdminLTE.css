@@ -96,7 +96,7 @@ body {
 .content-wrapper,
 .right-side {
   min-height: 100%;
-  background-color: #ecf0f5;
+  background-color: #E9EBEE;
   z-index: 800;
 }
 .main-footer {
@@ -118,12 +118,12 @@ body {
 }
 .fixed .content-wrapper,
 .fixed .right-side {
-  padding-top: 50px;
+  padding: 20px 2%;
 }
 @media (max-width: 767px) {
   .fixed .content-wrapper,
   .fixed .right-side {
-    padding-top: 100px;
+    padding-top: 70px;
   }
 }
 .fixed.layout-boxed .wrapper {
@@ -4913,3 +4913,4 @@ table.text-center th {
     white-space: normal !important;
   }
 }
+

@@ -21,11 +21,15 @@ defaults: &defaults
       "validation": "confirmation"
       "validation-confirm": "user[password]"
       "validation-error-msg-confirmation": <%= I18n.t "errors.confirm_password" %>
+    blank:
+      "validation": "required"
+      "validation-error-msg-required": <%= I18n.t "errors.required", data: "Name" %>
   paginate:
     per_page: 15
     related_product: 6
     other_promotion: 6
     hot_product: 10
+    per_page_10: 10
   image:
     size60: 60
     size150: 150
