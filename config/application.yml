@@ -21,7 +21,11 @@ defaults: &defaults
       "validation": "confirmation"
       "validation-confirm": "user[password]"
       "validation-error-msg-confirmation": <%= I18n.t "errors.confirm_password" %>
-
+  paginate:
+    per_page: 15
+  image:
+    size150: 150
+    size100: 100
 development:
   <<: *defaults
   neat_setting: 800

@@ -5,4 +5,10 @@ class Product < ActiveRecord::Base
   has_many :product_carts, dependent: :destroy
 
   delegate :name, to: :category, prefix: true, allow_nil: true
+
+  scope :select_products, ->{includes(:category).order created_at: :DESC}
+
+  def is_discount?
+    discount.to_f > 0
+  end
 end
