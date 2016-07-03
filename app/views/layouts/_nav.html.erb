@@ -15,7 +15,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><%= link_to t("menu.home"), root_path %></li>
-        <li><%= link_to t("menu.products"), "#" %></li>
+        <% Category.all.each do |category| %>
+          <li><%= link_to category.name, category %></li>
+        <% end %>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>

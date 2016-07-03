@@ -17,3 +17,5 @@ en:
     email_invalidate: "Email is invalid"
     form: "Form contains "
     error: "error"
+  labels:
+    loading: "Loading..."

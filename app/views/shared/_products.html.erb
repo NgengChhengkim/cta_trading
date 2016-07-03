@@ -1,0 +1,5 @@
+<% if user_signed_in? %>
+  <%= render partial: "shared/user_product", collection: @products, as: :product %>
+<% else %>
+  <%= render partial: "shared/guest_product", collection: @products, as: :product %>
+<% end %>

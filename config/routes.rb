@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :product_carts, only: [:index, :create, :update, :destroy]
   resources :product_invoices, only: [:new, :create]
   resources :guests, only: :create
+  resources :categories, only: :show
 
   mount Sidekiq::Web, at: "/sidekiq"
 end

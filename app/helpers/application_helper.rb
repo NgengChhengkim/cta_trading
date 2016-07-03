@@ -28,4 +28,12 @@ module ApplicationHelper
   def percentage_format number
     number_to_percentage number, precision: 1, strip_insignificant_zeros: true
   end
+
+  def image_product_list image
+    image_tag image, width: Settings.image.size150, class: "img-responsive"
+  end
+
+  def image_product_table image
+    image_tag image, width: Settings.image.size100, class: "img-responsive"
+  end
 end

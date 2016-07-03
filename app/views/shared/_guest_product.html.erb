@@ -1,19 +1,25 @@
-<div class="col-md-3 no-padding">
+<div class="col-md-3 no-padding md3">
   <%= link_to "#" do %>
     <div class="products">
+      <% if product.is_discount? %>
+        <div class="discount label label-success">
+          <%= "-#{percentage_format product.discount}" %>
+        </div>
+      <% end %>
       <div class="image">
-        <%= image_tag "bachi.jpg", width: "180", class: "img-responsive" %>
+        <%= image_product_list "bachi.jpg" %>
       </div>
       <div class="product-content">
         <div class="title" title="<%= product.name %>"><%= product.name %></div>
         <div class="type" title="<%= product.category_name %>"><%= product.category_name %></div>
         <div class="price">
           <span class="discount-price"><%= number_to_currency product.discount_price %></span>
-          <span class="discount label label-danger"><%= percentage_format product.discount %></span>
+          <span class="net-price">
+            <%= number_to_currency product.retail_sale_price if product.is_discount? %>
+          </span>
         </div>
-        <div class="net-price"><%= number_to_currency product.retail_sale_price %></div>
         <div>
-          <%= button_tag t("actions.add_to_cart"), class: "btn add-to-cart",
+          <%= button_tag t("actions.add_to_cart"), class: "btn btn-default add-to-cart",
             "data-product-id": product.id %>
         </div>
       </div>
