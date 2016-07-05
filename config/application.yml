@@ -23,7 +23,9 @@ defaults: &defaults
       "validation-error-msg-confirmation": <%= I18n.t "errors.confirm_password" %>
   paginate:
     per_page: 15
+    related_product: 6
   image:
+    size60: 60
     size150: 150
     size100: 100
 development:

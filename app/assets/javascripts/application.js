@@ -26,6 +26,7 @@
 //= require js.cookie
 //= require jquery-number-format
 //= require jquery.form-validator
+//= require facebook
 //= require custom
 //= require product_cart
 //= require categories

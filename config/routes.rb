@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :product_invoices, only: [:new, :create]
   resources :guests, only: :create
   resources :categories, only: :show
+  resources :products, only: :show
 
   mount Sidekiq::Web, at: "/sidekiq"
 end

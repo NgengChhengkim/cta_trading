@@ -36,4 +36,8 @@ module ApplicationHelper
   def image_product_table image
     image_tag image, width: Settings.image.size100, class: "img-responsive"
   end
+
+  def media_image image
+    image_tag image, width: Settings.image.size60, class: "media-object"
+  end
 end

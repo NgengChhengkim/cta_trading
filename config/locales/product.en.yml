@@ -1,0 +1,11 @@
+en:
+  product:
+    brand: "Brand:"
+    category: "Category:"
+    weight: "Weight:"
+    smell: "Smell:"
+    price: "Price"
+    discount: "Discount"
+    description: "Description"
+    usage: "Usage"
+    related_products: "Related Products"

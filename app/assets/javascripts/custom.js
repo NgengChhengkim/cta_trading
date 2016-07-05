@@ -5,7 +5,7 @@ $(document).on("page:update", function() {
 $(document).on("page:change", function() {
   new WOW().init();
   $.validate({
-    modules : 'security'
+    modules : "security"
   });
 
   $("#slider").responsiveSlides({
@@ -27,8 +27,26 @@ $(document).on("page:change", function() {
     mainClass: "my-mfp-zoom-in"
   });
 
-  $(".flexslider").flexslider({
+  $("#carousel").flexslider({
     animation: "slide",
-    controlNav: "thumbnails"
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    itemWidth: 70,
+    itemMargin: 5,
+    asNavFor: "#slider",
+    prevText: "",
+    nextText: ""
   });
+
+  $("#slider").flexslider({
+    animation: "slide",
+    controlNav: false,
+    animationLoop: false,
+    slideshow: false,
+    sync: "#carousel",
+    prevText: "",
+    nextText: ""
+  });
+
 });
