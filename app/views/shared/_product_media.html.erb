@@ -1,0 +1,11 @@
+<%= link_to product do %>
+  <div class="media">
+    <div class="media-left">
+      <%= media_image "bachi.jpg" %>
+    </div>
+    <div class="media-body">
+      <div title="<%= product.name %>"><%= product.name %></div>
+      <div class="price"><%= number_to_currency product.discount_price %></div>
+    </div>
+  </div>
+<% end %>

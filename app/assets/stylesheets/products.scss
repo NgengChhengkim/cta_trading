@@ -1,0 +1,119 @@
+#product-show {
+  margin-top: 20px;
+  font-size: 14px;
+
+  .product-detail {
+    padding: 10px 20px;
+    background-color: WHITE;
+
+    .action-cart {
+      margin-top: 20px;
+      .add-to-cart, .btn-add-to-cart {
+        background-color: #fa03bb;
+        color: WHITE;
+        font-weight: bold;
+      }
+    }
+
+    .tbl-product {
+      line-height: 26px;
+      width: 100%;
+      .category {
+        width: 20%;
+      }
+      .discount-price {
+        font-weight: bold;
+        color: #fa03bb;
+      }
+      .old-price {
+        text-decoration: line-through;
+        margin-left: 5px
+      }
+      .discount {
+        font-weight: bold;
+        border-radius: 0;
+        font-size: 100%;
+      }
+    }
+
+    .description, .usage {
+      .title {
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    }
+
+    .md4, .md8 {
+      float: left;
+    }
+
+    @media(max-width:992px){
+      .md4 {
+        width: 35%;
+      }
+      .md8 {
+        width: 65%;
+      }
+    }
+
+    @media(max-width:870px){
+      .md4 {
+        width: 40%;
+      }
+      .md8 {
+        width: 60%;
+      }
+    }
+
+    @media(max-width:650px){
+      .md4 {
+        width: 50%;
+        margin-left: 25%;
+      }
+      .md8 {
+        width: 100%;
+      }
+    }
+
+    @media(max-width:400px){
+      .md4 {
+        width: 100%;
+        margin-left: 0px;
+      }
+      .md8 {
+        width: 100%;
+      }
+    }
+
+    td {
+      font-size: 14px !important;
+    }
+
+  }
+
+  .right-bar {
+    background-color: WHITE;
+    padding: 10px;
+
+    ul {
+      list-style: none;
+      margin-top: 10px;
+      .fa-certificate {
+        color: #fa03bb;
+      }
+    }
+    .media {
+      margin: 15px 0px;
+      .media-body {
+        .price {
+          font-size: 13px;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .fb-comment {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,123 @@
+<div id="product-show" class="container">
+  <div class="row">
+    <div class="col-md-9">
+      <div class="row product-detail">
+        <div class="small-head-title">
+          <%= @product.name %>
+          <span class="fb-like pull-right" data-href="<%=  request.original_url %>"
+            data-layout="button_count" data-action="like" data-show-faces="true"
+            data-share="true"></span>
+        </div>
+        <hr>
+        <div class="col-md-4 md4">
+          <div id="slider" class="flexslider">
+            <ul class="slides">
+              <li>
+                <%= image_tag "romano.jpg", class: "img-responsive" %>
+              </li>
+              <li>
+                <%= image_tag "romano2.jpg", class: "img-responsive" %>
+              </li>
+              <li>
+                <%= image_tag "romano3.jpg", class: "img-responsive" %>
+              </li>
+            </ul>
+          </div>
+          <div id="carousel" class="flexslider">
+            <ul class="slides">
+              <li>
+                <%= image_tag "romano.jpg", class: "img-responsive" %>
+              </li>
+              <li>
+                <%= image_tag "romano2.jpg", class: "img-responsive" %>
+              </li>
+              <li>
+                <%= image_tag "romano3.jpg", class: "img-responsive" %>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="col-md-8 md8">
+          <table class="tbl-product">
+            <tr>
+              <td class="category"><%= t "product.category" %></td>
+              <td><%= link_to @product.category_name, @product.category %></td>
+            </tr>
+            <tr>
+              <td><%= t "product.brand" %></td>
+              <td><%= @product.brand_name %></td>
+            </tr>
+            <tr>
+              <td><%= t "product.weight" %></td>
+              <td><%= @product.weight %></td>
+            </tr>
+            <tr>
+              <td><%= t "product.smell" %></td>
+              <td><%= @product.smell %></td>
+            </tr>
+            <tr>
+              <td><%= t "product.price" %></td>
+              <td>
+                <span class="discount-price"><%= number_to_currency @product.discount_price %></span>
+                <span class="old-price"><%= number_to_currency @product.retail_sale_price if @product.is_discount? %></span>
+              </td>
+            </tr>
+            <% if @product.is_discount? %>
+              <tr>
+                <td><%= t "product.discount" %></td>
+                <td class="discount"><%= percentage_format @product.discount %></td>
+              </tr>
+            <% end %>
+          </table>
+          <div class="action-cart">
+            <% if user_signed_in? %>
+              <%= form_for ProductCart.new, remote: true do |f| %>
+                <%= f.hidden_field :product_id, value: @product.id %>
+                <%= f.submit t("actions.add_to_cart"), class: "btn btn-add-to-cart" %>
+              <% end %>
+            <% else %>
+              <%= button_tag t("actions.add_to_cart"), class: "btn add-to-cart",
+                "data-product-id": @product.id  %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <hr>
+        <div class="description">
+          <div class="title"><%= t "product.description" %></div>
+          <%= @product.description %>
+        </div>
+
+        <hr>
+        <div class="usage">
+          <div class="title"><%= t "product.usage" %></div>
+          <%= @product.usage %>
+        </div>
+
+        <div class="fb-comment">
+          <div class="fb-comments" data-href="<%=  request.original_url %>" data-numposts="5" data-width="100%"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="col-md-3 no-padding-right">
+      <div class="right-bar">
+        <div class="small-head-title"><%= t "product.related_products" %></div>
+        <%= render partial: "shared/product_media", collection: @related_products,
+          as: :product %>
+        <hr>
+        <div class="small-head-title"><%= t "product.brand" %></div>
+        <ul><%= render partial: "shared/brand", collection: @brands, as: :object %></ul>
+        <hr>
+        <div class="small-head-title"><%= t "product.category" %></div>
+        <ul><%= render partial: "shared/brand", collection: @categories, as: :object %></ul>
+      </div>
+    </div>
+
+  </div>
+</div>
