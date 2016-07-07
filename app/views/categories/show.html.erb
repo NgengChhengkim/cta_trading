@@ -1,18 +1,4 @@
 <div class="container">
   <div class="head-title"><%= @category.name %></div>
-  <% if @products.present? %>
-    <div class="row category-products">
-      <%= render "shared/products" %>
-    </div>
-    <div class="load-more">
-      <%= button_tag "Load more", class: "btn-load-more btn btn-default" if @products.next_page %>
-      <div class="loading" hidden>
-        <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-        <span class="sr-only"><%= t "labels.loading" %></span>
-      </div>
-      <div hidden><%= will_paginate @products %></div>
-    </div>
-  <% else %>
-    <div class="empty-cart"><%= t "category.empty_category" %></div>
-  <% end %>
+  <%= render "shared/product_list" %>
 </div>

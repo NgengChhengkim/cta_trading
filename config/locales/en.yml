@@ -10,6 +10,7 @@ en:
     sign_out: "Sign out"
   actions:
     add_to_cart: "Add to cart"
+    load_more: "Load more"
   errors:
     required: "%{data} cannot be blank"
     name_length: "Name requires at least 4 characters"
@@ -20,6 +21,11 @@ en:
     error: "error"
   labels:
     loading: "Loading..."
+    search: "Search products ..."
+    search_result: "Search Result"
+    product_number: "product"
+    found: "found"
   time:
     formats:
       default: "%d-%m-%Y %H:%M"
+

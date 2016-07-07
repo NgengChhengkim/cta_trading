@@ -1,11 +1,11 @@
 <div id="small-dialog" class="mfp-hide">
   <div class="search-top">
     <div class="login">
-      <form action="#" method="post">
-        <input type="submit" value="">
-        <input type="text" name="search" value="Type something..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
-      </form>
+      <%= search_form_for Product.ransack(params[:q]), url: search_path do |f| %>
+        <%= f.submit :submit, value: "" %>
+        <%= f.text_field :name_cont, class: "search-text",
+          placeholder: t("labels.search"), autocomplete: "off" %>
+      <% end %>
     </div>
-    <p> Shopping</p>
   </div>
 </div>
