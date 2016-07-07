@@ -5,6 +5,7 @@ en:
     products: "Products"
     login: "Login"
     register: "Register"
+    orders: "My Invoices"
     profile: "Profile"
     sign_out: "Sign out"
   actions:
@@ -19,3 +20,6 @@ en:
     error: "error"
   labels:
     loading: "Loading..."
+  time:
+    formats:
+      default: "%d-%m-%Y %H:%M"

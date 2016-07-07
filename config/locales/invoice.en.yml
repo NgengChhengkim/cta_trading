@@ -1,0 +1,7 @@
+en:
+  invoices:
+    title: "My Invoices"
+    name: "Invoice-"
+    total: "Total: %{total}"
+    actions:
+      view: "View"

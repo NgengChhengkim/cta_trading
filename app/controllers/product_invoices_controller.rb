@@ -1,6 +1,11 @@
 class ProductInvoicesController < ApplicationController
   load_and_authorize_resource
-  before_action :authenticate_user!, only: [:new, :create]
+  load_and_authorize_resource :invoice
+  before_action :authenticate_user!, only: [:index, :new, :create]
+  before_action :load_product_invoice, only: :index
+
+  def index
+  end
 
   def new
     redirect_to product_carts_path
@@ -38,7 +43,8 @@ class ProductInvoicesController < ApplicationController
   end
 
   def load_product_invoice
-    @product_invoices = @invoice.product_invoices.includes product: :category
-    @user = current_user
+    @product_invoices = @invoice.product_invoices.includes(product: :category)
+      .paginate(page: params[:page], per_page: Settings.paginate.per_page)
+      .order created_at: :desc
   end
 end

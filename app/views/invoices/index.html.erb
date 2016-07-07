@@ -1,0 +1,24 @@
+<div id="invoice" class="container">
+  <div class="row">
+    <div class="head-title">
+      <%= t "invoices.title" %>
+      <span class="pull-right">
+        <%= t "invoices.total", total: number_to_currency(@total_price) %></span>
+    </div>
+    <div class="col-md-12 invoice-content">
+      <table class="table tbl-invoice">
+        <thead>
+          <tr>
+            <th class="no"><%= t "invoices.tables.name" %></th>
+            <th class="no"><%= t "invoices.tables.total_price" %></th>
+            <th class="date"><%= t "invoices.tables.date" %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render @invoices %>
+        </tbody>
+      </table>
+    </div>
+    <div class="pull-right"><%= will_paginate @invoices %></div>
+  </div>
+</div>

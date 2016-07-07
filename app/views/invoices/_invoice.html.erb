@@ -1,0 +1,5 @@
+<tr>
+  <td><%= link_to invoice.name, invoice_product_invoices_path(invoice) %></td>
+  <td><%= number_to_currency invoice.product_invoices.total_price %></td>
+  <td><%= l invoice.created_at, format: :default %></td>
+</tr>
