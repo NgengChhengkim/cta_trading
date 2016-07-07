@@ -7,4 +7,8 @@ class ProductInvoice < ActiveRecord::Base
 
   scope :total_price, ->{joins(:product)
     .sum("product_invoices.quantity * products.discount_price")}
+
+  scope :find_by_user, -> user{joins(:invoice)
+    .where("invoices.customer_id = ? and customer_type = 'User'", user)
+    .includes product: :category}
 end
