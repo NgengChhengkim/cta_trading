@@ -29,7 +29,6 @@
 //= require facebook
 //= require custom
 //= require product_cart
-//= require categories
 
 //= require admin/app
 //= require admin/fastclick

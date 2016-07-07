@@ -1,0 +1,9 @@
+<div id="search" class="container">
+  <div class="head-title">
+    <%= t "labels.search_result" %>
+    <span class="search-result">
+      (<%= pluralize @products.count, t("labels.product_number") %>)
+    </span>
+  </div>
+  <%= render "shared/product_list" %>
+</div>

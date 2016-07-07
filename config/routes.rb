@@ -14,5 +14,7 @@ Rails.application.routes.draw do
     resources :product_invoices, only: :index
   end
 
+  get "search" => "searches#index"
+
   mount Sidekiq::Web, at: "/sidekiq"
 end
