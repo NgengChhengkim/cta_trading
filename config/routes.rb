@@ -10,11 +10,12 @@ Rails.application.routes.draw do
   resources :guests, only: :create
   resources :categories, only: :show
   resources :products, only: :show
+  resources :promotions
   resources :invoices do
     resources :product_invoices, only: :index
   end
 
   get "search" => "searches#index"
-
+  get "contact" => "static_pages#contact"
   mount Sidekiq::Web, at: "/sidekiq"
 end

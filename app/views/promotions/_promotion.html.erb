@@ -1,0 +1,16 @@
+<div class="media">
+  <div class="media-left">
+    <%= link_to "", class: "media-object" do %>
+      <%= image_tag "romano.jpg", width: Settings.image.size100 %>
+    <% end %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading"><%= link_to promotion.title, promotion %></h4>
+    <div class="short-content"><%= text_truncate promotion.content, 100 %></div>
+    <div class="date">
+      <i class="fa fa-clock-o" aria-hidden="true"></i>
+      <%= l promotion.created_at, format: :default %>
+    </div>
+  </div>
+</div>
+<hr>

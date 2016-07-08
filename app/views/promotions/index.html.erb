@@ -1,0 +1,9 @@
+<div id="promotion" class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="head-title"><%= t "promotions.title" %></div>
+      <div class="promotion-list"><%= render @promotions %></div>
+      <div class="pull-right"><%= will_paginate @promotions %></div>
+    </div>
+  </div>
+</div>

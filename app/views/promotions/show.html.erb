@@ -1,0 +1,27 @@
+<div id="promotion" class="container">
+  <div class="row">
+    <div class="col-md-9 promotion-detail">
+      <div class="head-title"><%= @promotion.title %></div>
+      <div class="sub-header">
+        <span class="date">
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          <%= l @promotion.created_at, format: :default %>
+        </span>
+        <span class="fb-like" data-href="<%= request.original_url %>"
+          data-layout="button_count" data-action="like" data-show-faces="true"
+          data-share="true"></span>
+      </div>
+      <div class="image"><%= image_tag "romano.jpg", width: Settings.image.size500,
+        class: "img-responsive" %></div>
+      <div class="promotion-content"><%= @promotion.content %></div>
+      <hr>
+      <%= render "shared/fb_comment" %>
+    </div>
+    <div class="col-md-3 no-padding-right">
+      <div class="right-promotion">
+        <div class="small-head-title"><%= t "promotion.similar" %></div><br>
+        <%= render partial: "right_side", collection: @other_promotions, as: :promotion %>
+      </div>
+    </div>
+  </div>
+</div>

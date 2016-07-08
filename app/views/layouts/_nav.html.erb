@@ -18,6 +18,8 @@
         <% Category.all.each do |category| %>
           <li><%= link_to category.name, category %></li>
         <% end %>
+        <li><%= link_to t("menu.promotion"), promotions_path %></li>
+        <li><%= link_to t("menu.contact"), contact_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
