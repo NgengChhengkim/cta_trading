@@ -1,11 +1,11 @@
 <div id="invoice" class="container">
-  <div class="row">
-    <div class="head-title">
-      <%= t "invoices.title" %>
-      <span class="pull-right">
-        <%= t "invoices.total", total: number_to_currency(@total_price) %></span>
-    </div>
+  <div class="row main-background">
     <div class="col-md-12 invoice-content">
+      <div class="head-title">
+        <%= t "invoices.title" %>
+        <span class="pull-right">
+          <%= t "invoices.total", total: number_to_currency(@total_price) %></span>
+      </div>
       <table class="table tbl-invoice">
         <thead>
           <tr>

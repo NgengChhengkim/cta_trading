@@ -1,10 +1,8 @@
 #product-cart, #product-order {
   margin-bottom: 10px;
-  .check-out {
-    background-color: WHITE;
-  }
+
   .tbl-cart {
-    font-size: 1em;
+    font-size: 15px;
     line-height: 2;
     .item {
       width: 20%;
@@ -40,11 +38,8 @@
   }
 
   .order {
-    background-color: WHITE;
     padding: 10px;
-    .order-title {
-      font-weight: bold;
-    }
+
     .order-price {
       font-weight: bold;
       .total {
@@ -66,7 +61,6 @@
   }
 
   .success-info {
-    background-color: WHITE;
     padding-top: 20px;
     margin-bottom: 10px;
     .icon {

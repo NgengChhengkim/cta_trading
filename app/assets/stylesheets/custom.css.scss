@@ -2,6 +2,11 @@
 @import "bootstrap";
 @import "font-awesome";
 
+.main-background {
+  background-color: WHITE;
+  margin-top: 10px;
+}
+
 .error-explanation {
   padding-left: 35px;
   .close {
@@ -58,8 +63,10 @@
   margin: 10px;
   text-align: center;
   padding: 10px;
-  line-height: 1.7;
-  color: BLACK;
+  line-height: 20px;
+  color: #545351;
+  font-size: 15px;
+  border: 1px solid #f6f6f6;
   .discount {
     position: absolute;
     top: 10px;
@@ -71,17 +78,27 @@
     height: 150px;
   }
   .product-content {
-    font-size: 1em;
+    .title {
+      height: 20px;
+      overflow-y: hidden;
+      a {
+        color: #545351;
+      }
+    }
     .type {
-      font-size: 0.8em;
+      height: 20px;
+      overflow-y: hidden;
+      margin-top: 5px;
     }
     .price {
+      height: 20px;
+      overflow-y: hidden;
+      margin-top: 5px;
       .discount-price {
         color: RED;
       }
       .net-price {
         text-decoration: line-through;
-        font-size: 0.8em;
         padding-left: 5px;
       }
     }
@@ -94,7 +111,7 @@
 }
 
 .products:hover {
-  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
   .add-to-cart, .btn-add-to-cart {
     background-color: #fa03bb;
     color: WHITE;
@@ -158,10 +175,8 @@ a:hover {
 }
 
 .empty-cart {
-  background-color: WHITE;
   padding: 20px;
   text-align: center;
-  margin: 20px 0px;
 }
 
 .no-padding-right {
@@ -172,4 +187,8 @@ a:hover {
   .no-padding-right {
     padding-left: 0px !important;
   }
+}
+
+.table > thead > tr > th {
+  border-bottom: none;
 }

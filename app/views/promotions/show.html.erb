@@ -1,6 +1,6 @@
 <div id="promotion" class="container">
   <div class="row">
-    <div class="col-md-9 promotion-detail">
+    <div class="col-md-9 promotion-detail main-background">
       <div class="head-title"><%= @promotion.title %></div>
       <div class="sub-header">
         <span class="date">
@@ -18,7 +18,7 @@
       <%= render "shared/fb_comment" %>
     </div>
     <div class="col-md-3 no-padding-right">
-      <div class="right-promotion">
+      <div class="right-promotion main-background">
         <div class="small-head-title"><%= t "promotion.similar" %></div><br>
         <%= render partial: "right_side", collection: @other_promotions, as: :promotion %>
       </div>

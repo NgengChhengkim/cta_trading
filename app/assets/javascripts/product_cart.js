@@ -65,7 +65,7 @@ $(document).on("page:change", function() {
       $(".cart-"+product_id).remove();
       total_price();
     }else{
-      $("#product-cart .row").html("<div class='empty-cart'>"+ I18n.t("cart.labels.no_cart") +"</div>")
+      $("#product-cart .row").html("<div class='empty-cart main-background'>" + I18n.t("cart.labels.no_cart") + "</div>")
     }
     return false;
   });
