@@ -24,10 +24,12 @@ defaults: &defaults
   paginate:
     per_page: 15
     related_product: 6
+    other_promotion: 6
   image:
     size60: 60
     size150: 150
     size100: 100
+    size500: 500
 development:
   <<: *defaults
   neat_setting: 800

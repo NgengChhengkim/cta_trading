@@ -40,4 +40,8 @@ module ApplicationHelper
   def media_image image
     image_tag image, width: Settings.image.size60, class: "media-object"
   end
+
+  def text_truncate content, length
+    truncate content, length: length, omission: ""
+  end
 end

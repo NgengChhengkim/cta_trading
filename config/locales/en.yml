@@ -3,6 +3,8 @@ en:
   menu:
     home: "Home"
     products: "Products"
+    promotion: "Promotion"
+    contact: "Contact"
     login: "Login"
     register: "Register"
     orders: "My Invoices"
