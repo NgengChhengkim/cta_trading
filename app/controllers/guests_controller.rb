@@ -37,7 +37,8 @@ class GuestsController < ApplicationController
   end
 
   def load_product_invoice
-    @product_invoices = @invoice.product_invoices.includes product: :category
+    @product_invoices = @invoice.product_invoices.includes(product: :category)
+      .order created_at: :desc
     @user = @guest
   end
 end

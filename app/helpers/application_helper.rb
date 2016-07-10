@@ -42,6 +42,6 @@ module ApplicationHelper
   end
 
   def text_truncate content, length
-    truncate content, length: length, omission: ""
+    truncate content, length: length, omission: "..."
   end
 end

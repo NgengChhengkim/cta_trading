@@ -25,6 +25,7 @@ defaults: &defaults
     per_page: 15
     related_product: 6
     other_promotion: 6
+    hot_product: 10
   image:
     size60: 60
     size150: 150

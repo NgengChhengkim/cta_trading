@@ -1,7 +1,7 @@
 <div id="product-show" class="container">
   <div class="row">
     <div class="col-md-9">
-      <div class="row product-detail">
+      <div class="row product-detail main-background">
         <div class="small-head-title">
           <%= @product.name %>
           <span class="fb-like pull-right" data-href="<%=  request.original_url %>"
@@ -104,7 +104,7 @@
     </div>
 
     <div class="col-md-3 no-padding-right">
-      <div class="right-bar">
+      <div class="right-bar main-background">
         <div class="small-head-title"><%= t "product.related_products" %></div>
         <%= render partial: "shared/product_media", collection: @related_products,
           as: :product %>

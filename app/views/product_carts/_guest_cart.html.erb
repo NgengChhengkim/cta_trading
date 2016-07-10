@@ -1,7 +1,7 @@
 <tr class="guest-cart product-cart cart-<%= product.id %>">
-  <td><%= image_product_table "bachi.jpg" %></td>
+  <td><%= link_to image_product_table("bachi.jpg"), product %></td>
   <td>
-    <div class="title"><%= product.name %></div>
+    <div class="title"><%= link_to product.name, product %></div>
     <div class="type"><%= product.category_name %></div>
   </td>
   <td>
