@@ -27,9 +27,12 @@ ActiveRecord::Schema.define(version: 20160701032142) do
   end
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "content",    limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "address",      limit: 255
+    t.string   "email",        limit: 255
+    t.string   "phone_number", limit: 255
+    t.string   "content",      limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "countries", force: :cascade do |t|
