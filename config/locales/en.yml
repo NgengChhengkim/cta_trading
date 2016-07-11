@@ -30,4 +30,13 @@ en:
   time:
     formats:
       default: "%d-%m-%Y %H:%M"
-
+      year: "%Y"
+  footer:
+    categories: "Categories"
+    brands: "Brands"
+    our_address: "Our Address"
+    facebook: "Facebook"
+    address: "Address: %{address}"
+    email: "Email: %{email}"
+    phone: "Phone: %{phone}"
+    reserved: "© %{year}. All Rights Reserved | CTA Trading"

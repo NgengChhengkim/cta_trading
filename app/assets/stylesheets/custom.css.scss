@@ -7,6 +7,10 @@
   margin-top: 10px;
 }
 
+.container {
+  min-height: 50%;
+}
+
 .error-explanation {
   padding-left: 35px;
   .close {
@@ -191,4 +195,22 @@ a:hover {
 
 .table > thead > tr > th {
   border-bottom: none;
+}
+
+// footer
+@media(max-width:992px){
+  .footer-bottom-cate {
+    float: left;
+    width: 50%;
+  }
+  .address {
+    clear: both;
+  }
+}
+
+@media(max-width:700px){
+  .address, .facebook {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
