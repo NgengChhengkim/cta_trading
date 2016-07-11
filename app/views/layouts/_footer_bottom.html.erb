@@ -14,7 +14,7 @@
       <h6><%= t "footer.brands" %></h6>
       <ul>
         <% Brand.all.each do |brand| %>
-          <li><%= link_to brand.name, "" %></li>
+          <li><%= link_to brand.name, brand %></li>
         <% end %>
       </ul>
     </div>

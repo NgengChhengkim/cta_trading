@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :categories, only: :show
   resources :products, only: :show
   resources :promotions
+  resources :brands, only: :show
   resources :invoices do
     resources :product_invoices, only: :index
   end

@@ -1,6 +1,11 @@
 <div id="contact" class="container">
   <div class="row">
     <div class="col-md-12 main-background">
+      <ol class="breadcrumb">
+        <li><%= link_to t("menu.home"), root_path %></li>
+        <li class="active"><%= t "contact.title" %></li>
+      </ol>
+
       <div class="head-title"><%= t "contact.title" %></div>
       <div class="contact-content"><%= @contact.content if @contact %></div>
     </div>

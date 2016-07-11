@@ -5,7 +5,7 @@ class SearchesController < ApplicationController
       per_page: Settings.paginate.per_page
     respond_to do |format|
       format.html
-      format.js
+      format.js {render "categories/show.js.erb"}
     end
   end
 end

@@ -2,6 +2,11 @@
   <div class="row">
     <% if @product_carts.present? || @products.present? %>
       <div class="col-md-8 check-out main-background">
+        <ol class="breadcrumb">
+          <li><%= link_to t("menu.home"), root_path %></li>
+          <li class="active"><%= t "cart.title" %></li>
+        </ol>
+
         <div class="head-title"><%= t "cart.title" %></div>
         <table class="table tbl-cart">
           <thead>

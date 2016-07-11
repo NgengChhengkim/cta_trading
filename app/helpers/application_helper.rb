@@ -44,4 +44,9 @@ module ApplicationHelper
   def text_truncate content, length
     truncate content, length: length, omission: "..."
   end
+
+  def active_menu controller_name, action_name, id = nil
+    controller.controller_name == controller_name &&
+      controller.action_name == action_name && params[:id].to_i == id.to_i ? "active" : ""
+  end
 end

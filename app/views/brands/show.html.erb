@@ -1,9 +1,9 @@
 <div class="container main-background">
   <ol class="breadcrumb">
     <li><%= link_to t("menu.home"), root_path %></li>
-    <li class="active"><%= @category.name %></li>
+    <li class="active"><%= @brand.name %></li>
   </ol>
 
-  <div class="head-title"><%= @category.name %></div>
+  <div class="head-title"><%= @brand.name %></div>
   <%= render "shared/product_list" %>
 </div>
