@@ -14,12 +14,16 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><%= link_to t("menu.home"), root_path %></li>
+        <li class="<%= active_menu 'static_pages', 'index' %>">
+          <%= link_to t("menu.home"), root_path %></li>
         <% Category.all.each do |category| %>
-          <li><%= link_to category.name, category %></li>
+          <li class="<%= active_menu 'categories', 'show', category.id %>">
+            <%= link_to category.name, category %></li>
         <% end %>
-        <li><%= link_to t("menu.promotion"), promotions_path %></li>
-        <li><%= link_to t("menu.contact"), contact_path %></li>
+        <li class="<%= active_menu 'promotions', 'index' %>">
+          <%= link_to t("menu.promotion"), promotions_path %></li>
+        <li class="<%= active_menu 'static_pages', 'contact' %>">
+          <%= link_to t("menu.contact"), contact_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>

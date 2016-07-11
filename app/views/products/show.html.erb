@@ -2,6 +2,12 @@
   <div class="row">
     <div class="col-md-9">
       <div class="row product-detail main-background">
+        <ol class="breadcrumb">
+          <li><%= link_to t("menu.home"), root_path %></li>
+          <li><%= link_to @product.category_name, @product.category %></li>
+          <li class="active"><%= @product.name %></li>
+        </ol>
+
         <div class="small-head-title">
           <%= @product.name %>
           <span class="fb-like pull-right" data-href="<%=  request.original_url %>"
@@ -47,7 +53,7 @@
             </tr>
             <tr>
               <td><%= t "product.brand" %></td>
-              <td><%= @product.brand_name %></td>
+              <td><%= link_to @product.brand_name, @product.brand %></td>
             </tr>
             <tr>
               <td><%= t "product.weight" %></td>
