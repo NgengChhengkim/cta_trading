@@ -49,4 +49,8 @@ module ApplicationHelper
     controller.controller_name == controller_name &&
       controller.action_name == action_name && params[:id].to_i == id.to_i ? "active" : ""
   end
+
+  def flash_message flash_type
+    t "flashs.#{flash_type}", model_name: controller_name.classify
+  end
 end

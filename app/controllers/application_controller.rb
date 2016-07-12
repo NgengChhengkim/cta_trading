@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
   layout :layout_by_resource
+  include ApplicationHelper
 
   def after_sign_in_path_for resource
     product_cart_cookie = cookies[:product_cart]
@@ -34,11 +35,11 @@ class ApplicationController < ActionController::Base
   protected
 
   def layout_by_resource
-    # if self.class.parent == Admin
-    #   "admin/application"
-    # else
-    #   "application"
-    # end
+    if self.class.parent == Admin
+      "admin/application"
+    else
+      "application"
+    end
   end
 
   def configure_permitted_parameters

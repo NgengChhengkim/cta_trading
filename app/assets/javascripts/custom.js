@@ -1,12 +1,13 @@
 $(document).on("page:update", function() {
   $(".flash-message").delay(3000).slideUp();
+
+  $.validate({
+    modules : "security"
+  });
 });
 
 $(document).on("page:change", function() {
   new WOW().init();
-  $.validate({
-    modules : "security"
-  });
 
   $("#slider").responsiveSlides({
     auto: true,

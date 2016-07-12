@@ -11,10 +11,14 @@
   </head>
 
   <body class="hold-transition skin-blue sidebar-mini admin fixed">
-    <div class="wrapper">
+    <div class="admin-wrapper">
       <%= render "layouts/admin/header" %>
       <%= render "layouts/admin/sidebar" %>
       <div class="content-wrapper">
+        <div class="flash">
+          <%= render "layouts/flash" %>
+        </div>
+
         <%= yield %>
       </div>
       <%= render "layouts/admin/footer" %>
