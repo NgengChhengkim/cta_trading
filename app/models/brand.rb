@@ -1,3 +1,11 @@
 class Brand < ActiveRecord::Base
   has_many :products
+
+  validates :name, presence: true, uniqueness: {case_sensitive: false}
+
+  scope :find_brands, -> ids{where id: ids}
+
+  def has_data?
+    products.any?
+  end
 end

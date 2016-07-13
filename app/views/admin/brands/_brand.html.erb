@@ -1,0 +1,15 @@
+<tr>
+  <td class="td-checkbox">
+    <% if brand.has_data? %>
+      <%= ff.check_box :id, {disabled: true, checked: false,
+        title: t("admin.brands.messages.cannot_remove")} %>
+    <% else %>
+      <%= ff.check_box :id, {name: "brand[id][]", checked: false,
+        class: "check-box"}, brand.id, false %></td>
+    <% end %>
+
+  <td><%= brand.name %></td>
+  <td class="td-action"><%= link_to t("admin.actions.edit"),
+    edit_admin_brand_path(brand), remote: true, class: "btn btn-default",
+    data: {toggle: "modal", target: "#form-modal"} %></td>
+</tr>

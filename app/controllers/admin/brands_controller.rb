@@ -1,17 +1,17 @@
-class Admin::CategoriesController < ApplicationController
+class Admin::BrandsController < ApplicationController
   load_and_authorize_resource
-  before_action :load_categories, only: [:index, :create, :update, :destroy]
+  before_action :load_brands, only: [:index, :create, :update, :destroy]
   respond_to :js
 
   def index
-    @category = Category.new
+    @brand = Brand.new
   end
 
   def new
   end
 
   def create
-    if @category.save
+    if @brand.save
       flash.now[:success] = flash_message "created"
     else
       flash.now[:error] = flash_message "not_created"
@@ -22,7 +22,7 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def update
-    if @category.update_attributes category_params
+    if @brand.update_attributes brand_params
       flash.now[:success] = flash_message "updated"
     else
       flash.now[:error] = flash_message "not_updated"
@@ -30,22 +30,22 @@ class Admin::CategoriesController < ApplicationController
   end
 
   def destroy
-    ids = params[:category][:id] if params[:category].present?
-    categories = Category.find_categories ids
+    ids = params[:brand][:id] if params[:brand].present?
+    brands = Brand.find_brands ids
 
-    if categories.destroy_all
+    if brands.destroy_all
       flash.now[:success] = flash_message "deleted"
     else
       flash.now[:error] = flash "not_deleted"
     end
   end
 
-  def category_params
-    params.require(:category).permit :name, id: []
+  def brand_params
+    params.require(:brand).permit :name, id: []
   end
 
-  def load_categories
-    @categories = Category.order(:name).paginate page: params[:page],
+  def load_brands
+    @brands = Brand.order(:name).paginate page: params[:page],
       per_page: Settings.paginate.per_page_10
   end
 end

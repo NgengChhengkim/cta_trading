@@ -5,9 +5,9 @@
   <span class="pull-right">
     <%= link_to new_admin_category_path, remote: true, class: "btn btn-primary",
       data: {toggle: "modal", target: "#form-modal"} do %>
-      <%= t "categories.add" %>
+      <%= t "admin.actions.add" %>
     <% end %>
-    <%= f.submit t("categories.delete"), data: {confirm: t("messages.delete_confirm")},
+    <%= f.submit t("admin.actions.delete"), data: {confirm: t("messages.delete_confirm")},
       class: "btn btn-danger btn-delete", disabled: true %>
   </span>
 

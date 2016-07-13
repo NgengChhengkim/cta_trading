@@ -52,3 +52,10 @@ en:
     not_updated: "%{model_name} couldn't be updated"
   messages:
     delete_confirm: "Are you sure?"
+  admin:
+    actions:
+      add: "Add"
+      edit: "Edit"
+      delete: "Delete"
+      cancel: "Cancel"
+      save: "Save"
