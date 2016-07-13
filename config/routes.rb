@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories, except: :show
+    resources :brands, except: :show
     post "destroy_categories" => "categories#destroy"
+    post "destroy_brands" => "brands#destroy"
   end
 end

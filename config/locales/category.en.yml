@@ -3,6 +3,8 @@ en:
     empty_category: "No products"
 
   categories:
+    add_category: "Add Category"
+    edit_category: "Edit Category"
     thead:
       name: "Name"
     category: "Category"

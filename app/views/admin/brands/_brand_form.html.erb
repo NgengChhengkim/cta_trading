@@ -1,15 +1,15 @@
 <div class="modal-header">
   <button type="button" class="close" data-dismiss="modal">&times;</button>
   <h4 class="modal-title">
-    <%= @category.new_record? ? t("categories.add_category") : t("categories.edit_category") %>
+    <%= @brand.new_record? ? t("admin.brands.add_brand") : t("admin.brands.edit_brand") %>
   </h4>
 </div>
 <div class="modal-body col-md-12">
   <div class="errors"></div>
   <div class="form">
-    <%= form_for [:admin, @category], remote: true do |f| %>
+    <%= form_for [:admin, @brand], remote: true do |f| %>
       <div>
-        <%= f.text_field :name, placeholder: t("categories.placeholders.name"),
+        <%= f.text_field :name, placeholder: t("admin.brands.placeholders.name"),
           data: Settings.validations.blank, class: "form-control" %>
       </div><br />
 

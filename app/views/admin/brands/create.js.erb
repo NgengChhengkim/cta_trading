@@ -1,0 +1,7 @@
+<% if @brand.errors.any? %>
+  $(".errors").html("<%= j (render 'shared/error_messages', object: @brand) %>");
+<% else %>
+  $(".flash").html("<%= j render 'layouts/flash' %>");
+  $(".infor").html("<%= j render 'infor' %>");
+  $("#form-modal").modal("hide");
+<% end %>

@@ -1,0 +1,14 @@
+en:
+  admin:
+    brands:
+      title: "Brands"
+      add_brand: "Add Brand"
+      edit_brand: "Edit Brand"
+      tables:
+        name: "Name"
+      messages:
+        cannot_remove: "Category with products cannot remove."
+      placeholders:
+        name: "Enter brand name"
+
+

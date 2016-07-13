@@ -1,0 +1,35 @@
+<%= form_for :brands, url: admin_destroy_brands_path, remote: true do |f| %>
+  <div class="head-title">
+    <span><%= t "admin.brands.title" %></span>
+
+  <span class="pull-right">
+    <%= link_to t("admin.actions.add"), new_admin_brand_path, remote: true,
+      class: "btn btn-primary", data: {toggle: "modal", target: "#form-modal"} %>
+    <%= f.submit t("admin.actions.delete"), data: {confirm: t("messages.delete_confirm")},
+      class: "btn btn-danger btn-delete", disabled: true %>
+  </span>
+
+  </div>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr class="row-head">
+        <th class="td-checkbox select-all">
+          <%= check_box_tag :select_all %>
+        </th>
+        <th><%= t "admin.brands.tables.name" %></th>
+        <th class="action"></th>
+      </tr>
+    </thead>
+
+    <tbody class="list">
+      <%= render partial: "brand", collection: @brands, locals: {ff: f} %>
+    </tbody>
+
+    <tfoot class="table-footer">
+      <tr>
+        <td colspan="3"><%= will_paginate @brands %></td>
+      </tr>
+    </tfoot>
+  </table>
+<% end %>
