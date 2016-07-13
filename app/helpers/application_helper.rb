@@ -1,5 +1,9 @@
 module ApplicationHelper
 
+  def set_title title
+    title.present? ? "#{title} | #{t 'site'}" : t("site")
+  end
+
   def flash_class level
     case level
     when :notice then "alert-info"
@@ -42,7 +46,7 @@ module ApplicationHelper
   end
 
   def text_truncate content, length
-    truncate content, length: length, omission: "..."
+    truncate content, length: length, omission: "...", escape: false
   end
 
   def active_menu controller_name, action_name, id = nil

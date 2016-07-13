@@ -1,3 +1,8 @@
+<% provide :title, @product.name %>
+<% provide :name, @product.name %>
+<% provide :description, @product.safe_description %>
+<% provide :image, asset_url("romano.jpg") %>
+
 <div id="product-show" class="container">
   <div class="row">
     <div class="col-md-9">
@@ -94,13 +99,13 @@
         <hr>
         <div class="description">
           <div class="title"><%= t "product.description" %></div>
-          <%= @product.description %>
+          <%= @product.safe_description %>
         </div>
 
         <hr>
         <div class="usage">
           <div class="title"><%= t "product.usage" %></div>
-          <%= @product.usage %>
+          <%= @product.safe_usage %>
         </div>
 
         <%= render "shared/fb_comment" %>

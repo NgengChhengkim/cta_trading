@@ -1,3 +1,8 @@
+<% provide :title, @promotion.title %>
+<% provide :name, @promotion.title %>
+<% provide :description, @promotion.safe_content %>
+<% provide :image, asset_url("romano.jpg") %>
+
 <div id="promotion" class="container">
   <div class="row">
     <div class="col-md-9 promotion-detail main-background">
@@ -19,7 +24,7 @@
       </div>
       <div class="image"><%= image_tag "romano.jpg", width: Settings.image.size500,
         class: "img-responsive" %></div>
-      <div class="promotion-content"><%= @promotion.content %></div>
+      <div class="promotion-content"><%= @promotion.safe_content %></div>
       <hr>
       <%= render "shared/fb_comment" %>
     </div>

@@ -14,4 +14,12 @@ class Product < ActiveRecord::Base
   def is_discount?
     discount.to_f > 0
   end
+
+  def safe_description
+    description.html_safe if description
+  end
+
+  def safe_usage
+    usage.html_safe if usage
+  end
 end
