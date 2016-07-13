@@ -2,3 +2,16 @@ en:
   category:
     empty_category: "No products"
 
+  categories:
+    thead:
+      name: "Name"
+    category: "Category"
+    add: "Add"
+    save: "Save"
+    cancel: "Cancel"
+    delete: "Delete"
+    edit: "Edit"
+    placeholders:
+      name: "Enter category name"
+    messages:
+      cannot_remove: "Category with products cannot remove."

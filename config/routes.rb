@@ -19,4 +19,9 @@ Rails.application.routes.draw do
   get "search" => "searches#index"
   get "contact" => "static_pages#contact"
   mount Sidekiq::Web, at: "/sidekiq"
+
+  namespace :admin do
+    resources :categories, except: :show
+    post "destroy_categories" => "categories#destroy"
+  end
 end
