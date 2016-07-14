@@ -1,0 +1,23 @@
+<tr>
+  <td class="td-checkbox">
+    <% if product.has_data? %>
+      <%= ff.check_box :id, {disabled: true, checked: false,
+        title: t("admin.products.messages.cannot_remove")} %>
+    <% else %>
+      <%= ff.check_box :id, {name: "product[id][]", checked: false,
+        class: "check-box"}, product.id, false %></td>
+    <% end %>
+  <td><%= product.code %></td>
+  <td><%= product.name %></td>
+  <td><%= number_to_currency product.retail_sale_price %></td>
+  <td><%= percentage_format product.discount %></td>
+  <td><%= number_to_currency product.discount_price %></td>
+  <td class="td-action">
+    <%= link_to t("admin.actions.view"), admin_product_path(product),
+      class: "btn btn-default" %>
+  </td>
+  <td class="td-action">
+    <%= link_to t("admin.actions.edit"), edit_admin_product_path(product),
+      class: "btn btn-default" %>
+  </td>
+</tr>

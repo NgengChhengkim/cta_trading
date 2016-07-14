@@ -16,6 +16,8 @@
 //= require bootstrap-sprockets
 //= require i18n
 //= require i18n/translations
+//= require jquery_nested_form
+//= require ckeditor/init
 //= require imagezoom
 //= require jquery.flexslider
 //= require jquery.magnific-popup

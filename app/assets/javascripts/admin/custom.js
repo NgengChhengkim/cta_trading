@@ -22,4 +22,8 @@ $(document).on("page:change", function(){
     $(".modal-content").html("<div class='modal-spinner'>" +
       "<i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i></div>");
   });
+
+  $(".ckeditor").each(function() {
+    CKEDITOR.replace($(this).attr("id"));
+  });
 });

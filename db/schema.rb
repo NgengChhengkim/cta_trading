@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701032142) do
+ActiveRecord::Schema.define(version: 20160715212111) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -26,6 +26,22 @@ ActiveRecord::Schema.define(version: 20160701032142) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "ckeditor_assets", force: :cascade do |t|
+    t.string   "data_file_name",    limit: 255, null: false
+    t.string   "data_content_type", limit: 255
+    t.integer  "data_file_size",    limit: 4
+    t.integer  "assetable_id",      limit: 4
+    t.string   "assetable_type",    limit: 30
+    t.string   "type",              limit: 30
+    t.integer  "width",             limit: 4
+    t.integer  "height",            limit: 4
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
+  add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
   create_table "contacts", force: :cascade do |t|
     t.string   "address",      limit: 255
     t.string   "email",        limit: 255
@@ -33,12 +49,6 @@ ActiveRecord::Schema.define(version: 20160701032142) do
     t.string   "content",      limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-  end
-
-  create_table "countries", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
   end
 
   create_table "guests", force: :cascade do |t|
@@ -51,11 +61,13 @@ ActiveRecord::Schema.define(version: 20160701032142) do
   end
 
   create_table "images", force: :cascade do |t|
-    t.string   "image",       limit: 255
-    t.string   "description", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "product_id", limit: 4
   end
+
+  add_index "images", ["product_id"], name: "index_images_on_product_id", using: :btree
 
   create_table "invoices", force: :cascade do |t|
     t.integer  "customer_id",   limit: 4
@@ -89,26 +101,19 @@ ActiveRecord::Schema.define(version: 20160701032142) do
   create_table "products", force: :cascade do |t|
     t.string   "name",              limit: 255
     t.string   "code",              limit: 255
-    t.float    "weight",            limit: 24
-    t.integer  "number_per_case",   limit: 4
-    t.decimal  "whole_sale_price",                precision: 10
-    t.decimal  "retail_sale_price",               precision: 10
-    t.decimal  "price_per_case",                  precision: 10
-    t.float    "discount",          limit: 24
-    t.decimal  "discount_price",                  precision: 10
-    t.string   "smell",             limit: 255
+    t.decimal  "retail_sale_price",               precision: 15, scale: 2
+    t.float    "discount",          limit: 24,                             default: 0.0
+    t.decimal  "discount_price",                  precision: 15, scale: 2
     t.text     "description",       limit: 65535
-    t.text     "usage",             limit: 65535
+    t.string   "cover_image",       limit: 255
     t.integer  "category_id",       limit: 4
-    t.integer  "supplier_id",       limit: 4
     t.integer  "brand_id",          limit: 4
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
+    t.datetime "created_at",                                                             null: false
+    t.datetime "updated_at",                                                             null: false
   end
 
   add_index "products", ["brand_id"], name: "index_products_on_brand_id", using: :btree
   add_index "products", ["category_id"], name: "index_products_on_category_id", using: :btree
-  add_index "products", ["supplier_id"], name: "index_products_on_supplier_id", using: :btree
 
   create_table "promotions", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -119,21 +124,11 @@ ActiveRecord::Schema.define(version: 20160701032142) do
   end
 
   create_table "slide_images", force: :cascade do |t|
-    t.string   "image",       limit: 255
-    t.string   "description", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-  end
-
-  create_table "suppliers", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "description", limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-    t.integer  "country_id",  limit: 4
   end
-
-  add_index "suppliers", ["country_id"], name: "index_suppliers_on_country_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   limit: 255
@@ -157,12 +152,11 @@ ActiveRecord::Schema.define(version: 20160701032142) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "images", "products"
   add_foreign_key "product_carts", "products"
   add_foreign_key "product_carts", "users"
   add_foreign_key "product_invoices", "invoices"
   add_foreign_key "product_invoices", "products"
   add_foreign_key "products", "brands"
   add_foreign_key "products", "categories"
-  add_foreign_key "products", "suppliers"
-  add_foreign_key "suppliers", "countries"
 end

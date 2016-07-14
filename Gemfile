@@ -25,6 +25,10 @@ gem "sidekiq"
 gem "will_paginate", "3.0.7"
 gem "bootstrap-will_paginate", "0.0.10"
 gem "ransack"
+gem "nested_form"
+gem "carrierwave"
+gem "mini_magick"
+gem "ckeditor", github: "galetahub/ckeditor"
 group :development, :test do
   gem "pry"
 end
