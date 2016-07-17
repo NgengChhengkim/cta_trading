@@ -24,6 +24,7 @@ en:
     email_invalidate: "Email is invalid"
     form: "Form contains "
     error: "error"
+    number: "%{data} must be number"
   labels:
     loading: "Loading..."
     search: "Search products ..."
@@ -59,3 +60,4 @@ en:
       delete: "Delete"
       cancel: "Cancel"
       save: "Save"
+      view: "View"

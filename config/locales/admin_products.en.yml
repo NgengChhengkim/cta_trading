@@ -1,0 +1,28 @@
+en:
+  admin:
+    products:
+      title: "Products"
+      form:
+        retail_sale_price: "Retail sale price ($)"
+        discount: "Discount (%)"
+      tables:
+        code: "Code"
+        name: "Name"
+        category: "Category"
+        brand: "Brand"
+        retail_sale_price: "Retail sale price"
+        description: "Description"
+        post_date: "Post Date"
+        cover_image: "Cover Image"
+        discount: "Discount"
+        discount_price: "Discount price"
+      new_product: "New product"
+      more_images: "More Images"
+      errors:
+        at_least_one_image: "Product must contain at least one image"
+        only_one_covered_image: "Product cover image must contain only one"
+      actions:
+        remove_image: "Remove image"
+        add_image: "Add image"
+      messages:
+        cannot_remove: "Product with invoices or ordered carts cannot remove."

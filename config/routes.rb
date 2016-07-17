@@ -1,6 +1,7 @@
 require "sidekiq/web"
 
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => "/ckeditor"
   devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks",
     registrations: "registrations"}
   root "static_pages#index"
@@ -23,7 +24,10 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :categories, except: :show
     resources :brands, except: :show
+    resources :products
+
     post "destroy_categories" => "categories#destroy"
     post "destroy_brands" => "brands#destroy"
+    post "destroy_products" => "products#destroy"
   end
 end

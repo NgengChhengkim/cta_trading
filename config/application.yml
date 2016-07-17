@@ -24,6 +24,18 @@ defaults: &defaults
     blank:
       "validation": "required"
       "validation-error-msg-required": <%= I18n.t "errors.required", data: "Name" %>
+    retail_sale_price:
+      "validation": "number"
+      "validation-allowing": "float"
+      "validation-error-msg-number": <%= I18n.t "errors.number", data: "Retail sale price" %>
+    discount:
+      "validation": "number"
+      "validation-allowing": "float"
+      "validation-optional": "true"
+      "validation-error-msg-number": <%= I18n.t "errors.number", data: "Discount" %>
+    code:
+      "validation": "required"
+      "validation-error-msg-required": <%= I18n.t "errors.required", data: "Code" %>
   paginate:
     per_page: 15
     related_product: 6

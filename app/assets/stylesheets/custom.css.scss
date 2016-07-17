@@ -222,7 +222,13 @@ a:hover {
   padding: 10px 0px 0px 0px;
   background-color: transparent;
 }
+//end breadcrumb
 
 .has-error {
   font-size: 13px;
+}
+
+input[type="file"], input[type="file"]:focus {
+  border: none;
+  outline: none;
 }

@@ -1,0 +1,38 @@
+<%= form_for :products, url: admin_destroy_products_path do |f| %>
+  <div class="head-title">
+    <span><%= t "admin.products.title" %></span>
+
+    <span class="pull-right">
+      <%= link_to t("admin.actions.add"), new_admin_product_path, class: "btn btn-primary" %>
+      <%= f.submit t("admin.actions.delete"), data: {confirm: t("messages.delete_confirm")},
+        class: "btn btn-danger btn-delete", disabled: true %>
+    </span>
+  </div>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr class="row-head">
+        <th class="td-checkbox select-all">
+          <%= check_box_tag :select_all %>
+        </th>
+        <th><%= t "admin.products.tables.code" %></th>
+        <th><%= t "admin.products.tables.name" %></th>
+        <th><%= t "admin.products.tables.retail_sale_price" %></th>
+        <th><%= t "admin.products.tables.discount" %></th>
+        <th><%= t "admin.products.tables.discount_price" %></th>
+        <th class="action"></th>
+        <th class="action"></th>
+      </tr>
+    </thead>
+
+    <tbody class="list">
+      <%= render partial: "product", collection: @products, locals: {ff: f} %>
+    </tbody>
+
+    <tfoot class="table-footer">
+      <tr>
+        <td colspan="8"><%= will_paginate @products %></td>
+      </tr>
+    </tfoot>
+  </table>
+<% end %>
