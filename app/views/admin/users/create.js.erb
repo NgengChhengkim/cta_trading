@@ -1,0 +1,7 @@
+<% if @user.errors.any? %>
+  $(".errors").html("<%= j (render 'shared/error_messages', object: @user) %>");
+<% else %>
+  $(".flash").html("<%= j render 'layouts/flash' %>");
+  $(".infor").html("<%= j render 'infor' %>");
+  $("#form-modal").modal("hide");
+<% end %>

@@ -11,8 +11,11 @@ class User < ActiveRecord::Base
 
   validates :name, presence: true, length: {minimum: 4}
   validates :phone_number, presence: true
+  validates :role, presence: true
 
-  enum role: [:admin, :editor, :guest]
+  scope :find_users, -> ids{where id: ids}
+
+  enum role: [:admin, :editor, :customer]
 
   class << self
     def from_omniauth access_token

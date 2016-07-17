@@ -1,0 +1,26 @@
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">&times;</button>
+  <h4 class="modal-title">
+    <%= t "admin.users.user_detail" %>
+  </h4>
+</div>
+
+<div class="modal-body col-md-12">
+  <dl class="dl-horizontal">
+    <dt><%= t "admin.users.tables.name" %>:</dt>
+    <dd><%= @user.name %></dd>
+    <dt><%= t "admin.users.tables.email" %>:</dt>
+    <dd><%= @user.email %></dd>
+    <dt><%= t "admin.users.tables.role" %>:</dt>
+    <dd><%= @user.role %></dd>
+    <dt><%= t "admin.users.tables.phone_number" %>:</dt>
+    <dd><%= @user.phone_number %></dd>
+    <dt><%= t "admin.users.tables.address" %>:</dt>
+    <dd><%= @user.address %></dd>
+  </dl>
+  <div class="action pull-right">
+    <button type="button" class="btn btn-default" data-dismiss="modal">
+      <%= t "admin.actions.cancel" %>
+    </button>
+  </div>
+</div>
