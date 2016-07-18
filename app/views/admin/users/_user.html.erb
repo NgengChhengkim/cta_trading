@@ -1,0 +1,15 @@
+<tr>
+  <td class="td-checkbox">
+    <%= ff.check_box :id, {name: "user[id][]", checked: false,
+      class: "check-box"}, user.id, false %></td>
+
+  <td><%= user.name %></td>
+  <td><%= user.email %></td>
+  <td><%= user.role %></td>
+  <td class="td-action"><%= link_to t("admin.actions.view"),
+    admin_user_path(user), remote: true, class: "btn btn-default",
+    data: {toggle: "modal", target: "#form-modal"} %></td>
+  <td class="td-action"><%= link_to t("admin.actions.edit"),
+    edit_admin_user_path(user), remote: true, class: "btn btn-default",
+    data: {toggle: "modal", target: "#form-modal"} %></td>
+</tr>

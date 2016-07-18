@@ -1,0 +1,20 @@
+en:
+  admin:
+    users:
+      title: "Users"
+      add_user: "Add user"
+      edit_user: "Edit user"
+      user_detail: "User Detail"
+      tables:
+        name: "Name"
+        email: "Email"
+        role: "Role"
+        phone_number: "Phone number"
+        address: "Address"
+      placeholders:
+        name: "Enter name"
+        email: "Enter email"
+        phone_number: "Enter phone number"
+        role: "Enter role"
+        password: "Enter password"
+        password_confirmation: "Enter password confirmation"
