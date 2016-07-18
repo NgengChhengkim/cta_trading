@@ -41,7 +41,7 @@ class Admin::ProductsController < ApplicationController
     if products.destroy_all
       flash[:success] = flash_message "deleted"
     else
-      flash[:error] = flash "not_deleted"
+      flash[:error] = flash_message "not_deleted"
     end
     redirect_to admin_products_path
   end

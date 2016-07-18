@@ -36,7 +36,7 @@ class Admin::CategoriesController < ApplicationController
     if categories.destroy_all
       flash.now[:success] = flash_message "deleted"
     else
-      flash.now[:error] = flash "not_deleted"
+      flash.now[:error] = flash_message "not_deleted"
     end
   end
 

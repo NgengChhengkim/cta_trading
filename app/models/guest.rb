@@ -8,4 +8,6 @@ class Guest < ActiveRecord::Base
   validates :phone_number, presence: true
 
   before_save {self.email = email.downcase}
+
+  scope :find_guests, -> ids{where id: ids}
 end
