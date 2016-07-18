@@ -1,0 +1,12 @@
+<div id="admin-product">
+  <div class="bread-crumb">
+    <ol class="breadcrumb">
+      <li><%= link_to t("menu.home"), root_path %></li>
+      <li><%= link_to t("admin.promotions.title"), admin_promotions_path %></li>
+      <li class="active"><%= t "admin.promotions.new_promotion" %></li>
+    </ol>
+  </div>
+  <div class="background-form">
+    <%= render "promotion_form" %>
+  </div>
+</div>

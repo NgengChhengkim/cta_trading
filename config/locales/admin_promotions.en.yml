@@ -1,0 +1,10 @@
+en:
+  admin:
+    promotions:
+      title: "Promotions"
+      new_promotion: "New promotion"
+      tables:
+        title: "Title"
+        content: "Content"
+        picture: "Picture"
+        post_date: "Post Date"

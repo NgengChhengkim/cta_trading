@@ -1,0 +1,15 @@
+<tr>
+  <td class="td-checkbox">
+    <%= ff.check_box :id, {name: "promotion[id][]", checked: false,
+      class: "check-box"}, promotion.id, false %></td>
+  <td><%= promotion.title %></td>
+  <td><%= l promotion.created_at, format: :default %></td>
+  <td class="td-action">
+    <%= link_to t("admin.actions.view"), admin_promotion_path(promotion),
+      class: "btn btn-default" %>
+  </td>
+  <td class="td-action">
+    <%= link_to t("admin.actions.edit"), edit_admin_promotion_path(promotion),
+      class: "btn btn-default" %>
+  </td>
+</tr>

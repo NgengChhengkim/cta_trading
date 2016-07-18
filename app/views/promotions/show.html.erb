@@ -22,8 +22,7 @@
           data-layout="button_count" data-action="like" data-show-faces="true"
           data-share="true"></span>
       </div>
-      <div class="image"><%= image_tag "romano.jpg", width: Settings.image.size500,
-        class: "img-responsive" %></div>
+      <div class="image"><%= promotion_image "romano.jpg" %></div>
       <div class="promotion-content"><%= @promotion.safe_content %></div>
       <hr>
       <%= render "shared/fb_comment" %>
