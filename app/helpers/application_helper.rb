@@ -45,6 +45,10 @@ module ApplicationHelper
     image_tag image, width: Settings.image.size60, class: "media-object"
   end
 
+  def promotion_image image
+    image_tag image, width: Settings.image.size500, class: "img-responsive"
+  end
+
   def text_truncate content, length
     truncate content, length: length, omission: "...", escape: false
   end

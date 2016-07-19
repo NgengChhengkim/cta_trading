@@ -1,0 +1,33 @@
+<%= form_for [:admin, @promotion], html: {multipart: true} do |f| %>
+  <div class="row">
+    <div class="head-title">
+      <%= @promotion.new_record? ? t("admin.promotions.new_promotion") : @promotion.title %>
+    </div>
+    <hr>
+    <div class="errors"><%= render "shared/error_messages", object: @promotion %></div>
+    <div class="col-md-12">
+      <div>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-control",
+          data: Settings.validations.title %>
+      </div>
+      <div>
+        <%= f.label :content %>
+        <%= f.text_area :content, class: "ckeditor form-control" %>
+      </div>
+      <div>
+        <%= f.label :picture %><br>
+        <%= promotion_image f.object.picture_url unless f.object.new_record? %>
+        <%= f.file_field :picture, class: "form-control" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="pull-right">
+      <%= link_to t("admin.actions.cancel"), admin_promotions_path,
+        class: "btn btn-default" %>
+      <%= f.submit t("admin.actions.save"), class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>

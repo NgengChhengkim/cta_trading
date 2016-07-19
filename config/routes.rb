@@ -22,16 +22,18 @@ Rails.application.routes.draw do
   mount Sidekiq::Web, at: "/sidekiq"
 
   namespace :admin do
-    resources :categories, except: :show
-    resources :brands, except: :show
-    resources :products
-    resources :users
+    resources :categories, except: [:show, :destroy]
+    resources :brands, except: [:show, :destroy]
+    resources :products, except: :destroy
+    resources :users, except: :destroy
     resources :guests, only: [:index, :show]
+    resources :promotions, except: :destroy
 
     post "destroy_categories" => "categories#destroy"
     post "destroy_brands" => "brands#destroy"
     post "destroy_products" => "products#destroy"
     post "destroy_users" => "users#destroy"
     post "destroy_guests" => "guests#destroy"
+    post "destroy_promotions" => "promotions#destroy"
   end
 end
