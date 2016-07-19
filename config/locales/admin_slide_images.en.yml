@@ -1,0 +1,14 @@
+en:
+  admin:
+    slide_images:
+      title: "Slide Images"
+      new_slide_image: "New slide image"
+      edit_slide_image: "Edit slide image"
+      view: "View Detail"
+      tables:
+        picture: "Picture"
+        post_date: "Post Date"
+        heading1: "Heading 1"
+        heading2: "Heading 2"
+        heading3: "Heading 3"
+        heading4: "Heading 4"

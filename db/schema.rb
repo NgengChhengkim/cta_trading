@@ -124,10 +124,13 @@ ActiveRecord::Schema.define(version: 20160715212111) do
   end
 
   create_table "slide_images", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.string   "description", limit: 255
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "picture",    limit: 255
+    t.string   "heading1",   limit: 255
+    t.string   "heading2",   limit: 255
+    t.string   "heading3",   limit: 255
+    t.string   "heading4",   limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "users", force: :cascade do |t|

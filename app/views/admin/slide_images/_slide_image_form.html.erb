@@ -1,0 +1,42 @@
+<%= form_for [:admin, @slide_image], html: {multipart: true} do |f| %>
+  <div class="row">
+    <div class="head-title">
+      <%= @slide_image.new_record? ? t("admin.slide_images.new_slide_image") : t("admin.slide_images.edit_slide_image") %>
+    </div>
+    <hr>
+    <div class="errors"><%= render "shared/error_messages", object: @slide_image %></div>
+    <div class="col-md-12">
+      <div>
+        <%= f.label :picture %><br>
+        <%= promotion_image f.object.picture_url unless f.object.new_record? %>
+        <%= f.file_field :picture, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :heading1 %>
+        <%= f.text_field :heading1, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :heading2 %>
+        <%= f.text_field :heading2, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :heading3 %>
+        <%= f.text_field :heading3, class: "form-control" %>
+      </div>
+      <div>
+        <%= f.label :heading4 %>
+        <%= f.text_field :heading4, class: "form-control" %><br>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="pull-right">
+        <%= link_to t("admin.actions.cancel"), admin_slide_images_path,
+          class: "btn btn-default" %>
+        <%= f.submit t("admin.actions.save"), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+<% end %>
