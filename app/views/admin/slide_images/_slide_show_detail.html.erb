@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="head-title">
+    <%= t "admin.slide_images.view" %>
+    <%= link_to edit_admin_slide_image_path(@slide_image), class: "pull-right" do %>
+      <i class="fa fa-pencil" aria-hidden="true"></i>
+      <%= t "admin.actions.edit" %>
+    <% end %>
+  </div>
+  <hr>
+  <div class="col-md-12">
+    <dl class="dl-horizontal">
+      <dt><%= t "admin.slide_images.tables.picture" %>:</dt>
+      <dd><%= promotion_image @slide_image.picture_url %></dd>
+      <dt><%= t "admin.slide_images.tables.heading1" %>:</dt>
+      <dd><%= @slide_image.heading1 %></dd>
+      <dt><%= t "admin.slide_images.tables.heading2" %>:</dt>
+      <dd><%= @slide_image.heading2 %></dd>
+      <dt><%= t "admin.slide_images.tables.heading3" %>:</dt>
+      <dd><%= @slide_image.heading3 %></dd>
+      <dt><%= t "admin.slide_images.tables.heading4" %>:</dt>
+      <dd><%= @slide_image.heading4 %></dd>
+      <dt><%= t "admin.slide_images.tables.post_date" %>:</dt>
+      <dd><%= l @slide_image.created_at, format: :default %></dd>
+    </dl>
+  </div>
+</div>

@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     resources :users, except: :destroy
     resources :guests, only: [:index, :show]
     resources :promotions, except: :destroy
+    resources :slide_images, except: :destroy
 
     post "destroy_categories" => "categories#destroy"
     post "destroy_brands" => "brands#destroy"
@@ -35,5 +36,6 @@ Rails.application.routes.draw do
     post "destroy_users" => "users#destroy"
     post "destroy_guests" => "guests#destroy"
     post "destroy_promotions" => "promotions#destroy"
+    post "destroy_slide_images" => "slide_images#destroy"
   end
 end

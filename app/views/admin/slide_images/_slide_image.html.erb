@@ -1,0 +1,15 @@
+<tr>
+  <td class="td-checkbox">
+    <%= ff.check_box :id, {name: "slide_image[id][]", checked: false,
+      class: "check-box"}, slide_image.id, false %></td>
+  <td><%= image_product_table slide_image.picture_url %></td>
+  <td><%= l slide_image.created_at, format: :default %></td>
+  <td class="td-action">
+    <%= link_to t("admin.actions.view"), admin_slide_image_path(slide_image),
+      class: "btn btn-default" %>
+  </td>
+  <td class="td-action">
+    <%= link_to t("admin.actions.edit"), edit_admin_slide_image_path(slide_image),
+      class: "btn btn-default" %>
+  </td>
+</tr>
