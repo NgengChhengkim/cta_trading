@@ -38,7 +38,7 @@ class Admin::UsersController < ApplicationController
     if users.destroy_all
       flash.now[:success] = flash_message "deleted"
     else
-      flash.now[:error] = flash "not_deleted"
+      flash.now[:error] = flash_message "not_deleted"
     end
   end
 

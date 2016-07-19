@@ -26,10 +26,12 @@ Rails.application.routes.draw do
     resources :brands, except: :show
     resources :products
     resources :users
+    resources :guests, only: [:index, :show]
 
     post "destroy_categories" => "categories#destroy"
     post "destroy_brands" => "brands#destroy"
     post "destroy_products" => "products#destroy"
     post "destroy_users" => "users#destroy"
+    post "destroy_guests" => "guests#destroy"
   end
 end

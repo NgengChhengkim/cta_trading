@@ -1,0 +1,11 @@
+<div class="bread-crumb">
+  <ol class="breadcrumb">
+    <li><%= link_to t("menu.home"), root_path %></li>
+    <li class="active"><%= t "admin.guests.title" %></li>
+  </ol>
+</div>
+<div class="infor">
+  <%= render "infor" %>
+</div>
+
+<%= render "admin/shared/form_modal" %>
