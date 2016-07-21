@@ -6,79 +6,63 @@
       </div>
       <div class="pull-left info">
         <p>Alexander Pierce</p>
-        <a href="#"><i class="fa fa-circle text-success"></i>Online</a>
+        <a href="#"><i class="fa fa-circle text-success"></i>
+        <%= t "labels.online" %></a>
       </div>
     </div>
 
     <ul class="sidebar-menu">
       <li class="treeview">
         <%= link_to "#" do %>
-          <i class="fa fa-cart-arrow-down text-aqua"></i><span>Product Carts</span>
+          <i class="fa fa-cart-arrow-down text-aqua"></i><span>Invoices</span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-product-hunt text-aqua"></i><span>Products</span>
+        <%= link_to admin_categories_path do %>
+          <i class="fa fa-shopping-bag text-green"></i>
+          <span><%= t "categories.category" %></span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-object-group text-green"></i><span>Categories</span>
+        <%= link_to admin_brands_path do %>
+          <i class="fa fa-certificate text-muted"></i>
+          <span><%= t "admin.brands.title" %></span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-user-plus text-yellow"></i><span>Suppliers</span>
+        <%= link_to admin_products_path do %>
+          <i class="fa fa-product-hunt text-aqua"></i>
+          <span><%= t "admin.products.title" %></span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-globe text-green"></i><span>Countries</span>
+        <%= link_to admin_users_path do %>
+          <i class="fa fa-user text-yellow"></i>
+          <span><%= t "admin.users.title" %></span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-dashboard text-muted"></i><span>Brands</span>
+        <%= link_to admin_guests_path do %>
+          <i class="fa fa-user-secret text-yellow"></i>
+          <span><%= t "admin.guests.title" %></span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-dashboard text-red"></i><span>Promotions</span>
+        <%= link_to admin_promotions_path do %>
+          <i class="fa fa-dashboard text-red"></i>
+          <span><%= t "admin.promotions.title" %></span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-user text-yellow"></i><span>Users</span>
+        <%= link_to admin_slide_images_path do %>
+          <i class="fa fa-picture-o text-light-blue"></i>
+          <span><%= t "admin.slide_images.title" %></span>
         <% end %>
       </li>
       <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-user-secret text-yellow"></i><span>Guests</span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-envelope text-aqua"></i><span>Contacts</span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-picture-o text-light-blue"></i><span>Images</span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-film text-light-blue"></i><span>Slide Images</span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-picture-o text-light-blue"></i><span>Images</span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-film text-light-blue"></i><span>Slide Images</span>
+        <%= link_to admin_contacts_path do %>
+          <i class="fa fa-phone-square text-light-blue"></i>
+          <span><%= t "admin.contacts.title" %></span>
         <% end %>
       </li>
     </ul>

@@ -1,6 +1,6 @@
 <%= form_for :guests, url: admin_destroy_guests_path, remote: true do |f| %>
   <div class="head-title">
-    <span><%= t "admin.brands.title" %></span>
+    <span><%= t "admin.guests.title" %></span>
 
     <span class="pull-right">
       <%= f.submit t("admin.actions.delete"), data: {confirm: t("messages.delete_confirm")},

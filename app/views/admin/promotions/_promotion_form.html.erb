@@ -20,14 +20,11 @@
         <%= promotion_image f.object.picture_url unless f.object.new_record? %>
         <%= f.file_field :picture, class: "form-control" %>
       </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="pull-right">
-      <%= link_to t("admin.actions.cancel"), admin_promotions_path,
-        class: "btn btn-default" %>
-      <%= f.submit t("admin.actions.save"), class: "btn btn-primary" %>
+      <div class="pull-right">
+        <%= link_to t("admin.actions.cancel"), admin_promotions_path,
+          class: "btn btn-default" %>
+        <%= f.submit t("admin.actions.save"), class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 <% end %>

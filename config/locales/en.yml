@@ -1,6 +1,7 @@
 en:
   brand: "CTA"
   site: "CTA Trading"
+  admin_site: "Admin CTA Trading"
   keywords: "trading, perfume, online shopping, beauty shopping, facial, body, shampoo"
   description: "First rank Beauty online shopping in Cambodia"
   menu:
@@ -31,6 +32,7 @@ en:
     search_result: "Search Result"
     product_number: "product"
     found: "found"
+    online: "online"
   time:
     formats:
       default: "%d-%m-%Y %H:%M"

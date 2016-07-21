@@ -39,6 +39,9 @@ defaults: &defaults
     title:
       "validation": "required"
       "validation-error-msg-required": <%= I18n.t "errors.required", data: "Title" %>
+    address:
+      "validation": "required"
+      "validation-error-msg-required": <%= I18n.t "errors.required", data: "Address" %>
   paginate:
     per_page: 15
     related_product: 6
