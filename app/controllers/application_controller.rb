@@ -24,6 +24,8 @@ class ApplicationController < ActionController::Base
     end
     cookies.delete :product_cart
     stored_location_for(resource) || root_path
+
+    current_user.customer? ? root_path : admin_root_path
   end
 
   def after_sign_out_path_for resource
@@ -31,8 +33,23 @@ class ApplicationController < ActionController::Base
     root_path
   end
 
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:alert] = exception.message
+    if current_user.present? && current_user.editor?
+      redirect_to admin_root_path
+    elsif
+      redirect_to root_path
+    end
+  end
 
   protected
+
+  def current_ability
+    controller_name_segments = params[:controller].split('/')
+    controller_name_segments.pop
+    controller_namespace = controller_name_segments.join('/').camelize
+    Ability.new(current_user, controller_namespace)
+  end
 
   def layout_by_resource
     if self.class.parent == Admin

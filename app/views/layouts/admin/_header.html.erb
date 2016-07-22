@@ -30,10 +30,12 @@
             </li>
             <li class="user-footer">
               <div class="pull-left">
-                <a href="#" class="btn btn-default btn-flat">Profile</a>
+                <%= link_to t("menu.profile"), edit_user_registration_path,
+                  class: "btn btn-default btn-flat" %>
               </div>
               <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                <%= link_to t("menu.sign_out"), destroy_user_session_path,
+                  method: :delete, class: "btn btn-default btn-flat" %>
               </div>
             </li>
           </ul>
