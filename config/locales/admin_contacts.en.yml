@@ -1,0 +1,9 @@
+en:
+  admin:
+    contacts:
+      title: "Contact Us"
+      address: "Address"
+      email: "Email"
+      phone_number: "Phone number"
+      content: "Content"
+      edit: "Edit contact"

@@ -29,6 +29,7 @@ Rails.application.routes.draw do
     resources :guests, only: [:index, :show]
     resources :promotions, except: :destroy
     resources :slide_images, except: :destroy
+    resources :contacts, only: [:index, :edit, :update]
 
     post "destroy_categories" => "categories#destroy"
     post "destroy_brands" => "brands#destroy"

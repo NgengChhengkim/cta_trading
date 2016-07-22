@@ -1,0 +1,46 @@
+<div id="admin-product">
+  <div class="bread-crumb">
+    <ol class="breadcrumb">
+      <li><%= link_to t("menu.home"), root_path %></li>
+      <li><%= link_to t("admin.contacts.title"), admin_contacts_path %></li>
+      <li class="active"><%= t "admin.contacts.edit" %></li>
+    </ol>
+  </div>
+  <div class="background-form">
+    <%= form_for [:admin, @contact] do |f| %>
+      <div class="row">
+        <div class="head-title">
+          <%= t "admin.contacts.edit" %>
+        </div>
+        <hr>
+        <div class="errors"><%= render "shared/error_messages", object: @contact %></div>
+        <div class="col-md-12">
+          <div>
+            <%= f.label :address %>
+            <%= f.text_field :address, class: "form-control",
+              data: Settings.validations.address %>
+          </div>
+          <div>
+            <%= f.label :email %>
+            <%= f.text_field :email, class: "form-control",
+              data: Settings.validations.email %>
+          </div>
+          <div>
+            <%= f.label :phone_number %>
+            <%= f.text_field :phone_number, class: "form-control",
+              data: Settings.validations.phone_number %>
+          </div>
+          <div>
+            <%= f.label :content %>
+            <%= f.text_area :content, class: "ckeditor form-control" %><br>
+          </div>
+          <div class="pull-right">
+            <%= link_to t("admin.actions.cancel"), admin_contacts_path,
+              class: "btn btn-default" %>
+            <%= f.submit t("admin.actions.save"), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

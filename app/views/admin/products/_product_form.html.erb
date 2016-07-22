@@ -57,31 +57,33 @@
   </div>
 
   <div class="row">
-    <div class="head-title">
-      <%= t "admin.products.more_images" %> &nbsp;
-      <%= f.link_to_add "", :images, data: {target: "#images-upload"},
-        class: "fa fa-plus-square", title: t("admin.products.actions.add_image") %>
-    </div>
-    <div class="image-list">
-      <table id="images-upload" class="table">
-        <tbody>
-          <%= f.fields_for :images, wrapper: false do |ff| %>
-            <tr class="fields">
-              <td>
-                <%= image_product_table ff.object.name_url unless ff.object.new_record? %>
-                <%= ff.file_field :name, class: "form-control" %>
-              </td>
-              <td><%= ff.link_to_remove "", class: "fa fa-times",
-                title: t("admin.products.actions.remove_image") %></td>
-            </tr>
-          <% end %>
-        </tbody>
-      </table>
-    </div>
-    <div class="pull-right">
-      <%= link_to t("admin.actions.cancel"), admin_products_path,
-        class: "btn btn-default" %>
-      <%= f.submit t("admin.actions.save"), class: "btn btn-primary" %>
+    <div class="col-md-12">
+      <div class="head-title">
+        <%= t "admin.products.more_images" %> &nbsp;
+        <%= f.link_to_add "", :images, data: {target: "#images-upload"},
+          class: "fa fa-plus-square", title: t("admin.products.actions.add_image") %>
+      </div>
+      <div class="image-list">
+        <table id="images-upload" class="table">
+          <tbody>
+            <%= f.fields_for :images, wrapper: false do |ff| %>
+              <tr class="fields">
+                <td>
+                  <%= image_product_table ff.object.name_url unless ff.object.new_record? %>
+                  <%= ff.file_field :name, class: "form-control" %>
+                </td>
+                <td><%= ff.link_to_remove "", class: "fa fa-times",
+                  title: t("admin.products.actions.remove_image") %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+      <div class="pull-right">
+        <%= link_to t("admin.actions.cancel"), admin_products_path,
+          class: "btn btn-default" %>
+        <%= f.submit t("admin.actions.save"), class: "btn btn-primary" %>
+      </div>
     </div>
   </div>
 <% end %>
