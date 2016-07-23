@@ -1,0 +1,26 @@
+<% bold_class = set_bold invoice %>
+
+<td class="td-checkbox">
+  <%= check_box_tag "invoice[id][]", invoice.id, false, class: "check-box" %></td>
+<td class="<%= bold_class %>">
+  <% if invoice.seen? %>
+    <%= link_to admin_invoice_path(invoice), method: :patch, remote: true,
+      title: t("admin.invoices.mark_as_unread") do %>
+      <i class="fa fa-circle-o" aria-hidden="true"></i> &nbsp;
+    <% end %>
+  <% else %>
+    <%= link_to admin_invoice_path(invoice), method: :patch, remote: true,
+      title: t("admin.invoices.mark_as_read") do %>
+      <i class="fa fa-circle" aria-hidden="true"></i> &nbsp;
+    <% end %>
+  <% end %>
+  <%= invoice.name %>
+</td>
+<td class="<%= bold_class %>">
+  <%= number_to_currency invoice.product_invoices.total_price %>
+</td>
+<td class="<%= bold_class %>"><%= l invoice.created_at, format: :default %></td>
+<td class="td-action">
+  <%= link_to t("admin.actions.view"), admin_invoice_path(invoice),
+    class: "btn btn-default #{bold_class}" %>
+</td>

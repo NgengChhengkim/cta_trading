@@ -61,4 +61,8 @@ module ApplicationHelper
   def flash_message flash_type
     t "flashs.#{flash_type}", model_name: controller_name.classify
   end
+
+  def set_bold invoice
+    "font-bold" unless invoice.seen?
+  end
 end

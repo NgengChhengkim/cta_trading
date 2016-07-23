@@ -4,9 +4,8 @@ class ProductInvoicesController < ApplicationController
   before_action :authenticate_user!, only: [:index, :new, :create]
 
   def index
-    @product_invoices = @invoice.product_invoices.includes(product: :category)
-      .paginate(page: params[:page], per_page: Settings.paginate.per_page)
-      .order created_at: :desc
+    @product_invoices = @invoice.product_invoices.select_product_invoices
+      .paginate page: params[:page], per_page: Settings.paginate.per_page
   end
 
   def new

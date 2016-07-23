@@ -30,6 +30,7 @@ Rails.application.routes.draw do
     resources :promotions, except: :destroy
     resources :slide_images, except: :destroy
     resources :contacts, only: [:index, :edit, :update]
+    resources :invoices, only: [:index, :show, :update]
 
     post "destroy_categories" => "categories#destroy"
     post "destroy_brands" => "brands#destroy"
@@ -38,5 +39,6 @@ Rails.application.routes.draw do
     post "destroy_guests" => "guests#destroy"
     post "destroy_promotions" => "promotions#destroy"
     post "destroy_slide_images" => "slide_images#destroy"
+    post "destroy_invoices" => "invoices#destroy"
   end
 end

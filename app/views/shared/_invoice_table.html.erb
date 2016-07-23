@@ -1,0 +1,15 @@
+<table class="table tbl-cart">
+  <thead>
+    <tr>
+      <th class="item"><%= t "cart.tables.item" %></th>
+      <th class="name"></th>
+      <th class="price"><%= t "cart.tables.price" %></th>
+      <th class="quantity"><%= t "cart.tables.quantity" %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render partial: "shared/product_invoice",
+      collection: @product_invoices, as: :product_invoice,
+      locals: {is_invoice: true} %>
+  </tbody>
+</table>

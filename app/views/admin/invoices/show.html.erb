@@ -1,0 +1,28 @@
+<div id="admin-product">
+  <div class="bread-crumb">
+    <ol class="breadcrumb">
+      <li><%= link_to t("menu.home"), root_path %></li>
+      <li><%= link_to t("admin.invoices.title"), admin_invoices_path %></li>
+      <li class="active"><%= @invoice.name %></li>
+    </ol>
+  </div>
+  <div class="background-form">
+
+    <div class="row">
+      <div class="head-title"><%= @invoice.name %></div>
+      <hr>
+      <div class="col-md-12">
+        <div class="order"><%= render "shared/purchaser_information" %></div>
+        <%= render "shared/invoice_table" %>
+        <div class="pull-right">
+          <strong>
+            <%= t "cart.total_price" %> &nbsp;
+            <%= number_to_currency @invoice.product_invoices.total_price %>
+          </strong>
+        </div>
+        <div class="pull-right"><%= will_paginate @product_invoices %></div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -72,8 +72,9 @@ ActiveRecord::Schema.define(version: 20160715212111) do
   create_table "invoices", force: :cascade do |t|
     t.integer  "customer_id",   limit: 4
     t.string   "customer_type", limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.boolean  "seen",                      default: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   create_table "product_carts", force: :cascade do |t|

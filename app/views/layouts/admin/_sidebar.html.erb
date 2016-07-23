@@ -13,8 +13,9 @@
 
     <ul class="sidebar-menu">
       <li class="treeview">
-        <%= link_to "#" do %>
-          <i class="fa fa-cart-arrow-down text-aqua"></i><span>Invoices</span>
+        <%= link_to admin_invoices_path do %>
+          <i class="fa fa-cart-arrow-down text-aqua"></i>
+          <span><%= t "admin.invoices.title" %></span>
         <% end %>
       </li>
       <li class="treeview">
