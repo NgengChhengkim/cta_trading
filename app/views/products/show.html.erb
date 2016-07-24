@@ -1,7 +1,7 @@
 <% provide :title, @product.name %>
 <% provide :name, @product.name %>
 <% provide :description, @product.safe_description %>
-<% provide :image, asset_url("romano.jpg") %>
+<% provide :image, get_full_path(@product.cover_image_url) %>
 
 <div id="product-show" class="container">
   <div class="row">
@@ -24,27 +24,25 @@
           <div id="slider" class="flexslider">
             <ul class="slides">
               <li>
-                <%= image_tag "romano.jpg", class: "img-responsive" %>
+                <%= image_tag @product.cover_image_url, class: "img-responsive" %>
               </li>
-              <li>
-                <%= image_tag "romano2.jpg", class: "img-responsive" %>
-              </li>
-              <li>
-                <%= image_tag "romano3.jpg", class: "img-responsive" %>
-              </li>
+              <% @images.each do |image| %>
+                <li>
+                  <%= image_tag image.name_url, class: "img-responsive" %>
+                </li>
+              <% end %>
             </ul>
           </div>
           <div id="carousel" class="flexslider">
             <ul class="slides">
               <li>
-                <%= image_tag "romano.jpg", class: "img-responsive" %>
+                <%= image_tag @product.cover_image_url, class: "img-responsive" %>
               </li>
-              <li>
-                <%= image_tag "romano2.jpg", class: "img-responsive" %>
-              </li>
-              <li>
-                <%= image_tag "romano3.jpg", class: "img-responsive" %>
-              </li>
+              <% @images.each do |image| %>
+                <li>
+                  <%= image_tag image.name_url, class: "img-responsive" %>
+                </li>
+              <% end %>
             </ul>
           </div>
 
@@ -59,14 +57,6 @@
             <tr>
               <td><%= t "product.brand" %></td>
               <td><%= link_to @product.brand_name, @product.brand %></td>
-            </tr>
-            <tr>
-              <td><%= t "product.weight" %></td>
-              <td><%= @product.weight %></td>
-            </tr>
-            <tr>
-              <td><%= t "product.smell" %></td>
-              <td><%= @product.smell %></td>
             </tr>
             <tr>
               <td><%= t "product.price" %></td>
@@ -102,14 +92,7 @@
           <%= @product.safe_description %>
         </div>
 
-        <hr>
-        <div class="usage">
-          <div class="title"><%= t "product.usage" %></div>
-          <%= @product.safe_usage %>
-        </div>
-
         <%= render "shared/fb_comment" %>
-
       </div>
 
     </div>

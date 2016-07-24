@@ -1,5 +1,5 @@
 <tr class="guest-cart product-cart cart-<%= product.id %>">
-  <td><%= link_to image_product_table("bachi.jpg"), product,
+  <td><%= link_to image_product_table(product.cover_image_url), product,
     "data-no-turbolink": true %></td>
   <td>
     <div class="title"><%= link_to product.name, product,

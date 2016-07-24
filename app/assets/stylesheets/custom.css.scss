@@ -71,7 +71,7 @@
   padding: 10px;
   line-height: 20px;
   color: #545351;
-  font-size: 15px;
+  font-size: 14px;
   border: 1px solid #f6f6f6;
   .discount {
     position: absolute;
@@ -84,33 +84,26 @@
     height: 150px;
   }
   .product-content {
-    .title {
-      height: 20px;
-      overflow-y: hidden;
+    line-height: 26px;
+    .title, .type, .price {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       a {
         color: #545351;
       }
     }
-    .type {
-      height: 20px;
-      overflow-y: hidden;
-      margin-top: 5px;
-    }
     .price {
-      height: 20px;
-      overflow-y: hidden;
-      margin-top: 5px;
       .discount-price {
         color: RED;
       }
       .net-price {
         text-decoration: line-through;
         padding-left: 5px;
+        color: #999;
       }
     }
-
     .add-to-cart, .btn-add-to-cart {
-      margin-top: 5px;
       padding: 2px 6px;
     }
   }
@@ -235,4 +228,10 @@ input[type="file"], input[type="file"]:focus {
 
 .dl-horizontal dt {
   text-align: left;
+}
+
+#promotion {
+  img {
+    @extend .img-responsive;
+  }
 }

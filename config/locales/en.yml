@@ -13,6 +13,7 @@ en:
     register: "Register"
     orders: "My Invoices"
     profile: "Profile"
+    admin_page: "Admin page"
     sign_out: "Sign out"
   actions:
     add_to_cart: "Add to cart"

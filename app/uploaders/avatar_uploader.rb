@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-class ProductImageUploader < CarrierWave::Uploader::Base
+class AvatarUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
@@ -18,13 +18,13 @@ class ProductImageUploader < CarrierWave::Uploader::Base
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   def default_url
-    "default_product.png"
+    "user.jpg"
   end
 
   # Process files as they are uploaded:
+  process resize_to_fill: [225, 225]
   # process :scale => [200, 300]
-  process resize_to_fill: [400, 400]
-  # process resize_to_fit: [600, 600]
+  #
   # def scale(width, height)
   #   # do something
   # end

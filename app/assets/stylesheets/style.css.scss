@@ -48,7 +48,10 @@ h1,h2,h3,h4,h5,h6,label,p{
   background-color: white;
 }
 .navbar-collapse.in {
-  overflow: hidden;
+  // overflow: hidden;
+}
+.navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
+  max-height: none;
 }
 .navbar-toggle .icon-bar {
   display: block;
@@ -70,6 +73,11 @@ h1,h2,h3,h4,h5,h6,label,p{
 .navbar-default .navbar-brand {
   font-weight: bold;
 }
+
+.avatar-dropdown {
+  padding: 10px !important;
+}
+
 .cart, .search {
   height: 50px;
 }
@@ -298,7 +306,7 @@ p.footer-class a:hover{
   color:  #B2B2B2;
 }
 .footer-bottom {
-    padding: 4em 0;
+    padding: 1em 0;
     background:#252323;
 }
 /*--//footer--*/
