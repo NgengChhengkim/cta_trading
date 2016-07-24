@@ -15,6 +15,12 @@ $(document).on("page:update", function(){
       }
     });
   }
+
+  $(".navbar .menu").slimscroll({
+    height: "200px",
+    alwaysVisible: false,
+    size: "5px"
+  });
 });
 
 $(document).on("page:change", function(){

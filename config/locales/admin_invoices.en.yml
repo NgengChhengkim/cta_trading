@@ -1,0 +1,12 @@
+en:
+  admin:
+    invoices:
+      title: "Invoices"
+      mark_as_read: "Mark as read"
+      mark_as_unread: "Mark as unread"
+      you_have: "You have"
+      new_invoice: "new invoice"
+      tables:
+        name: "Name"
+        total_price: "Total Price"
+        date: "Date"

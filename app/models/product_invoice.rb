@@ -11,4 +11,6 @@ class ProductInvoice < ActiveRecord::Base
   scope :find_by_user, -> user{joins(:invoice)
     .where("invoices.customer_id = ? and customer_type = 'User'", user)
     .includes product: :category}
+
+  scope :select_product_invoices, ->{includes product: :category}
 end

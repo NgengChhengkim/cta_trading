@@ -16,21 +16,7 @@
   </div>
   <div class="row">
     <div class="col-md-8 check-out main-background">
-      <table class="table tbl-cart">
-        <thead>
-          <tr>
-            <th class="item"><%= t "cart.tables.item" %></th>
-            <th class="name"></th>
-            <th class="price"><%= t "cart.tables.price" %></th>
-            <th class="quantity"><%= t "cart.tables.quantity" %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render partial: "shared/product_invoice",
-            collection: @product_invoices, as: :product_invoice,
-            locals: {is_invoice: true} %>
-        </tbody>
-      </table>
+      <%= render "shared/invoice_table" %>
     </div>
     <div class="col-md-4 no-padding-right">
       <div class="order main-background">
@@ -41,19 +27,7 @@
           <span class="total"></span>
         </div>
         <hr>
-        <div class="order-title"><%= t "cart.order_information" %></div>
-        <dl class="dl-horizontal">
-          <dt><%= t "product_invoices.invoice_info.invoice_id" %></dt>
-          <dd><%= @invoice.id %></dd>
-          <dt><%= t "product_invoices.invoice_info.name" %></dt>
-          <dd><%= @user.name %></dd>
-          <dt><%= t "product_invoices.invoice_info.email" %></dt>
-          <dd><%= @user.email %></dd>
-          <dt><%= t "product_invoices.invoice_info.phone_number" %></dt>
-          <dd><%= @user.phone_number %></dd>
-          <dt><%= t "product_invoices.invoice_info.address" %></dt>
-          <dd><%= @user.address %></dd>
-        </dl>
+        <%= render "shared/purchaser_information" %>
       </div>
     </div>
   </div>
