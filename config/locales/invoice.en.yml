@@ -5,3 +5,7 @@ en:
     total: "Total: %{total}"
     actions:
       view: "View"
+    tables:
+      name: "Name"
+      total_price: "Total Price"
+      date: "Date"

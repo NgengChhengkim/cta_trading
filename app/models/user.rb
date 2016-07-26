@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  mount_uploader :avatar, AvatarUploader
+
   devise :omniauthable, :omniauth_providers => [:google_oauth2, :facebook]
 
   has_many :invoices, as: :customer, dependent: :destroy
@@ -24,7 +26,7 @@ class User < ActiveRecord::Base
       unless user
         password = Devise.friendly_token[0,20]
         user = User.new name: data.name, email: data.email, password: password,
-          password_confirmation: password
+          password_confirmation: password, remote_avatar_url: data.image
         user.save validate: false
       end
       user

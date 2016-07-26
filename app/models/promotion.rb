@@ -1,5 +1,5 @@
 class Promotion < ActiveRecord::Base
-  mount_uploader :picture, ProductImageUploader
+  mount_uploader :picture, PromotionUploader
 
   validates :title, presence: true
   validates :content, presence: true

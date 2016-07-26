@@ -6,11 +6,12 @@
       </div>
     <% end %>
     <div class="image">
-      <%= link_to image_product_list("bachi.jpg"), product, "data-no-turbolink": true %>
+      <%= link_to image_product_list(product.cover_image_url), product,
+        "data-no-turbolink": true %>
     </div>
     <div class="product-content">
       <div class="title" title="<%= product.name %>">
-        <%= link_to text_truncate(product.name, 25), product, "data-no-turbolink": true %>
+        <%= link_to product.name, product, "data-no-turbolink": true %>
       </div>
       <div class="type" title="<%= product.category_name %>"><%= product.category_name %></div>
       <div class="price">

@@ -46,7 +46,11 @@ module ApplicationHelper
   end
 
   def promotion_image image
-    image_tag image, width: Settings.image.size500, class: "img-responsive"
+    image_tag image, class: "img-responsive"
+  end
+
+  def avatar_image
+    image_tag current_user.avatar_url, size: "30x30", class: "img-circle"
   end
 
   def text_truncate content, length
@@ -64,5 +68,9 @@ module ApplicationHelper
 
   def set_bold invoice
     "font-bold" unless invoice.seen?
+  end
+
+  def get_full_path image
+    "#{request.protocol}#{request.host}#{image}"
   end
 end

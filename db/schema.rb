@@ -140,6 +140,7 @@ ActiveRecord::Schema.define(version: 20160715212111) do
     t.string   "address",                limit: 255
     t.string   "phone_number",           limit: 255
     t.string   "email",                  limit: 255, default: "", null: false
+    t.string   "avatar",                 limit: 255
     t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
