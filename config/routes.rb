@@ -13,15 +13,14 @@ Rails.application.routes.draw do
   resources :products, only: :show
   resources :promotions
   resources :brands, only: :show
-  resources :invoices do
-    resources :product_invoices, only: :index
-  end
+  resources :invoices, only: [:index, :show]
 
   get "search" => "searches#index"
   get "contact" => "static_pages#contact"
   mount Sidekiq::Web, at: "/sidekiq"
 
   namespace :admin do
+    root to: "invoices#index"
     resources :categories, except: [:show, :destroy]
     resources :brands, except: [:show, :destroy]
     resources :products, except: :destroy

@@ -1,12 +1,7 @@
 class ProductInvoicesController < ApplicationController
   load_and_authorize_resource
   load_and_authorize_resource :invoice
-  before_action :authenticate_user!, only: [:index, :new, :create]
-
-  def index
-    @product_invoices = @invoice.product_invoices.select_product_invoices
-      .paginate page: params[:page], per_page: Settings.paginate.per_page
-  end
+  before_action :authenticate_user!, only: [:new, :create]
 
   def new
     redirect_to product_carts_path
