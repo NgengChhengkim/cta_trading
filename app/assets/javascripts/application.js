@@ -26,6 +26,7 @@
 //= require simpleCart.min
 //= require wow.min
 //= require js.cookie
+//= require jquery.lockfixed
 //= require jquery-number-format
 //= require jquery.form-validator
 //= require facebook

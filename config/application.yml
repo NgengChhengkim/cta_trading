@@ -43,10 +43,10 @@ defaults: &defaults
       "validation": "required"
       "validation-error-msg-required": <%= I18n.t "errors.required", data: "Address" %>
   paginate:
-    per_page: 15
+    per_page: 16
     related_product: 6
     other_promotion: 6
-    hot_product: 10
+    hot_product: 8
     per_page_10: 10
   image:
     size60: 60

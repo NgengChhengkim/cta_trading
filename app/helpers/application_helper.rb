@@ -57,9 +57,8 @@ module ApplicationHelper
     truncate content, length: length, omission: "...", escape: false
   end
 
-  def active_menu controller_name, action_name, id = nil
-    controller.controller_name == controller_name &&
-      controller.action_name == action_name && params[:id].to_i == id.to_i ? "active" : ""
+  def active_panel params_id, id
+    "active" if params_id == id
   end
 
   def flash_message flash_type

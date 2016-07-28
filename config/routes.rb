@@ -9,10 +9,14 @@ Rails.application.routes.draw do
   resources :product_carts, only: [:index, :create, :update, :destroy]
   resources :product_invoices, only: [:new, :create, :destroy]
   resources :guests, only: :create
-  resources :categories, only: :show
+  resources :categories, only: :show do
+    resources :brands, only: :show
+  end
   resources :products, only: :show
   resources :promotions
-  resources :brands, only: :show
+  resources :brands, only: :show do
+    resources :categories, only: :show
+  end
   resources :invoices, only: [:index, :show]
 
   get "search" => "searches#index"

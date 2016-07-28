@@ -1,0 +1,24 @@
+#categories, #brands {
+  .right-bar-panel {
+    background-color: WHITE;
+    padding: 10px;
+
+    ul {
+      list-style: none;
+      margin-top: 10px;
+      font-size: 14px;
+
+      li {
+        padding: 5px 10px;
+      }
+      .active {
+        margin: 5px 0px;
+        background-color: #f4f4f4;
+        border-right: 4px solid #fa03bb;
+      }
+      .fa-certificate {
+        color: #fa03bb;
+      }
+    }
+  }
+}

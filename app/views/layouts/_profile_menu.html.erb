@@ -4,10 +4,10 @@
     <%= avatar_image %>
     <%= current_user.name %><span class="caret"></span></a>
   <ul class="dropdown-menu">
-    <li><%= link_to t("menu.orders"), invoices_path if current_user.customer? %></li>
     <li>
       <%= link_to t("menu.admin_page"), admin_invoices_path unless current_user.customer? %>
     </li>
+    <li><%= link_to t("menu.orders"), invoices_path %></li>
     <li><%= link_to t("menu.profile"), edit_user_registration_path %></li>
     <li role="separator" class="divider"></li>
     <li><%= link_to t("menu.sign_out"),  destroy_user_session_path,

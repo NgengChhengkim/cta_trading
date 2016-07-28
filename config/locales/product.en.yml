@@ -2,6 +2,8 @@ en:
   product:
     brand: "Brand:"
     category: "Category:"
+    brands: "Brands"
+    category: "Categories"
     weight: "Weight:"
     smell: "Smell:"
     price: "Price"

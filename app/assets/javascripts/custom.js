@@ -66,4 +66,6 @@ $(document).on("page:change", function() {
     });
   }
 
+  $.lockfixed(".right-bar-panel", {offset: {top: 40, bottom: $(".footer").height() + 50}});
+
 });

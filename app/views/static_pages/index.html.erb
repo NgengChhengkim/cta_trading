@@ -3,8 +3,8 @@
 <%= render "shared/banner" %>
 
 <div class="container main-background">
-  <div class="head-title">Hot Products</div>
+  <div class="head-title"><%= t "labels.hot_products" %></div>
   <div class="row">
-    <%= render "shared/products" %>
+    <%= render partial: "shared/products", collection: @products, as: :product %>
   </div>
 </div>
