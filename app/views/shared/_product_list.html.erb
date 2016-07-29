@@ -1,21 +1,21 @@
-  <% if @products.present? %>
-    <div class="row category-products">
-      <%= render partial: "shared/products", collection: @products, as: :product %>
-    </div>
-    <div class="load-more">
-      <% if @products.next_page %>
-        <%= link_to "javascript:void(0)", class: "btn-load-more" do %>
-          <%= t "actions.load_more" %> &nbsp;
-          <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
-        <% end %>
+<% if @products.present? %>
+  <div class="row category-products">
+    <%= render partial: "shared/products", collection: @products, as: :product %>
+  </div>
+  <div class="load-more">
+    <% if @products.next_page %>
+      <%= link_to "javascript:void(0)", class: "btn-load-more" do %>
+        <%= t "actions.load_more" %> &nbsp;
+        <i class="fa fa-arrow-circle-down" aria-hidden="true"></i>
       <% end %>
-      <div class="loading" hidden>
-        <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
-        <span class="sr-only"><%= t "labels.loading" %></span>
-      </div>
-      <div hidden><%= will_paginate @products %></div>
+    <% end %>
+    <div class="loading" hidden>
+      <i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+      <span class="sr-only"><%= t "labels.loading" %></span>
     </div>
-  <% else %>
-    <div class="empty-cart"><%= t "category.empty_category" %></div>
-  <% end %>
-
+    <div hidden><%= will_paginate @products %></div>
+  </div>
+  <%= render "shared/modal_cart" %>
+<% else %>
+  <div class="empty-cart"><%= t "category.empty_category" %></div>
+<% end %>
