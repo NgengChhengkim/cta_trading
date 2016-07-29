@@ -1,11 +1,41 @@
 <% provide :title, @brand.name %>
 
-<div class="container main-background">
-  <ol class="breadcrumb">
-    <li><%= link_to t("menu.home"), root_path %></li>
-    <li class="active"><%= @brand.name %></li>
-  </ol>
+<div id="brands" class="container">
+  <div class="row">
 
-  <div class="head-title"><%= @brand.name %></div>
-  <%= render "shared/product_list" %>
+    <div class="col-md-9 main-background">
+      <ol class="breadcrumb">
+        <li><%= link_to t("menu.home"), root_path %></li>
+        <li class="active"><%= @brand.name %></li>
+      </ol>
+      <div class="head-title">
+        <%= @brand.name %>
+        <span class="sub-title"><%= @category_name %></span>
+      </div>
+      <%= render "shared/product_list" %>
+    </div>
+
+    <div class="col-md-3 no-padding-right">
+      <div class="right-bar-panel main-background">
+        <div class="small-head-title"><%= t "product.categories" %></div>
+        <ul>
+          <%= link_to @brand do %>
+            <li class="<%= active_panel params[:category_id].to_i, 0 %>">
+              <i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;
+              <%= t "labels.all_categories" %>
+            </li>
+          <% end %>
+          <% @categories.each do |category| %>
+            <%= link_to [category, @brand] do %>
+              <li class="<%= active_panel params[:category_id].to_i, category.id %>">
+                <i class="fa fa-certificate" aria-hidden="true"></i> &nbsp;
+                <%= category.name %>
+              </li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+
+  </div>
 </div>

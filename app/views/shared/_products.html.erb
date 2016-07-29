@@ -1,5 +1,26 @@
-<% if user_signed_in? %>
-  <%= render partial: "shared/user_product", collection: @products, as: :product %>
-<% else %>
-  <%= render partial: "shared/guest_product", collection: @products, as: :product %>
-<% end %>
+<div class="col-md-3 no-padding md3">
+  <div class="products">
+    <% if product.is_discount? %>
+      <div class="discount label label-success">
+        <%= "-#{percentage_format product.discount}" %>
+      </div>
+    <% end %>
+    <div class="image">
+      <%= link_to image_product_list(product.cover_image_url), product,
+        "data-no-turbolink": true %>
+    </div>
+    <div class="product-content">
+      <div class="title" title="<%= product.name %>">
+        <%= link_to product.name, product, "data-no-turbolink": true %>
+      </div>
+      <div class="type" title="<%= product.category_name %>"><%= product.category_name %></div>
+      <div class="price">
+        <span class="discount-price"><%= number_to_currency product.discount_price %></span>
+        <span class="net-price">
+          <%= number_to_currency product.retail_sale_price if product.is_discount? %>
+        </span>
+      </div>
+      <div><%= render "shared/btn_add_to_cart", product: product %></div>
+    </div>
+  </div>
+</div>

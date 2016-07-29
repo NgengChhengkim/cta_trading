@@ -2,7 +2,6 @@
   font-size: 14px;
 
   .product-detail {
-    padding: 10px 20px;
 
     .action-cart {
       margin-top: 20px;
@@ -10,6 +9,8 @@
         background-color: #fa03bb;
         color: WHITE;
         font-weight: bold;
+        outline: none;
+        border: none;
       }
     }
 
@@ -98,6 +99,9 @@
       margin-top: 10px;
       .fa-certificate {
         color: #fa03bb;
+      }
+      li {
+        margin: 5px 0px;
       }
     }
     .media {

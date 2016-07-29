@@ -1,4 +1,4 @@
-$(".category-products").append("<%= j render 'shared/products' %>");
+$(".category-products").append("<%= j render partial: 'shared/products', collection: @products, as: :product %>");
 $(".loading").hide();
 $(".btn-load-more").show();
 <% if @products.next_page %>

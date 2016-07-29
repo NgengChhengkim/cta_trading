@@ -5,8 +5,8 @@
 
 <div id="product-show" class="container">
   <div class="row">
-    <div class="col-md-9">
-      <div class="row product-detail main-background">
+    <div class="col-md-9 main-background">
+      <div class="product-detail">
         <ol class="breadcrumb">
           <li><%= link_to t("menu.home"), root_path %></li>
           <li><%= link_to @product.category_name, @product.category %></li>
@@ -73,15 +73,7 @@
             <% end %>
           </table>
           <div class="action-cart">
-            <% if user_signed_in? %>
-              <%= form_for ProductCart.new, remote: true do |f| %>
-                <%= f.hidden_field :product_id, value: @product.id %>
-                <%= f.submit t("actions.add_to_cart"), class: "btn btn-add-to-cart" %>
-              <% end %>
-            <% else %>
-              <%= button_tag t("actions.add_to_cart"), class: "btn add-to-cart",
-                "data-product-id": @product.id  %>
-            <% end %>
+            <%= render "shared/btn_add_to_cart", product: @product %>
           </div>
         </div>
 
