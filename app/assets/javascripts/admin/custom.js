@@ -24,7 +24,7 @@ $(document).on("page:update", function(){
 });
 
 $(document).on("page:change", function(){
-  $("#form-modal").on("hidden.bs.modal", function () {
+  $("#form-modal, #modal-cart").on("hidden.bs.modal", function () {
     $(".modal-content").html("<div class='modal-spinner'>" +
       "<i class='fa fa-spinner fa-pulse fa-3x fa-fw'></i></div>");
   });

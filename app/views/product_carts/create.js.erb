@@ -2,4 +2,5 @@
   alert("Cannot add to cart");
 <% else %>
   $(".number-cart").html("<%= @product_cart_number %>");
+  $(".modal-cart-content").html("<%= j render 'shared/modal_cart_content', product: @product_cart.product %>");
 <% end %>

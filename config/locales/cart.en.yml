@@ -4,6 +4,7 @@ en:
     cart_information: "Cart Information"
     order_information: "Purchaser Information"
     total_price: "Total: "
+    modal_title: "1 item added to Cart"
     tables:
       item: "Item"
       quantity: "Quantity"
@@ -17,6 +18,8 @@ en:
     labels:
       no_cart: "Your Cart is empty."
       discount: "discount"
+      continue_shopping: "Continue Shopping"
+      go_to_product_cart: "Go to Product Cart"
     forms:
       name: "Name"
       email: "Email"

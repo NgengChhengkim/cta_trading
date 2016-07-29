@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :categories, only: :show
   end
   resources :invoices, only: [:index, :show]
+  resources :cart_cookie_modals, only: :show
 
   get "search" => "searches#index"
   get "contact" => "static_pages#contact"

@@ -1,0 +1,35 @@
+#modal-cart {
+  font-size: 14px;
+
+  .price {
+    color: RED;
+  }
+
+  .old-price {
+    color: #999;
+    .net-price {
+      text-decoration: line-through;
+    }
+  }
+
+  .modal-content {
+    width: 100%;
+    margin-left: 0;
+    min-height: auto;
+    line-height: 24px;
+    .modal-title {
+      color: BLUE;
+    }
+    .btn-cart {
+      background-color: #fa03bb;
+      outline: none;
+      border: none;
+    }
+
+    .modal-spinner {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+}
