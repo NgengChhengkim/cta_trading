@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
 
   scope :find_users, -> ids{where id: ids}
 
-  enum role: [:admin, :editor, :customer]
+  enum role: [:admin, :editor, :seller, :customer]
 
   class << self
     def from_omniauth access_token

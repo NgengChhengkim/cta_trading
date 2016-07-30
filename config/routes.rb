@@ -13,7 +13,10 @@ Rails.application.routes.draw do
     resources :brands, only: :show
   end
   resources :products, only: :show
-  resources :promotions
+
+  resources :promotions, only: :show
+  get "information/:kind" => "promotions#index", as: :informations
+
   resources :brands, only: :show do
     resources :categories, only: :show
   end
@@ -31,7 +34,11 @@ Rails.application.routes.draw do
     resources :products, except: :destroy
     resources :users, except: :destroy
     resources :guests, only: [:index, :show]
-    resources :promotions, except: :destroy
+
+    resources :promotions, except: [:index, :new, :destroy]
+    get "information/:kind" => "promotions#index", as: :informations
+    get "information/:kind/new" => "promotions#new", as: :new_information
+
     resources :slide_images, except: :destroy
     resources :contacts, only: [:index, :edit, :update]
     resources :invoices, only: [:index, :show, :update]

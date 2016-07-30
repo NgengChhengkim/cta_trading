@@ -2,40 +2,48 @@
   <section class="sidebar">
     <div class="user-panel">
       <div class="pull-left image">
-        <%= image_tag("user.jpg", class: "img-circle", alt: "User Image") %>
+        <%= avatar_image %>
       </div>
       <div class="pull-left info">
-        <p>Alexander Pierce</p>
+        <p><%= current_user.name %></p>
         <a href="#"><i class="fa fa-circle text-success"></i>
         <%= t "labels.online" %></a>
       </div>
     </div>
 
     <ul class="sidebar-menu">
-      <li class="treeview">
-        <%= link_to admin_invoices_path do %>
-          <i class="fa fa-cart-arrow-down text-aqua"></i>
-          <span><%= t "admin.invoices.title" %></span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to admin_categories_path do %>
-          <i class="fa fa-shopping-bag text-green"></i>
-          <span><%= t "categories.category" %></span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to admin_brands_path do %>
-          <i class="fa fa-certificate text-muted"></i>
-          <span><%= t "admin.brands.title" %></span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to admin_products_path do %>
-          <i class="fa fa-product-hunt text-aqua"></i>
-          <span><%= t "admin.products.title" %></span>
-        <% end %>
-      </li>
+      <% if can? :read, Invoice %>
+        <li class="treeview">
+          <%= link_to admin_invoices_path do %>
+            <i class="fa fa-cart-arrow-down text-aqua"></i>
+            <span><%= t "admin.invoices.title" %></span>
+          <% end %>
+        </li>
+      <% end %>
+      <% if can? :read, Category %>
+        <li class="treeview">
+          <%= link_to admin_categories_path do %>
+            <i class="fa fa-shopping-bag text-green"></i>
+            <span><%= t "categories.category" %></span>
+          <% end %>
+        </li>
+      <% end %>
+      <% if can? :read, Brand %>
+        <li class="treeview">
+          <%= link_to admin_brands_path do %>
+            <i class="fa fa-certificate text-muted"></i>
+            <span><%= t "admin.brands.title" %></span>
+          <% end %>
+        </li>
+      <% end %>
+      <% if can? :read, Product %>
+        <li class="treeview">
+          <%= link_to admin_products_path do %>
+            <i class="fa fa-product-hunt text-aqua"></i>
+            <span><%= t "admin.products.title" %></span>
+          <% end %>
+        </li>
+      <% end %>
       <% if can? :read, User %>
         <li class="treeview">
           <%= link_to admin_users_path do %>
@@ -44,30 +52,50 @@
           <% end %>
         </li>
       <% end %>
-      <li class="treeview">
-        <%= link_to admin_guests_path do %>
-          <i class="fa fa-user-secret text-yellow"></i>
-          <span><%= t "admin.guests.title" %></span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to admin_promotions_path do %>
-          <i class="fa fa-dashboard text-red"></i>
-          <span><%= t "admin.promotions.title" %></span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to admin_slide_images_path do %>
-          <i class="fa fa-picture-o text-light-blue"></i>
-          <span><%= t "admin.slide_images.title" %></span>
-        <% end %>
-      </li>
-      <li class="treeview">
-        <%= link_to admin_contacts_path do %>
-          <i class="fa fa-phone-square text-light-blue"></i>
-          <span><%= t "admin.contacts.title" %></span>
-        <% end %>
-      </li>
+      <% if can? :read, Guest %>
+        <li class="treeview">
+          <%= link_to admin_guests_path do %>
+            <i class="fa fa-user-secret text-yellow"></i>
+            <span><%= t "admin.guests.title" %></span>
+          <% end %>
+        </li>
+      <% end %>
+      <% if can? :read, Promotion %>
+        <li class="treeview">
+          <%= link_to admin_informations_path(Promotion.kinds.keys[0]) do %>
+            <i class="fa fa-dashboard text-red"></i>
+            <span><%= t "menu.promotions" %></span>
+          <% end %>
+        </li>
+        <li class="treeview">
+          <%= link_to admin_informations_path(Promotion.kinds.keys[1]) do %>
+            <i class="fa fa-calendar-o text-green"></i>
+            <span><%= t "menu.events" %></span>
+          <% end %>
+        </li>
+        <li class="treeview">
+          <%= link_to admin_informations_path(Promotion.kinds.keys[2]) do %>
+            <i class="fa fa-file-video-o text-red"></i>
+            <span><%= t "menu.videos" %></span>
+          <% end %>
+        </li>
+      <% end %>
+      <% if can? :read, SlideImage %>
+        <li class="treeview">
+          <%= link_to admin_slide_images_path do %>
+            <i class="fa fa-picture-o text-light-blue"></i>
+            <span><%= t "admin.slide_images.title" %></span>
+          <% end %>
+        </li>
+      <% end %>
+      <% if can? :read, Contact %>
+        <li class="treeview">
+          <%= link_to admin_contacts_path do %>
+            <i class="fa fa-phone-square text-light-blue"></i>
+            <span><%= t "admin.contacts.title" %></span>
+          <% end %>
+        </li>
+      <% end %>
     </ul>
   </section>
 </aside>

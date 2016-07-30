@@ -2,7 +2,7 @@ en:
   cart:
     title: "Product Cart"
     cart_information: "Cart Information"
-    order_information: "Purchaser Information"
+    order_information: "Order Information"
     total_price: "Total: "
     modal_title: "1 item added to Cart"
     tables:

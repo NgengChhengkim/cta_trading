@@ -1,7 +1,8 @@
 <%= link_to promotion, "data-no-turbolink": true do %>
   <div class="media">
     <div class="media-left">
-      <%= media_image promotion.picture_url %>
+      <%= image_tag promotion.picture_url, width: Settings.image.size80,
+        class: "media-object" %>
     </div>
     <div class="media-body">
       <div title="<%= promotion.title %>"><%= promotion.title %></div>

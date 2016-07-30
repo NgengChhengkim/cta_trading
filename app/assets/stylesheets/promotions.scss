@@ -6,6 +6,9 @@
   .media {
     line-height: 28px;
     font-size: 14px;
+    .media-heading {
+      font-size: 16px;
+    }
     .short-content {
       color: #777777;
     }
@@ -16,7 +19,6 @@
   }
 
   .promotion-detail {
-    padding: 0px 20px;
     .sub-header {
       margin: 10px 0px;
     }
