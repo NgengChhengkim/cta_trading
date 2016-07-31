@@ -1,7 +1,7 @@
 <% contact = Contact.first %>
 <div class="footer-bottom">
   <div class="container">
-    <div class="col-md-2 footer-bottom-cate animated wow fadeInLeft" data-wow-delay=".5s">
+    <div class="col-md-2 footer-bottom-cate">
       <h6><%= t "footer.categories" %></h6>
       <ul>
         <% Category.all.each do |category| %>
@@ -10,7 +10,7 @@
       </ul>
     </div>
 
-    <div class="col-md-2 footer-bottom-cate animated wow fadeInRight" data-wow-delay=".5s">
+    <div class="col-md-2 footer-bottom-cate">
       <h6><%= t "footer.brands" %></h6>
       <ul>
         <% Brand.all.each do |brand| %>
@@ -19,7 +19,7 @@
       </ul>
     </div>
 
-    <div class="col-md-4 footer-bottom-cate address cate-bottom animated wow fadeInRight" data-wow-delay=".5s">
+    <div class="col-md-4 footer-bottom-cate address">
       <h6><%= t "footer.our_address" %></h6>
       <ul>
         <li>
@@ -37,7 +37,7 @@
       </ul>
     </div>
 
-    <div class="col-md-4 footer-bottom-cate facebook animated wow fadeInRight" data-wow-delay=".5s">
+    <div class="col-md-4 footer-bottom-cate facebook">
       <h6><%= t "footer.facebook" %></h6>
       <ul>
         <div class="fb-page" data-href="https://www.facebook.com/Robeca-Cambodia-461286390719798/?fref=ts" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Robeca-Cambodia-461286390719798/?fref=ts" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Robeca-Cambodia-461286390719798/?fref=ts">Robeca Cambodia</a></blockquote></div>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="clearfix"></div>
-    <p class="footer-class animated wow fadeInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+    <p class="footer-class">
       <%= t "footer.reserved", year: l(Time.zone.now, format: :year) %>
     </p>
   </div>
