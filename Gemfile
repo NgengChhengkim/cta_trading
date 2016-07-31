@@ -29,6 +29,7 @@ gem "nested_form"
 gem "carrierwave"
 gem "mini_magick"
 gem "ckeditor", github: "galetahub/ckeditor"
+gem "unicorn"
 group :development, :test do
   gem "pry"
 end
