@@ -12,4 +12,4 @@ en:
       phone_number: "Phone number:"
     email:
       send_confirmation_order:
-        subject: "Product Order"
+        subject: "Order Confirmation"
