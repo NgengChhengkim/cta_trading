@@ -265,6 +265,6 @@ Devise.setup do |config|
   config.omniauth :google_oauth2,
     "698239196604-u8dfv3bkra46kjt0qpindp78altl5hn3.apps.googleusercontent.com",
     "pAo6OrdVyK8ehpl6O9-5gTB2", {image_aspect_ratio: "square", image_size: 225}
-  config.omniauth :facebook, "1665012973823414", "965413152e73e33d3d28896de75b6a0e",
+  config.omniauth :facebook, "737759422995722", "4ce9f0efc71c656bc0fde2a6d42e620a",
     info_fields: "name, email", secure_image_url: true, image_size: "large"
 end
