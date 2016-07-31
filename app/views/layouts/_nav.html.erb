@@ -20,8 +20,18 @@
           <li>
             <%= link_to category.name, category %></li>
         <% end %>
-        <li>
-          <%= link_to t("menu.promotion"), promotions_path %></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+            role="button" aria-haspopup="true" aria-expanded="false">
+            <%= t "menu.informations" %><span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% Promotion.kinds.each do |key, value| %>
+              <li>
+                <%= link_to t("menu.#{key}"), informations_path(key) %>
+              </li>
+            <% end %>
+          </ul>
+        </li>
         <li>
           <%= link_to t("menu.contact"), contact_path %></li>
       </ul>

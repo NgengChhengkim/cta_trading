@@ -1,9 +1,10 @@
 <%= form_for :promotions, url: admin_destroy_promotions_path do |f| %>
+  <%= f.hidden_field :kind, value: @kind %>
   <div class="head-title">
     <span><%= t "admin.promotions.title" %></span>
 
     <span class="pull-right">
-      <%= link_to t("admin.actions.add"), new_admin_promotion_path,
+      <%= link_to t("admin.actions.add"), admin_new_information_path(@kind),
         class: "btn btn-primary" %>
       <%= f.submit t("admin.actions.delete"),
         data: {confirm: t("messages.delete_confirm")},

@@ -1,7 +1,7 @@
 <%= form_for [:admin, @promotion], html: {multipart: true} do |f| %>
   <div class="row">
     <div class="head-title">
-      <%= @promotion.new_record? ? t("admin.promotions.new_promotion") : @promotion.title %>
+      <%= @promotion.new_record? ? t("admin.actions.new_infor") : @promotion.title %>
     </div>
     <hr>
     <div class="errors"><%= render "shared/error_messages", object: @promotion %></div>
@@ -25,6 +25,7 @@
           class: "btn btn-default" %>
         <%= f.submit t("admin.actions.save"), class: "btn btn-primary" %>
       </div>
+      <%= f.hidden_field :kind, value: @kind %>
     </div>
   </div>
 <% end %>

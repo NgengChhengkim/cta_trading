@@ -1,7 +1,7 @@
 en:
   admin:
     invoices:
-      title: "Invoices"
+      title: "Orders"
       mark_as_read: "Mark as read"
       mark_as_unread: "Mark as unread"
       you_have: "You have"

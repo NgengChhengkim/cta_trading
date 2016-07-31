@@ -1,9 +1,12 @@
 class Admin::PromotionsController < ApplicationController
   load_and_authorize_resource
+  before_action :set_params_kind, only: [:index, :new]
+  before_action :set_kind, only: [:show, :edit, :update]
+  before_action :set_params_form_kind, only: [:create, :destroy]
 
   def index
-    @promotions = Promotion.order(created_at: :desc).paginate page: params[:page],
-      per_page: Settings.paginate.per_page_10
+    @promotions = Promotion.send(params[:kind]).order(created_at: :desc)
+      .paginate page: params[:page], per_page: Settings.paginate.per_page_10
   end
 
   def show
@@ -14,8 +17,8 @@ class Admin::PromotionsController < ApplicationController
 
   def create
     if @promotion.save
-      flash[:success] = flash_message "created"
-      redirect_to admin_promotions_path
+      flash[:success] = t "flashs.created", model_name: @kind.capitalize
+      redirect_to admin_informations_path @kind
     else
       render :new
     end
@@ -26,8 +29,8 @@ class Admin::PromotionsController < ApplicationController
 
   def update
     if @promotion.update_attributes promotion_params
-      flash[:success] = flash_message "updated"
-      redirect_to admin_promotions_path
+      flash[:success] = t "flashs.updated", model_name: @promotion.kind.capitalize
+      redirect_to admin_informations_path @promotion.kind
     else
       render :edit
     end
@@ -38,14 +41,27 @@ class Admin::PromotionsController < ApplicationController
     promotions = Promotion.find_promotions ids
 
     if promotions.destroy_all
-      flash[:success] = flash_message "deleted"
+      flash[:success] = t "flashs.deleted", model_name: @kind.capitalize
     else
-      flash[:error] = flash_message "not_deleted"
+      flash[:error] = t "flashs.not_deleted", model_name: @kind.capitalize
     end
-    redirect_to admin_promotions_path
+    redirect_to admin_informations_path @kind
   end
 
+  private
   def promotion_params
-    params.require(:promotion).permit :title, :content, :picture
+    params.require(:promotion).permit :title, :content, :picture, :kind
+  end
+
+  def set_params_kind
+    @kind = params[:kind]
+  end
+
+  def set_kind
+    @kind = @promotion.kind
+  end
+
+  def set_params_form_kind
+    @kind = params[:promotion][:kind]
   end
 end

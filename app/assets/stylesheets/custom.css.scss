@@ -14,6 +14,20 @@
   min-height: 50%;
 }
 
+.flash {
+  position: fixed;
+  z-index: 10000;
+  right: 0px;
+  top: 60px;
+  opacity: 0.8;
+
+  .close {
+    font-weight: normal;
+    text-decoration: none;
+  }
+}
+
+
 .error-explanation {
   padding-left: 35px;
   .close {
@@ -236,7 +250,9 @@ input[type="file"], input[type="file"]:focus {
 }
 
 #promotion {
-  img {
-    @extend .img-responsive;
+  .promotion-detail {
+    img {
+      @extend .img-responsive;
+    }
   }
 }

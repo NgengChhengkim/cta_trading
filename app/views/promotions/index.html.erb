@@ -1,14 +1,14 @@
-<% provide :title, t("menu.promotion") %>
+<% provide :title, @kind.capitalize %>
 
 <div id="promotion" class="container">
   <div class="row">
     <div class="col-md-12 main-background">
       <ol class="breadcrumb">
         <li><%= link_to t("menu.home"), root_path %></li>
-        <li class="active"><%= t "promotions.title" %></li>
+        <li class="active"><%= @kind.capitalize %></li>
       </ol>
 
-      <div class="head-title"><%= t "promotions.title" %></div>
+      <div class="head-title"><%= @kind.capitalize %></div>
       <div class="promotion-list"><%= render @promotions %></div>
       <div class="pull-right"><%= will_paginate @promotions %></div>
     </div>

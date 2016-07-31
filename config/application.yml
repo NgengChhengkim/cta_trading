@@ -42,6 +42,9 @@ defaults: &defaults
     address:
       "validation": "required"
       "validation-error-msg-required": <%= I18n.t "errors.required", data: "Address" %>
+    valid_email:
+      "validation": "required"
+      "validation-error-msg-required": <%= I18n.t "errors.required", data: "Email" %>
   paginate:
     per_page: 16
     related_product: 6
@@ -50,8 +53,9 @@ defaults: &defaults
     per_page_10: 10
   image:
     size60: 60
-    size150: 150
+    size80: 80
     size100: 100
+    size150: 150
     size500: 500
 development:
   <<: *defaults

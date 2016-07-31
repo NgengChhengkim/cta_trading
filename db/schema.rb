@@ -120,6 +120,7 @@ ActiveRecord::Schema.define(version: 20160715212111) do
     t.string   "title",      limit: 255
     t.string   "content",    limit: 255
     t.string   "picture",    limit: 255
+    t.integer  "kind",       limit: 4
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

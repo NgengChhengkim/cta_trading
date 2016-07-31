@@ -23,16 +23,16 @@
       <h6><%= t "footer.our_address" %></h6>
       <ul>
         <li>
-          <i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>
-          <%= t "footer.address", address: contact.address if contact %>
+          <strong><%= t "footer.address" %></strong>
+          <%= contact.address if contact %>
         </li>
         <li>
-          <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>
-          <%= t "footer.email", email: contact.email if contact %>
+          <strong><%= t "footer.email" %></strong>
+          <%= contact.email if contact %>
         </li>
         <li>
-          <i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>
-          <%= t "footer.phone", phone: contact.phone_number if contact %>
+          <strong><%= t "footer.phone" %></strong>
+          <%= contact.phone_number if contact %>
         </li>
       </ul>
     </div>
