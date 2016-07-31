@@ -2,7 +2,7 @@ html,body{
 	background: #F6F8F8;
 	font-size: 100%;
 	font-family: 'Roboto', sans-serif;
-  padding-top: 25px;
+  padding-top: 30px;
   color: #545351;
   height: 100%;
 }
@@ -34,6 +34,9 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 .navbar-default .navbar-nav > li > a {
   font-weight: 300;
+}
+.navbar-default .navbar-nav > li {
+  padding: 5px 0px;
 }
 .navbar-nav {
   margin:0 auto;
@@ -72,6 +75,8 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 .navbar-default .navbar-brand {
   font-weight: bold;
+  padding: 8px;
+  height: 60px;
 }
 
 .avatar-dropdown {

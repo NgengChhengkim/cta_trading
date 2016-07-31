@@ -62,6 +62,7 @@ en:
       login: "Log in"
       forget_pass: "Forgot your password?"
       save: "Save"
+      change_password: "Change your password"
     placeholders:
       name: "Enter your name"
       email: "Enter your email"

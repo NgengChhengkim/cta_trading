@@ -1,9 +1,9 @@
 en:
   brand: "CTA"
-  site: "CTA Trading"
-  admin_site: "Admin CTA Trading"
-  keywords: "trading, perfume, online shopping, beauty shopping, facial, body, shampoo"
-  description: "First rank Beauty online shopping in Cambodia"
+  site: "CTA Beauty Store"
+  admin_site: "CTA Beauty Store"
+  keywords: "trading, cosmetic, perfume, online shopping, beauty shopping, facial, body, shampoo, Manufacturers, Suppliers, Exporters, Importers, Products, Trade Leads, Supplier, Manufacturer, Exporter, Importer. beauty supplies shopping Cosmetics gifts free beauty products supply makeup cosmetics discount perfume fragrances beauty makeover tips salons French Calvin Klein perfume natural skin care products moisturizers creams cosmetic counter make up tips fragrance perfume oil cologne oils counter skincare makeovers eye makeup blush eyeshadow mascara eyeliner lipstick nail polish hair care products lipliner eye shadow haircare lipsticks face powder facial moisturizer nail care polishes skin care bath and body nails wedding gift french manicure tips pedicure facial salon concealer toiletries foundation perfume perfumes parfum toilette colognes eau oils discount calvin klein fragrances Aromatherapy oils lotions candles bath cleansers Cosmetics health and beauty eye liner blush eyeliner concealer mascara hydrating daily moisturizers body lotion moisturize moisturizing body cream hand cream foot body silk balsam manicure kit facials anniversary birthday bridesmaid bridesmaids prom proms weddings"
+  description: "First rank Beauty online Store in Cambodia. Start your shopping now on ctabeautystore.com"
   menu:
     home: "Home"
     products: "Products"
@@ -52,7 +52,7 @@ en:
     address: "Address: "
     email: "Email: "
     phone: "Phone: "
-    reserved: "© %{year}. All Rights Reserved | CTA Trading"
+    reserved: "© %{year}. All Rights Reserved | CTA Beauty Store"
   flashs:
     created: "%{model_name} was created successfully!"
     not_created: "%{model_name} couldn't be created"
