@@ -1,6 +1,15 @@
 <tr class="product-cart">
-  <td><%= link_to image_product_table(product_invoice.product.cover_image_url),
-    product_invoice.product, "data-no-turbolink": true %></td>
+  <td>
+  <% if is_invoice %>
+    <%= link_to image_product_table(product_invoice.product.cover_image_url),
+      product_invoice.product, "data-no-turbolink": true %>
+  <% else %>
+    <%= link_to product_invoice.product do %>
+      <img src="128.199.235.7<%= product_invoice.product.cover_image_url %>"
+        width="100" height="100" />
+    <% end %>
+  <% end %>
+  </td>
   <td>
     <div class="title"><%= link_to product_invoice.product_name,
       product_invoice.product, "data-no-turbolink": true %></div>
