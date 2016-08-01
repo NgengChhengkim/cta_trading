@@ -5,7 +5,7 @@
       product_invoice.product, "data-no-turbolink": true %>
   <% else %>
     <%= link_to product_invoice.product do %>
-      <img src="128.199.235.7<%= product_invoice.product.cover_image_url %>"
+      <img src="<%= Settings.domain_url %><%= product_invoice.product.cover_image_url %>"
         width="100" height="100" />
     <% end %>
   <% end %>
@@ -18,10 +18,14 @@
   <td>
     <div class="discount-price" data-discount-price="<%= product_invoice.product_discount_price %>">
       <%= number_to_currency product_invoice.product_discount_price %></div>
-    <div class="old-price"><%= number_to_currency product_invoice.product_retail_sale_price %></div>
-    <div class="discount">
-      <%= "#{percentage_format product_invoice.product_discount} #{t "cart.labels.discount"}" %>
-    </div>
+    <% if product_invoice.product.is_discount? %>
+      <div class="old-price">
+        <%= number_to_currency product_invoice.product_retail_sale_price %>
+      </div>
+      <div class="discount">
+        <%= "#{percentage_format product_invoice.product_discount} #{t "cart.labels.discount"}" %>
+      </div>
+    <% end %>
   </td>
   <td>
     <div hidden><%= text_field_tag :quantity, product_invoice.quantity,
