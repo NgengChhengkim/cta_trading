@@ -17,8 +17,7 @@
 .flash {
   position: fixed;
   z-index: 10000;
-  right: 0px;
-  top: 60px;
+  top: 65px;
   opacity: 0.8;
 
   .close {
@@ -27,6 +26,17 @@
   }
 }
 
+.user {
+  .flash {
+    right: 0;
+  }
+}
+
+.admin {
+  .flash {
+    right: 50%;
+  }
+}
 
 .error-explanation {
   padding-left: 35px;

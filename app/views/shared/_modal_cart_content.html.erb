@@ -14,14 +14,16 @@
       <div class="title"><%= link_to product.name, product %></div>
       <div class="category"><%= product.category_name %></div>
       <div class="price"><%= number_to_currency product.discount_price %></div>
-      <div class="old-price">
-        <span class="net-price">
-          <%= number_to_currency product.retail_sale_price %></span> &nbsp;
-        <span class="discount">
-          <%= t "product.discount" %>:
-          <%= percentage_format product.discount %>
-        </span>
-      </div>
+      <% if product.is_discount? %>
+        <div class="old-price">
+          <span class="net-price">
+            <%= number_to_currency product.retail_sale_price %></span> &nbsp;
+          <span class="discount">
+            <%= t "product.discount" %>:
+            <%= percentage_format product.discount %>
+          </span>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

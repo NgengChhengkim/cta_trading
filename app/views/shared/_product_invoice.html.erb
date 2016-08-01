@@ -4,15 +4,22 @@
     <%= link_to image_product_table(product_invoice.product.cover_image_url),
       product_invoice.product, "data-no-turbolink": true %>
   <% else %>
-    <%= link_to product_invoice.product do %>
+    <a href="<%= Settings.domain_url %>/products/<%= product_invoice.product_id %>">
       <img src="<%= Settings.domain_url %><%= product_invoice.product.cover_image_url %>"
         width="100" height="100" />
-    <% end %>
+    </a>
   <% end %>
   </td>
   <td>
-    <div class="title"><%= link_to product_invoice.product_name,
-      product_invoice.product, "data-no-turbolink": true %></div>
+    <% if is_invoice %>
+      <div class="title"><%= link_to product_invoice.product_name,
+        product_invoice.product, "data-no-turbolink": true %></div>
+    <% else %>
+      <div class="title">
+        <a href="<%= Settings.domain_url %>/products/<%= product_invoice.product_id %>">
+          <%= product_invoice.product_name %>
+        </a>
+    <% end %>
     <div class="type"><%= product_invoice.product.category_name %></div>
   </td>
   <td>

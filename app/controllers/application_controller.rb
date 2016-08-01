@@ -23,9 +23,7 @@ class ApplicationController < ActionController::Base
       end
     end
     cookies.delete :product_cart
-    stored_location_for(resource) || root_path
-
-    current_user.customer? ? root_path : admin_root_path
+    stored_location_for(resource) || (current_user.customer? ? root_path : admin_root_path)
   end
 
   def after_sign_out_path_for resource
