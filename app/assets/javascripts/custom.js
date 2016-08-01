@@ -9,7 +9,7 @@ $(document).on("page:update", function() {
 $(document).on("page:change", function() {
   new WOW().init();
 
-  $("#slider").responsiveSlides({
+  $("#slider-banner").responsiveSlides({
     auto: true,
     speed: 500,
     namespace: "callbacks",

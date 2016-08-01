@@ -1,6 +1,6 @@
 <% provide :title, @promotion.title %>
 <% provide :name, @promotion.title %>
-<% provide :description, @promotion.safe_content %>
+<% provide :description, strip_tags(@promotion.content) %>
 <% provide :image, get_full_path(@promotion.picture_url) %>
 
 <div id="promotion" class="container">

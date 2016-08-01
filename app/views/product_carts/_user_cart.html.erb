@@ -9,10 +9,12 @@
   <td>
     <div class="discount-price" data-discount-price="<%= product_cart.product_discount_price %>">
       <%= number_to_currency product_cart.product_discount_price %></div>
-    <div class="old-price"><%= number_to_currency product_cart.product_retail_sale_price %></div>
-    <div class="discount">
-      <%= "#{percentage_format product_cart.product_discount} #{t "cart.labels.discount"}" %>
-    </div>
+    <% if product_cart.product.is_discount? %>
+      <div class="old-price"><%= number_to_currency product_cart.product_retail_sale_price %></div>
+      <div class="discount">
+        <%= "#{percentage_format product_cart.product_discount} #{t "cart.labels.discount"}" %>
+      </div>
+    <% end %>
   </td>
   <td><%= number_field_tag :number, product_cart.quantity,
     "data-product-cart-id": product_cart.id, min: 1,

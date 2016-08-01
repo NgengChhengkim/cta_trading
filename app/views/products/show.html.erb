@@ -1,6 +1,6 @@
 <% provide :title, @product.name %>
 <% provide :name, @product.name %>
-<% provide :description, @product.safe_description %>
+<% provide :description, strip_tags(@product.description) %>
 <% provide :image, get_full_path(@product.cover_image_url) %>
 
 <div id="product-show" class="container">
