@@ -2,7 +2,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       t.string :name
-      t.integer :role, default: 2
+      t.integer :role, default: 3
       t.string :address
       t.string :phone_number
       t.string :email,              null: false, default: ""

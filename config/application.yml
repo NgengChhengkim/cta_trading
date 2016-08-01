@@ -57,6 +57,7 @@ defaults: &defaults
     size100: 100
     size150: 150
     size500: 500
+  domain_url: "http://www.ctabeautystore.com"
 development:
   <<: *defaults
   neat_setting: 800
