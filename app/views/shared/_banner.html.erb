@@ -6,10 +6,18 @@
           <li>
             <%= image_tag slide_image.picture_url, class: "img-responsive" %>
             <div class="tes animated wow fadeInUp animated" data-wow-delay=".5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
-              <h2><%= slide_image.heading1 %></h2>
-              <h3><%= slide_image.heading2 %></h3>
-              <h4><%= slide_image.heading3 %></h4>
-              <p><%= slide_image.heading4 %></p>
+              <h2 style="color: <%= slide_image.color_h1 %>">
+                <%= slide_image.heading1 %>
+              </h2>
+              <h3 style="color: <%= slide_image.color_h2 %>">
+                <%= slide_image.heading2 %>
+              </h3>
+              <h4 style="color: <%= slide_image.color_h3 %>">
+                <%= slide_image.heading3 %>
+              </h4>
+              <p style="color: <%= slide_image.color_h4 %>">
+                <%= slide_image.heading4 %>
+              </p>
             </div>
           </li>
         <% end %>
