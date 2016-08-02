@@ -1,5 +1,6 @@
 en:
   product:
+    code: "Product code"
     brand: "Brand:"
     category: "Category:"
     brands: "Brands"
