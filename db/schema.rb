@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715212111) do
+ActiveRecord::Schema.define(version: 20160802101341) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -128,15 +128,15 @@ ActiveRecord::Schema.define(version: 20160715212111) do
   create_table "slide_images", force: :cascade do |t|
     t.string   "picture",    limit: 255
     t.string   "heading1",   limit: 255
-    t.string   "color_h1",   limit: 255, default: "#fa03bb"
     t.string   "heading2",   limit: 255
-    t.string   "color_h2",   limit: 255, default: "#ffffff"
     t.string   "heading3",   limit: 255
-    t.string   "color_h3",   limit: 255, default: "#ffffff"
     t.string   "heading4",   limit: 255
-    t.string   "color_h4",   limit: 255, default: "#fa03bb"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
+    t.string   "color_h1",   limit: 255, default: "#fa03bb"
+    t.string   "color_h2",   limit: 255, default: "#ffffff"
+    t.string   "color_h3",   limit: 255, default: "#ffffff"
+    t.string   "color_h4",   limit: 255, default: "#fa03bb"
   end
 
   create_table "users", force: :cascade do |t|
