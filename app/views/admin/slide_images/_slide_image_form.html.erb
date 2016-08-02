@@ -11,22 +11,46 @@
         <%= promotion_image f.object.picture_url unless f.object.new_record? %>
         <%= f.file_field :picture, class: "form-control" %>
       </div>
-      <div>
-        <%= f.label :heading1 %>
-        <%= f.text_field :heading1, class: "form-control" %>
+      <div class="row">
+        <div class="col-md-9">
+          <%= f.label :heading1 %>
+          <%= f.text_field :heading1, class: "form-control" %>
+        </div>
+        <div class="col-md-3">
+          <%= f.label :color %>
+          <%= f.text_field :color_h1, class: "color-header-picker form-control" %>
+        </div>
       </div>
-      <div>
-        <%= f.label :heading2 %>
-        <%= f.text_field :heading2, class: "form-control" %>
+      <div class="row">
+        <div class="col-md-9">
+          <%= f.label :heading2 %>
+          <%= f.text_field :heading2, class: "form-control" %>
+        </div>
+        <div class="col-md-3">
+          <%= f.label :color %>
+          <%= f.text_field :color_h2, class: "color-header-picker form-control" %>
+        </div>
       </div>
-      <div>
-        <%= f.label :heading3 %>
-        <%= f.text_field :heading3, class: "form-control" %>
+      <div class="row">
+        <div class="col-md-9">
+          <%= f.label :heading3 %>
+          <%= f.text_field :heading3, class: "form-control" %>
+        </div>
+        <div class="col-md-3">
+          <%= f.label :color %>
+          <%= f.text_field :color_h3, class: "color-header-picker form-control" %>
+        </div>
       </div>
-      <div>
-        <%= f.label :heading4 %>
-        <%= f.text_field :heading4, class: "form-control" %><br>
-      </div>
+      <div class="row">
+        <div class="col-md-9">
+          <%= f.label :heading4 %>
+          <%= f.text_field :heading4, class: "form-control" %>
+        </div>
+        <div class="col-md-3">
+          <%= f.label :color %>
+          <%= f.text_field :color_h4, class: "color-header-picker form-control" %>
+        </div>
+      </div><br>
       <div class="pull-right">
         <%= link_to t("admin.actions.cancel"), admin_slide_images_path,
           class: "btn btn-default" %>

@@ -29,6 +29,7 @@
 //= require jquery.lockfixed
 //= require jquery-number-format
 //= require jquery.form-validator
+//= require jquery.minicolors
 //= require facebook
 //= require custom
 //= require product_cart

@@ -2,7 +2,7 @@ class Admin::SlideImagesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @slide_images = SlideImage.order(created_at: :desc).paginate page: params[:page],
+    @slide_images = SlideImage.paginate page: params[:page],
       per_page: Settings.paginate.per_page_10
   end
 
@@ -46,7 +46,7 @@ class Admin::SlideImagesController < ApplicationController
   end
 
   def slide_image_params
-    params.require(:slide_image).permit :picture, :heading1, :heading2,
-      :heading3, :heading4
+    params.require(:slide_image).permit :picture, :heading1, :color_h1,
+      :heading2, :color_h2, :heading3, :color_h3, :heading4, :color_h4
   end
 end

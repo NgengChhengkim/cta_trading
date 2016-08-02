@@ -46,9 +46,9 @@ ActiveRecord::Schema.define(version: 20160715212111) do
     t.string   "address",      limit: 255
     t.string   "email",        limit: 255
     t.string   "phone_number", limit: 255
-    t.string   "content",      limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "content",      limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "guests", force: :cascade do |t|
@@ -118,26 +118,30 @@ ActiveRecord::Schema.define(version: 20160715212111) do
 
   create_table "promotions", force: :cascade do |t|
     t.string   "title",      limit: 255
-    t.string   "content",    limit: 255
+    t.text     "content",    limit: 65535
     t.string   "picture",    limit: 255
     t.integer  "kind",       limit: 4
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "slide_images", force: :cascade do |t|
     t.string   "picture",    limit: 255
     t.string   "heading1",   limit: 255
+    t.string   "color_h1",   limit: 255, default: "#fa03bb"
     t.string   "heading2",   limit: 255
+    t.string   "color_h2",   limit: 255, default: "#ffffff"
     t.string   "heading3",   limit: 255
+    t.string   "color_h3",   limit: 255, default: "#ffffff"
     t.string   "heading4",   limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "color_h4",   limit: 255, default: "#fa03bb"
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
   end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                   limit: 255
-    t.integer  "role",                   limit: 4,   default: 2
+    t.integer  "role",                   limit: 4,   default: 3
     t.string   "address",                limit: 255
     t.string   "phone_number",           limit: 255
     t.string   "email",                  limit: 255, default: "", null: false

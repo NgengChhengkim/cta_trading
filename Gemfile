@@ -30,6 +30,7 @@ gem "carrierwave"
 gem "mini_magick"
 gem "ckeditor", github: "galetahub/ckeditor"
 gem "unicorn"
+gem "jquery-minicolors-rails"
 group :development, :test do
   gem "pry"
 end
