@@ -30,6 +30,7 @@
 //= require jquery-number-format
 //= require jquery.form-validator
 //= require jquery.minicolors
+//= require bootstrap-datepicker
 //= require facebook
 //= require custom
 //= require product_cart

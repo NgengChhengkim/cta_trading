@@ -1,0 +1,17 @@
+<div class="row filter">
+  <%= search_form_for [:admin, @q], remote: true do |f| %>
+    <div class="col-md-3">
+      <%= f.label :name_or_email %>
+      <%= f.text_field :name_or_email_cont, class: "form-control" %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :role %>
+      <%= f.select :role_eq, User.roles, {selected: f.object.role_eq, include_blank: "All"},
+        {class: "form-control"} %>
+    </div>
+    <div class="col-md-1">
+      <br>
+      <%= f.submit t("admin.actions.filter"), class: "btn btn-primary btn-filter" %>
+    </div>
+  <% end %>
+</div>

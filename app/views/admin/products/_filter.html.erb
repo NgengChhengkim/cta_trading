@@ -1,0 +1,26 @@
+<div class="row filter">
+  <%= search_form_for [:admin, @q], remote: true do |f| %>
+    <div class="col-md-2">
+      <%= f.label :code %>
+      <%= f.text_field :code_cont, class: "form-control" %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :name %>
+      <%= f.text_field :name_cont, class: "form-control" %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :brand_id %>
+      <%= f.select :brand_id_eq, options_for_select(@brands, f.object.brand_id_eq),
+        {include_blank: "All"}, {class: "form-control"} %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :category_id %>
+      <%= f.select :category_id_eq, options_for_select(@categories, f.object.category_id_eq),
+        {include_blank: "All"}, {class: "form-control"} %>
+    </div>
+    <div class="col-md-1">
+      <br>
+      <%= f.submit t("admin.actions.filter"), class: "btn btn-primary btn-filter" %>
+    </div>
+  <% end %>
+</div>

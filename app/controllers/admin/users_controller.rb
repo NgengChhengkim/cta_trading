@@ -48,7 +48,8 @@ class Admin::UsersController < ApplicationController
   end
 
   def load_users
-    @users = User.order(:name).paginate page: params[:page],
+    @q = User.ransack params[:q]
+    @users = @q.result.order(:name).paginate page: params[:page],
       per_page: Settings.paginate.per_page_10
   end
 end

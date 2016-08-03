@@ -1,10 +1,11 @@
 class Admin::ProductsController < ApplicationController
   load_and_authorize_resource
-  before_action :load_data, only: [:new, :create, :edit, :update]
+  before_action :load_data, only: [:index, :new, :create, :edit, :update]
 
   def index
-    @products = Product.order(created_at: :desc).paginate page: params[:page],
-      per_page: Settings.paginate.per_page_10
+    @q = Product.ransack params[:q]
+    @products = @q.result.order(created_at: :desc)
+      .paginate page: params[:page], per_page: Settings.paginate.per_page_10
   end
 
   def show
