@@ -2,8 +2,9 @@ class Admin::InvoicesController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @invoices = Invoice.order(seen: :asc, created_at: :desc).paginate page: params[:page],
-      per_page: Settings.paginate.per_page_10
+    @q = Invoice.ransack params[:q]
+    @invoices = @q.result.order(seen: :asc, created_at: :desc)
+      .paginate page: params[:page], per_page: Settings.paginate.per_page_10
   end
 
   def show

@@ -1,0 +1,22 @@
+<div class="row filter">
+  <%= search_form_for [:admin, @q], remote: true do |f| %>
+    <div class="col-md-4">
+      <%= f.label :order_date %>
+      <div class="input-daterange input-group" id="datepicker">
+        <%= f.text_field :created_at_beginning_of_day_gteq, class: "form-control" %>
+        <span class="input-group-addon"><%= t "labels.to" %></span>
+        <%= f.text_field :created_at_end_of_day_lt, class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <%= f.label :status %>
+      <%= f.select :seen_eq, {seen: true, unseen: false},
+        {selected: f.object.seen_eq, include_blank: "All"}, class: "form-control" %>
+    </div>
+    <div class="col-md-1">
+      <br>
+      <%= f.submit t("admin.actions.filter"), class: "btn btn-primary btn-filter" %>
+    </div>
+  <% end %>
+</div>

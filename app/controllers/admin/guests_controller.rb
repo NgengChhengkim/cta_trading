@@ -22,7 +22,8 @@ class Admin::GuestsController < ApplicationController
 
   private
   def load_users
-    @guests = Guest.order(:name).paginate page: params[:page],
+    @q = Guest.ransack params[:q]
+    @guests = @q.result.order(:name).paginate page: params[:page],
       per_page: Settings.paginate.per_page_10
   end
 end

@@ -6,12 +6,12 @@
   <% if invoice.seen? %>
     <%= link_to admin_invoice_path(invoice), method: :patch, remote: true,
       title: t("admin.invoices.mark_as_unread") do %>
-      <i class="fa fa-circle-o" aria-hidden="true"></i> &nbsp;
+      <i class="fa-seen fa fa-circle-o" aria-hidden="true"></i> &nbsp;
     <% end %>
   <% else %>
     <%= link_to admin_invoice_path(invoice), method: :patch, remote: true,
       title: t("admin.invoices.mark_as_read") do %>
-      <i class="fa fa-circle" aria-hidden="true"></i> &nbsp;
+      <i class="fa-seen fa fa-circle" aria-hidden="true"></i> &nbsp;
     <% end %>
   <% end %>
   <%= invoice.name %>

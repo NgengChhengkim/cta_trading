@@ -34,4 +34,14 @@ $(document).on("page:change", function(){
   });
 
   $(".color-header-picker").minicolors({theme: "bootstrap"});
+
+  $(".btn-filter").unbind("click").on("click", function() {
+    $(".filter-loading").show();
+  });
+
+  $(".input-daterange").datepicker({
+    format: "dd-mm-yyyy",
+    autoclose: true,
+    todayHighlight: true
+  });
 });

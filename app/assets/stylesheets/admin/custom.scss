@@ -16,6 +16,13 @@
    max-height: 300px;
    opacity: 1;
   }
+
+  .filter-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+  }
 }
 
 .admin-wrapper {
@@ -102,15 +109,16 @@
           font-weight: bold;
         }
       }
+
+      .fa-seen {
+        color: #3c8dbc;
+        font-size: 10px;
+      }
     }
   }
 
   .font-bold {
     font-weight: bold;
-  }
-  .fa {
-    color: #3c8dbc;
-    font-size: 10px;
   }
 }
 
