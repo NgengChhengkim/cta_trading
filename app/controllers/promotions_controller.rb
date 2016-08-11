@@ -3,8 +3,8 @@ class PromotionsController < ApplicationController
 
   def index
     @kind = params[:kind]
-    @promotions = Promotion.send(@kind).paginate page: params[:page],
-      per_page: Settings.paginate.per_page
+    @promotions = Promotion.send(@kind).order(created_at: :desc)
+      .paginate page: params[:page], per_page: Settings.paginate.per_page
   end
 
   def show
