@@ -7,6 +7,22 @@
   <div class="row">
     <%= render partial: "shared/products", collection: @products, as: :product %>
   </div>
+
+  <hr>
+
+  <% if @discount_products.size > 0 %>
+    <div class="head-title">
+      <%= t "labels.discount_products" %>
+      <%= link_to discounts_path, class: "pull-right" do %>
+        <%= t "labels.more" %>&nbsp;
+        <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+      <% end %>
+    </div>
+    <div class="row">
+      <%= render partial: "shared/products", collection: @discount_products,
+        as: :product %>
+    </div>
+  <% end %>
 </div>
 
 <%= render "shared/modal_cart" %>

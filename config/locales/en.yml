@@ -40,7 +40,9 @@ en:
     all_brands: "All Brands"
     all_categories: "All Categories"
     hot_products: "Hot Products"
+    discount_products: "Discount Products"
     to: "to"
+    more: "more"
   time:
     formats:
       default: "%d-%m-%Y %H:%M"
