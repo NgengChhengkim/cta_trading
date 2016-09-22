@@ -25,6 +25,8 @@ class Product < ActiveRecord::Base
   scope :find_by_brand_category, -> brand_id, category_id{
     where(brand_id: brand_id, category_id: category_id).select_products}
   scope :exept_id, -> id{where.not id: id}
+  scope :discount_products, ->{where("discount > 0")}
+  scope :not_discount_products, ->{where discount: 0}
 
   accepts_nested_attributes_for :images,
     reject_if: proc {|attributes| attributes[:name].blank?}, allow_destroy: true

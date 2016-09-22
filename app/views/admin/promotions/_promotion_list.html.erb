@@ -1,7 +1,7 @@
 <%= form_for :promotion, url: admin_destroy_promotions_path do |f| %>
   <%= f.hidden_field :kind, value: @kind %>
   <div class="head-title">
-    <span><%= t "admin.promotions.title" %></span>
+    <span><%= @kind.capitalize %></span>
 
     <span class="pull-right">
       <%= link_to t("admin.actions.add"), admin_new_information_path(@kind),

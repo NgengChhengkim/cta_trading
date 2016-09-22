@@ -3,7 +3,7 @@
     <div class="login">
       <%= search_form_for Product.ransack(params[:q]), url: search_path do |f| %>
         <%= f.submit :submit, value: "" %>
-        <%= f.text_field :name_cont, class: "search-text",
+        <%= f.search_field :name_or_code_cont, class: "search-text",
           placeholder: t("labels.search"), autocomplete: "off" %>
       <% end %>
     </div>

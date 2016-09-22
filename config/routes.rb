@@ -25,6 +25,8 @@ Rails.application.routes.draw do
 
   get "search" => "searches#index"
   get "contact" => "static_pages#contact"
+  get "discounts" => "static_pages#discount"
+
   mount Sidekiq::Web, at: "/sidekiq"
 
   namespace :admin do
