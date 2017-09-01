@@ -266,5 +266,6 @@ Devise.setup do |config|
     "213097980990-h9reqimgl5fi93md3jvekt2op81ra6ts.apps.googleusercontent.com",
     "R5LbRR60WGA84fE33pEpWA_Y", {image_aspect_ratio: "square", image_size: 225}
   config.omniauth :facebook, "737759422995722", "4ce9f0efc71c656bc0fde2a6d42e620a",
-    info_fields: "name, email", secure_image_url: true, image_size: "large"
+    info_fields: "name, email", secure_image_url: true, image_size: "large",
+    token_params: { parse: :json }
 end
